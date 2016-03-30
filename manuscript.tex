@@ -523,14 +523,11 @@ In this section, we discuss how the legacy of these first generation
 
 \begin{figure}[t]
 	\centering
-	\includegraphics[width=.56\textwidth]{plots/current_limits.pdf}
-	\includegraphics[width=.43\textwidth]{plots/constraints_proposal.pdf}
-	\vspace{-20pt}
-	\caption{Left: The current best published $2\sigma$ upper limits on the 21cm power spectrum, $\Delta^2(k)$, (solid symbols represent analyses led by HERA collaborators) compared to 21cmFAST-generated models at $k=0.2$\,$h$\,Mpc$^{-1}$. 
+	\includegraphics[width=.8\textwidth]{plots/current_limits.pdf}
+	\caption{The current best published $2\sigma$ upper limits on the 21cm power spectrum, $\Delta^2(k)$, (solid symbols represent analyses led by HERA collaborators) compared to 21cmFAST-generated models at $k=0.2$\,$h$\,Mpc$^{-1}$. 
 Analysis is still underway on PAPER and MWA observations that approach their projected 
 full sensitivities (see Fig.~\ref{fig:Sensitivities}); 
-HERA can deliver sub-$\text{mK}^2$ sensitivities.
-Right: The \citet{ali_et_al2015} limit at $z=8.4$ excludes the entire gray shaded area corresponding to a cold IGM \citep{pober_et_al2015}.  The color scale shows the power spectrum amplitude at $k = 0.25~h{\rm Mpc}^{-1}$ for a given spin temperature and neutral fraction.  Constraints are weaker if the (currently unknown) neutral fraction at $z=8.4$ is very high or low, as the 21\,cm signal is brightest during the middle of reionization.}
+HERA can deliver sub-$\text{mK}^2$ sensitivities.}
 	\vspace{-10pt}
 	\label{fig:limits}
 	\label{fig:IGMtemperatureConstraints}
@@ -598,7 +595,7 @@ Though the desired measurement is over a volume, it is instructive to split it i
 \end{equation}
 where $c$ is the speed of light and $S$ is a parameter accounting for offsets related to the combined spectral smoothness of the foregrounds and the antenna response (see Fig. \ref{fig:wedgeWithBG}).  
 A key issue to measuring the EOR power spectrum is to understand and minimize such effects.  For an analytical derivation, see \cite{2012ApJ...756..165P,vedantham_et_al2012,liu_et_al2014b},  in simulation see \cite{datta_et_al2010,hazelton_et_al2013} and for observations
-\cite{2013ApJ...768L..36P,2015arXiv150601026P,2014ApJ...788..106P,2015arXiv150206016A}.
+\cite{2013ApJ...768L..36P,2015arXiv150601026P,2014ApJ...788..106P,2015arXiv150206016A}.  Note that the unit of the spatial wavenumber $k$ is 1/length, in this case the relevant length scale is megaparsecs (Mpc; 1 Mpc = 3.086$\times10^{22}$ m).  In order to normalize for updated measurements of Hubble's constant, it is further normalized by $h$, where $H_o=100h$, such that they are expressed as $h$/Mpc.
 
 \begin{figure}[t]
 \includegraphics[height=3in]{plots/wedgeWithBG.png}
@@ -624,7 +621,7 @@ We can essentially relate the sky power spectrum mode ${\hat P}(\kvec)$ to an in
 \end{equation}
 where $X$ and $Y$ are cosmological parameters relating angular size and spectral frequency to cosmic volumes, $\Omega_b$ is the integrated beam response, $B$ is the effective bandwidth, $\lambda$ is the observation wavelength, and $k_B$ is Boltzmann's constant.  The terms in square brackets are instrumental terms, as opposed to the constants and cosmological parameters.  
 Note that at the red-shifts of interest $X$ has a value of about 160 Mpc/deg and $Y$ has a value of about 16 Mpc/MHz.
-Rather than ${\hat P}(\kvec)$, the literature generally works with a volume-normalized parameter given by $\Delta^2(k) = \frac{k^3}{2\pi^2}{\hat P}(\kvec)$.
+Rather than ${\hat P}(\kvec)$, the literature generally works with a volume-normalized parameter given by $\Delta^2(k) = \frac{k^3}{2\pi^2}{\hat P}(\kvec)$.    
 
 Since the thermal noise per visibility baseline may be expressed as
 \begin{equation}
@@ -650,7 +647,7 @@ The power spectrum uses the full magnitude of the {\bf k}-vector, which is set b
 
 \begin{figure}[h!]
 \centerline{
-\includegraphics[width=\textwidth]{plots/kperf.png} 
+\includegraphics[width=.4\textwidth]{plots/kperf.png} 
 }
 \caption{\small k
 \label{fig:kperf}}
@@ -691,7 +688,7 @@ red band showing the forecasted 95\% confidence region derived from HERA data,
 after marginalizing over astrophysical and cosmological parameters.
 
 
-From these measurements and models, the Phase 1 and 2 minimum spans of redshifts range from $z=$6 to 13, corresponding to a frequency range of 100 - 200 MHz.  Extending the science to include the Dark Ages remains a goal so that efforts are on-going to design a feed to increase the lower limit down to about 50 MHz without compromising the performance in the specification range.  The fall-back position for the low-frequencies is a serial deployment of a scaled version of the HERA feed or to potentially build additional elements specifically for the low-frequencies.  The 100 MHz bandwidth is also the minimum fully digitized and correlated bandwidth.
+From these measurements and models, HERA is required to cover a redshift range of $z=$6 to 13, corresponding to a frequency range of 101 - 203 MHz.  We adopt 100-200 MHz for full performance as the requirement.  Extending the science to include the Dark Ages remains a goal so that efforts are on-going to design a feed to increase the lower limit down to at least 70 MHz without compromising the performance in the above requirement range.  The fall-back position for the low-frequencies is a serial deployment of a scaled version of the HERA feed or to potentially build additional elements specifically for the low-frequencies.  The 100 MHz bandwidth is also the minimum fully digitized and correlated bandwidth.
 
 The scientific requirement on channel bandwidth is to allow access to k-modes of greater than 1 h/Mpc [ref], which requires about 256 channels over the 100 MHz bandwidth.  However, in order to handle radio frequency interference as well as to allow the bandpass to be characterized, a specification of 1024 channels has been chosen.  This yields a channel bandwidth of 97.7 kHz.
 
@@ -715,10 +712,6 @@ N_a = 4634/D_a
 where $N_a$ and $D_a$ are the number of antennas and their diameter respectively.  Note that the number-diameter dependence was derived by running multiple sensitivity codes ({\em e.g.} Pober) over a range of values for the HERA configuration.  This dependency differs from Mellema, mostly likely due to the assumed configuration.
 Figure \ref{fig:costfig} shows the resulting normalized system cost/performance-curve as the horizontal shading relative to the canonical HERA design 
 which becomes very flat (colored purple) for diameters greater between about 12 and15 m, which is consistent with the chosen value of 14 meters based on other system considerations.
-
-
-
-
 
 
 \section{System Design} \label{sec:design}
