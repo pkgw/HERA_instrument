@@ -436,7 +436,7 @@ images.
 \centering
 \vspace{-15pt}
     %\includegraphics[width=.5\textwidth,clip]{plots/imaging/HERA_z8_SNR_annotated_2015.png}
-    \includegraphics[width=1.0\textwidth,clip]{plots/imaging/HERA_FoV_w_strips.png}
+    \includegraphics[width=1.0\textwidth,clip]{plots/HERA_FoV_w_strips.png}
   \vspace{-20pt}
 \caption{\footnotesize 
 HERA will observe a 1440 deg$^2$ stripe centered near $\delta = -30^\circ$. HERA can measure the ionization state around galaxies in, e.g., the GOODS-South field that contains a third of all known $z\!>\!8$ galaxies. HERA's primary imaging data product to the community will be deep cubes along the HERA stripe suitable for cross-correlation.
@@ -650,10 +650,14 @@ Also in Fig. \ref{fig:kperf}, the lime-green shaded region indicates a plausible
 
 \subsection{Map-Making Approach}
 \label{sec:mapapproach}
-In contrast to the delay-spectrum approach, map-making approaches combine baselines to build up information before squaring and calculating the power spectrum.  The conceptually easiest approach is that one makes an image of the sky and takes a 2-D Fourier transform to determine the power spectrum and so this approach is often called the imaging approach.  Advantages are that you actually image the reionized bubbles and can determine the magnitude of the smaller $k$-modes on the sky.  The principle disadvantage is that you have to compute and calibrate the effects of systematics and the propagation of the very bright foregrounds through your system and subtract them incredibly accurately.  In contrast, the delay-spectrum approach localizes those effects to a parameter space where they can much more easily be filtered and not used in subsequent analysis.
+In contrast to the delay-spectrum approach, map-making approaches combine baselines to build up information before squaring and calculating the power spectrum.  The conceptually easiest approach is to first make an image cube of the sky as a function of angular position and frequency, and then to Fourier transform, square, and bin the cube to determine the power spectrum. One advantage of such an approach is that sky images can be interesting in their own right, both for dealing with measurement systematics and for accessing the non-Gaussian observational signatures (such as ionized bubble structures) that are missed by variance statistics such as the power spectrum. The principal disadvantage of a map-making approach is its stringent calibration and forward-modeling requirements for propagating models of bright foregrounds through instrument systematics. In contrast, the delay-spectrum allows one to stay considerably closer to the format of raw visibility measurements, thus allowing systematic effects to be sequestered to localized regions of parameter space where they can much more easily be filtered out.
 
 \subsection{Hybrid Approaches}
 \label{sec:hybridapproach}
+
+While they were presented separately above, the delay-spectrum and map-making approaches need not be viewed as mutually exclusive. For example, mapmaking need not be limited to the real space image basis; pipelines that combine multiple baselines into estimates of various Fourier amplitudes of the sky are formally also mapmaking pipelines. Like the delay-spectrum approach, such pipelines (see, e.g., \citealt{trott_et_al2016}) avoid the image domain entirely. This helps to prevent artifacts that may introduced by imaging algorithms.
+
+More generally, it is possible to express a map-making algorithm as a linear operator that acts on visibility data to produce a compressed dataset. Squaring this to obtain an estimate of the power spectrum then results in a weighted quadratic combination of visibilities, where one multiplies the visibility from every baseline with that from every other baseline. These visibility product pairs are subsequently normalized to form their own individual estimates of the power spectrum before all the normalized pairs are summed together to form a final power spectrum. Measuring a power spectrum in this way combines the best aspects of the mapmaking and delay-spectrum approaches. Power spectra are formed directly by the cross-multiplication of visibility data, preserving the delay-spectrum approach's strategy of staying close to quantities measured by an interferometer; on the other hand, by multiplying together the data from every possible combination of baselines, one retains all the information captured by mapmaking. Indeed, it can be shown \citep{liu_et_al2014a} that in the limit of infinitely fine Fourier space bins, the hybrid method that we have just described is mathematically equivalent to the mapmaking approach. In practice, the hybrid method comes with the added benefit of allowing particular baseline pairs that are suspected of being affected by instrumental systematics to be more surgically downweighted.
 
 \subsection{Calibration}
 \label{sec:calibration}
