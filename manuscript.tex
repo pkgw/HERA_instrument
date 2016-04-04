@@ -327,8 +327,54 @@ informing the design and science case of the low-frequency SKA, highlighting are
 Additionally, HERA's constraints enable principal component parameterizations of the
 sky-averaged $21\,\textrm{cm}$ signal measurements pursued by experiments such as EDGES, increasing their signal-to-noise and thus their science return \citep{liu_parsons2015}.
 
-\subsection{Secondary Scientific Objectives}%\\Precision Cosmology, Reionization Imaging, and High-$z$ IGM X-Ray Heating Science}
+\subsection{Existing Measurements}
+\label{sec:existing}
+PAPER adopted a foreground mitigation strategy based largely
+on filtering out the wedge in frequency domain (so-called ``delay filtering"; \citealt{parsons_et_al2012b}).  
+By reducing the need
+for image-domain foreground modeling, this approach allowed PAPER to switch to a grid-based antenna layout that
+enhanced sensitivity toward fewer Fourier modes and facilitated calibration
+based on the ``redundancy" of different antenna pairs measuring the same sky modes \citep{zheng_et_al2014}.
+Combined, redundancy and delay filtering provide a robust, inexpensive, and demonstrably successful solution 
+to the foreground problem.  
+Yet PAPER's lack of imaging support and its uneven $uv$ sampling 
+leave it with limited diagnostic capability, particularly for direction-dependent systematics
+such as polarization leakage from Faraday-rotated emission \Mycitep{moore_et_al2013}.
+While concern over such effects has decreased markedly since discovering that
+intrinsic point source polarization is lower than previously thought
+\citep{asad_et_al2015} and that variable Faraday rotation through the
+ionosphere averages down the polarized signal over long observing seasons
+\Mycitep{moore_et_al2016}, direction-dependent beam effects remain an area of interest.
+The MWA's image-based calibration and foreground subtraction strategy provides complementary
+capabilities. Imaging with subtraction, while still under development as a viable foreground strategy,
+can increase sensitivity by recovering more modes of the cosmological signal (see
+Table~\ref{tab:signif}) and help address systematic errors rooted
+in the image domain.  HERA's antenna configuration---shown in Figure \ref{fig:arrayConfig} and discussed in \S\ref{sec:arrayConfig}---emphasizes
+the proven approaches of redundant calibration and delay filtering, while simultaneously
+increasing the extent and density of $uv$ sampling for high-fidelity imaging.  
 
+\begin{figure}[t]
+	\centering
+	\includegraphics[width=.8\textwidth]{plots/current_limits.pdf}
+	\caption{The current best published $2\sigma$ upper limits on the 21cm power spectrum, $\Delta^2(k)$, (solid symbols represent analyses led by HERA collaborators) compared to 21cmFAST-generated models at $k=0.2$\,$h$\,Mpc$^{-1}$. 
+Analysis is still underway on PAPER and MWA observations that approach their projected 
+full sensitivities (see Fig.~\ref{fig:Sensitivities}); 
+HERA can deliver sub-$\text{mK}^2$ sensitivities.}
+	\vspace{-10pt}
+	\label{fig:limits}
+	\label{fig:IGMtemperatureConstraints}
+\end{figure}
+
+Despite progress, the fact remains that the 21\,cm EoR signal is intrinsically very faint; making a detection requires a
+large instrumental collecting area and a long, dedicated observing campaign.
+Although published PAPER and MWA results (Fig. \ref{fig:limits}) do not yet include observations 
+at full sensitivity that are still being analyzed (e.g. Fig. \ref{fig:Sensitivities}), 
+it is clear already that these instruments lack the sensitivity
+to make a conclusive detection (see Table~\ref{tab:signif}). 
+HERA addresses this shortcoming with a dish element that delivers a much larger collecting area 
+while retaining the necessary characteristics for both proven and forward-looking foreground removal strategies.
+
+\subsection{Secondary Scientific Objectives}%\\Precision Cosmology, Reionization Imaging, and High-$z$ IGM X-Ray Heating Science}
 
 \startsquarepar\emph{\textbf{Precision Cosmology.}}
 \label{sec:tau}
@@ -442,7 +488,6 @@ epoch.
 \subsection{Other Scientific Objectives}
 \label{subsec:broader_science}
 
-
 \noindent With unprecedented sensitivity at this frequency range, HERA can deliver much more than its core 21\,cm science. 
 Some of HERA's broader science impacts derive directly from the public data products HERA delivers.  Other
 areas of impact may require additional hardware or software that HERA can host at no extra risk. 
@@ -506,23 +551,19 @@ Obviously between our present observation point and the Epoch of Reionization ap
 This section will provide a brief overview of existing measurements and the theoretical underpinning of how foregrounds contaminate the measurement (the so-called ``wedge''), discuss the various techniques used to make the measurement and finally provide a brief discussion on calibration issues and techniques.
 
 \subsection{The ``Wedge''}
-The past three
-years have seen deep EoR observations with PAPER, the MWA, 
+The past three years have seen deep EoR observations with PAPER, the MWA, 
 the Giant Metrewave Radio Telescope (GMRT; \citealt{paciga_et_al2013}), and LOFAR.
 PAPER and the MWA have produced progressively deeper limits
 \citep{dillon_et_al2015,parsons_etal2014,ali_et_al2015}, with PAPER
 yielding the first meaningful constraints on the 21\,cm spin temperature during reionization
 (Fig. \ref{fig:limits}).
-The inherent challenge of simultaneously meeting stringent sensitivity requirements 
+The inherent challenge is to simultaneously meet stringent sensitivity requirements 
 while suppressing foregrounds $\sim5$ orders of magnitude
-brighter than the 21\,cm signal make this progress all the more remarkable.  
-To achieve this, HERA team members have refined and improved 
-techniques spanning all aspects of the experimental process, from how we
-calibrate our data \citep{zheng_et_al2014, jacobs_et_al2016, barry_et_al2016}, to how we understand foreground contamination
-\citep{moore_et_al2013,moore_et_al2016,thyagarajan_et_al2015a,pober_et_al2016},
-to how we design the interferometer itself \citep{parsons_et_al2012a,dillon_parsons2016}.
-In this section, we discuss how the legacy of these first generation
-21\,cm experiments inform critical aspects of HERA's design.
+brighter than the 21\,cm signal, which has been addressed along a number of approaches.  
+To address this challenge,  all aspects of the experimental process must be refined and improved, spanning 
+calibration ({\em e.g.} \cite{zheng_et_al2014, jacobs_et_al2016, barry_et_al2016}), handling foreground contamination
+({\em e.g.} \cite{moore_et_al2013,moore_et_al2016,thyagarajan_et_al2015a,pober_et_al2016}),
+and the interferometer design itself ({\em e.g.} \cite{parsons_et_al2012a,dillon_parsons2016}).
 
 Perhaps the most important advance informing HERA's design is a
 refined understanding of how smooth-spectrum foregrounds interact
@@ -536,18 +577,13 @@ signal reflections within antennas, and the angular response of the antenna beam
 that, to the limits of current sensitivity, foreground emission is absent outside of the wedge; it can only 
 appear there through instrumental leakage \citep{parsons_etal2014,ali_et_al2015,moore_et_al2016,kohn_et_al2016}.
 
-
-
-
-
-
-Though the desired measurement is over a volume, it is instructive to split it into two components,  $\kvec =  \kvpr + \kpar{\hat {\bf z}}$ where $\kvpr$ is determined by the antenna baseline and $\kpar$ by the frequency.  This is useful since it allows us to split out the chromatic response of the interferometer and isolate a phase space where foreground sources ({\em i.e.} everything {\em not} the EOR) contaminate the signal of interest from where they don't.  This contaminated phase space may be shown [REF] to be a wedge-shaped region in $\kpr$:$\kpar$ space:
+Though the power spectrum measurement is over a volume, it is instructive to split the spatial wavenumbers into two components,  $\kvec =  \kvpr + \kpar{\hat {\bf z}}$ where $\kvpr$ is determined by the antenna baseline and $\kpar$ by the frequency.  This is useful since it allows us to split out the chromatic response of the interferometer and isolate a phase space where foreground sources ({\em i.e.} everything {\em not} the EOR) contaminate the signal of interest from where they don't.  This contaminated phase space may be shown [REF] to be a wedge-shaped region in $\kpr$:$\kpar$ space:
 \begin{equation}
 |\kpar| \le \beta\frac{X\lambda}{Yc}\kpr + \frac{S}{Y}
 \end{equation}
 where $c$ is the speed of light and $S$ is a parameter accounting for offsets related to the combined spectral smoothness of the foregrounds and the antenna response (see Fig. \ref{fig:wedge}).  
 A key issue to measuring the EOR power spectrum is to understand and minimize such effects.  For an analytical derivation, see \cite{zahn_etal2012,vedantham_2012,liu_et_al2014b},  in simulation see \cite{datta_etal2010,hazelton_et_al2013} and for observations
-\cite{pober_etal2013b,2015arXiv150601026P,parsons_etal2014,2015arXiv150206016A}.  Note that the unit of the spatial wavenumber $k$ is 1/length, in this case the relevant length scale is megaparsecs (Mpc; 1 Mpc = 3.086$\times10^{22}$ m).  In order to normalize for updated measurements of Hubble's constant, it is further normalized by $h$, where $H_o=100h$, such that they are expressed as $h$/Mpc.
+\cite{pober_etal2013b,2015arXiv150601026P,parsons_etal2014,2015arXiv150206016A}.  Note that the unit of the spatial wavenumber $k$ is 1/length, in this case the relevant length scale is megaparsecs (Mpc; 1 Mpc = 3.086$\times10^{22}$ m).  In order to normalize for updated measurements of the Hubble constant, it is further normalized by a factor $h$, where Hubble's constant is expressed as $H_o=100h$ (km/s)/Mpc , such that the wavenumbers are expressed as $h$/Mpc.
 
 \begin{figure}[t]
 \includegraphics[height=3in]{plots/wedgeWithBG.png}
@@ -564,14 +600,14 @@ The techniques to measure the power spectrum may be broken down into two princip
 
 \subsection{Delay-Spectrum Approach}
 \label{sec:delayapproach}
-Given that the response of an interferometer natively measures the power in Fourier modes of the sky within its beam, we see that it is a natural instrument to use for this measurement.  There are now numerous papers in the literature on the technique of measuring the power spectrum using an interferometer and the attendant issues [[[list of citations]]].  Below, a high-level overview based on  \cite{parsons_et_al2012b} will be presented. The so-called delay-spectrum approach leverages this response to optimize sensitivity to the desired modes while rejecting modes contaminated by the foreground power in the wedge.  Other than potentially handling overlapping bins in {\em uv} space, the delay-spectrum approach does not combine baselines before squaring and calculating the power spectrum.
+Given that the response of an interferometer natively measures the power in Fourier modes of the sky within its beam, we see that it is a natural instrument to use for this measurement.  There are now numerous papers in the literature on the technique of measuring the power spectrum using an interferometer and the attendant issues [[[list of citations]]].  Below, a high-level overview based on  \cite{parsons_et_al2012b} will be presented. The so-called delay-spectrum approach leverages the interferometer measurement to optimize sensitivity to the desired modes while rejecting modes contaminated by the foreground power in the wedge.  Other than potentially handling overlapping bins in {\em uv} space, the delay-spectrum approach does not combine baselines before squaring and calculating the power spectrum.
 
 We can essentially relate the sky power spectrum mode ${\hat P}(\kvec)$ to an interferometer baseline visibility ${\tilde V}(\bvec)$, which is the equivalent of the (complex) fringe pattern in a double slit experiment:
 \begin{equation}
 {\hat P}(\kvec) \approx\frac{X^2Y}{4k_B^2}   \left[\frac{{\tilde V}^2(\bvec)}{\Omega_b B/ \lambda^4} \right]
 \label{eq:Pk_baseline}
 \end{equation}
-where $X$ and $Y$ are cosmological parameters relating angular size and spectral frequency to cosmic volumes, $\Omega_b$ is the integrated beam response, $B$ is the effective bandwidth, $\lambda$ is the observation wavelength, and $k_B$ is Boltzmann's constant.  The terms in square brackets are instrumental terms, as opposed to the constants and cosmological parameters.  
+where $X$ and $Y$ are cosmological parameters relating angular size and spectral frequency to cosmic volumes (so, relating wavenumber to physical volume at a given redshift), $\Omega_b$ is the integrated beam response, $B$ is the effective bandwidth, $\lambda$ is the observation wavelength, and $k_B$ is Boltzmann's constant.  The terms in square brackets are instrumental terms, as opposed to the constants and cosmological parameters.  
 Note that at the red-shifts of interest $X$ has a value of about 160 Mpc/deg and $Y$ has a value of about 16 Mpc/MHz.
 Rather than ${\hat P}(\kvec)$, the literature generally works with a volume-normalized parameter given by $\Delta^2(k) = \frac{k^3}{2\pi^2}{\hat P}(\kvec)$.    
 
@@ -587,21 +623,24 @@ to determine the sensitivity of an instrument to the power spectrum per baseline
 \label{eq:sensitivity}
 \end{equation}
 where $\mathcal{N}$ represents the improvement in sensitivity based on the array configuration, which may significantly boost the sensitivity if optimized for this measurement 
-(see \cite{parsons_et_al2012b}).  Fig. \ref{fig:boost} plots this ``boost'' factor for various telescopes under nominal observing campaigns using the delay-spectrum technique.  The large improvement for PAPER and HERA is the fact that the baselines are redundantly placed on appropriate spatial scales, so the same baselines gets many samples.
+(see \cite{parsons_et_al2012b}).  Fig. \ref{fig:boost} plots this ``boost'' factor for various telescopes under nominal observing campaigns using the delay-spectrum technique.  The large improvement for PAPER and HERA is the fact that the baselines are redundantly placed on appropriate spatial scales, so that a more limited number of unique baselines get sampled many times.
+
+
 
 \begin{figure}[h!]
 \includegraphics[width=0.5\textwidth]{plots/boost.png}
-\caption{Representative boost factors ($\mathcal{N}$ in Eq. \ref{eq:sensitivity}) for representative observing campaigns for various instruments.}
+\caption{Representative boost factors ($\mathcal{N}$ in Eq. \ref{eq:sensitivity}) for representative observing campaigns for various instruments.
+ADD NEW HERA CONFIGURATION AND LOFAR AND PUT IN 'HOW TO MAKE THIS PLOT'}
 \label{fig:boost}
 \end{figure}
 
-The power spectrum uses the full magnitude of the {\bf k}-vector, which is set by the antenna baselines and bandwidths.  Note that largest bandwidth (which determines the smallest $\kpar$) is about 10 MHz, for larger bandwidths cosmic evolution begins to impact the result.  Figure \ref{fig:kperf} shows the allowed k-values based on the beamwidth/baseline (gray plus dark-blue overlap regions, the black lines are the limits) and a bandwidth of 10 MHz with 1024 channels (the blue and dark-blue overlap regions, the blue line is the lower limit).  The red-dashed line is the allowed smallest $k$-value attainable with this technique.  Note that at these red-shifts it is essentially set just by the bandwidth.
+The power spectrum uses the full magnitude of the {\bf k}-vector, which is set by the antenna baselines and bandwidths.  Note that largest bandwidth (which determines the smallest $\kpar$) is about 10 MHz, for larger bandwidths cosmic evolution begins to impact the result.  Figure \ref{fig:kperf} shows the allowed k-values based on the beamwidth/baseline (gray plus dark-blue overlap regions, the black lines are the limits) and a bandwidth of 10 MHz with 1024 channels (the blue and dark-blue overlap regions, the blue line is the lower limit).  The red-dashed line is the allowed smallest $k$-value attainable with this technique.  Note that at these red-shifts it is dominated by the bandwidth.
 
 \begin{figure}[h!]
 \centerline{
 \includegraphics[width=.4\textwidth]{plots/kperf.png} 
 }
-\caption{\small ADD NEW HERA CONFIGURATION AND LOFAR AND PUT IN 'HOW TO MAKE THIS PLOT'}
+\caption{\small kperf}
 \label{fig:kperf}
 \end{figure}
 
@@ -615,57 +654,13 @@ In contrast to the delay-spectrum approach, map-making approaches combine baseli
 \subsection{Calibration}
 \label{sec:calibration}
 
-\subsection{Existing Measurements}
-\label{sec:existing}
-PAPER adopted a foreground mitigation strategy based largely
-on filtering out the wedge in frequency domain (so-called ``delay filtering"; \citealt{parsons_et_al2012b}).  
-By reducing the need
-for image-domain foreground modeling, this approach allowed PAPER to switch to a grid-based antenna layout that
-enhanced sensitivity toward fewer Fourier modes and facilitated calibration
-based on the ``redundancy" of different antenna pairs measuring the same sky modes \citep{zheng_et_al2014}.
-Combined, redundancy and delay filtering provide a robust, inexpensive, and demonstrably successful solution 
-to the foreground problem.  
-Yet PAPER's lack of imaging support and its uneven $uv$ sampling 
-leave it with limited diagnostic capability, particularly for direction-dependent systematics
-such as polarization leakage from Faraday-rotated emission \Mycitep{moore_et_al2013}.
-While concern over such effects has decreased markedly since discovering that
-intrinsic point source polarization is lower than previously thought
-\citep{asad_et_al2015} and that variable Faraday rotation through the
-ionosphere averages down the polarized signal over long observing seasons
-\Mycitep{moore_et_al2016}, direction-dependent beam effects remain an area of interest.
-The MWA's image-based calibration and foreground subtraction strategy provides complementary
-capabilities. Imaging with subtraction, while still under development as a viable foreground strategy,
-can increase sensitivity by recovering more modes of the cosmological signal (see
-Table~\ref{tab:signif}) and help address systematic errors rooted
-in the image domain.  HERA's antenna configuration---shown in Figure \ref{fig:arrayConfig} and discussed in \S\ref{sec:arrayConfig}---emphasizes
-the proven approaches of redundant calibration and delay filtering, while simultaneously
-increasing the extent and density of $uv$ sampling for high-fidelity imaging.  
 
-\begin{figure}[t]
-	\centering
-	\includegraphics[width=.8\textwidth]{plots/current_limits.pdf}
-	\caption{The current best published $2\sigma$ upper limits on the 21cm power spectrum, $\Delta^2(k)$, (solid symbols represent analyses led by HERA collaborators) compared to 21cmFAST-generated models at $k=0.2$\,$h$\,Mpc$^{-1}$. 
-Analysis is still underway on PAPER and MWA observations that approach their projected 
-full sensitivities (see Fig.~\ref{fig:Sensitivities}); 
-HERA can deliver sub-$\text{mK}^2$ sensitivities.}
-	\vspace{-10pt}
-	\label{fig:limits}
-	\label{fig:IGMtemperatureConstraints}
-\end{figure}
-
-Despite progress, the fact remains that the 21\,cm EoR signal is intrinsically very faint; making a detection requires a
-large instrumental collecting area and a long, dedicated observing campaign.
-Although published PAPER and MWA results (Fig. \ref{fig:limits}) do not yet include observations 
-at full sensitivity that are still being analyzed (e.g. Fig. \ref{fig:Sensitivities}), 
-it is clear already that these instruments lack the sensitivity
-to make a conclusive detection (see Table~\ref{tab:signif}). 
-HERA addresses this shortcoming with a dish element that delivers a much larger collecting area 
-while retaining the necessary characteristics for both proven and forward-looking foreground removal strategies.
 
 \section{High-Level Requirements} 
 \label{sec:requirements}
-From the science and techniques discussed above, we may derive some high-level requirements.  This section describes frequency and sensitivity requirements that largely set the overall design concept.
+From the science and techniques discussed above, we may derive some high-level requirements, predicating on optimizing for the delay-spectrum approach for detecting the EOR while not unduly limiting other approaches or other science goals.  The fact that HERA is an experiment and not meant to be a long-term general use facility greatly facilitates this optimization. This section describes the element, configuration, frequency and sensitivity requirements that largely set the overall design concept.
 
+\subsection{Antenna Design and Configuration}
 Thus, to open the widest possible window for EoR measurements, HERA must use close-packed antennas that
 minimize signal reflections and deliver significant forward gain relative to their horizon response.
 Tests with prototype HERA antennas (Figs. \ref{fig:orbcommexptandbeammap} and \ref{fig:reflectometry}, discussed in \S\ref{sec:antenna})
@@ -706,6 +701,8 @@ As mentioned earlier (see Fig. \ref{fig:kperf}) we should be able to process at 
 \caption{\small Costing model for a fixed sensitivity system as a function of diameter (thick blue line and left axis) as well as the round-trip delay for 1,2 and 3 feed-vertex trips (dashed red lines and right axis).  The 60 ns spec is indicated by the horizontal dash line, and the two-trip intersection at about 14-meter is the vertical dashed line.  SEE TEXT...
 \label{fig:costfig}}
 \end{figure}
+
+
 
 \subsection{Sensitivity Optimization}
 \label{sec:cost}
