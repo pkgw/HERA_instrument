@@ -586,7 +586,9 @@ A key issue to measuring the EOR power spectrum is to understand and minimize su
 \cite{pober_etal2013b,2015arXiv150601026P,parsons_etal2014,2015arXiv150206016A}.  Note that the unit of the spatial wavenumber $k$ is 1/length, in this case the relevant length scale is megaparsecs (Mpc; 1 Mpc = 3.086$\times10^{22}$ m).  In order to normalize for updated measurements of the Hubble constant, it is further normalized by a factor $h$, where Hubble's constant is expressed as $H_o=100h$ (km/s)/Mpc , such that the wavenumbers are expressed as $h$/Mpc.
 
 \begin{figure}[t]
+\centerline{
 \includegraphics[height=3in]{plots/wedgeWithBG.png}
+}
 \caption{Foregrounds are a primary challenge facing 21\,cm cosmology experiments. 
 HERA leverages a ``wedge'' in the spherically-averaged ($\mathbf{k}$ is broken into $k_\|$ and $k_\perp$) power spectrum (center panel; \citealt{dillon_et_al2015}). Smooth-spectrum foregrounds (right panel) $\sim$5 orders of magnitude brighter than fiducial EoR models (left panel; \citealt{mesinger_et_al2011}) create the ``wedge'' when they interact with the interferometer's chromatic response. By avoiding foregrounds, PAPER has placed limits within an order
 of magnitude (in mK) of these models \citep{ali_et_al2015} and show the ``EoR Window'' to be foreground-free.
@@ -628,7 +630,9 @@ where $\mathcal{N}$ represents the improvement in sensitivity based on the array
 
 
 \begin{figure}[h!]
+\centerline{
 \includegraphics[width=0.5\textwidth]{plots/boost.png}
+}
 \caption{Representative boost factors ($\mathcal{N}$ in Eq. \ref{eq:sensitivity}) for representative observing campaigns for various instruments.
 ADD NEW HERA CONFIGURATION AND LOFAR AND PUT IN 'HOW TO MAKE THIS PLOT'}
 \label{fig:boost}
@@ -648,7 +652,7 @@ Also in Fig. \ref{fig:kperf}, the lime-green shaded region indicates a plausible
 \centerline{
 \includegraphics[width=.4\textwidth]{plots/kperf.png} 
 }
-\caption{\small kperf}
+\caption{\small $\kvec, \kpar, \kperp$ resolution wavenumbers with various bandwidths and baselines as a function of redshift.  See text for discussion.  The full redshift range is the HERA extended goal.  The initial HERA delay-spectrum power spectrum goal is the light square region in the upper right.}
 \label{fig:kperf}
 \end{figure}
 
@@ -672,14 +676,17 @@ More generally, it is possible to express a map-making algorithm as a linear ope
 
 \section{High-Level Requirements} 
 \label{sec:requirements}
-From the science and techniques discussed above, we may derive some high-level requirements, predicating on optimizing for the delay-spectrum approach for detecting the EOR while not unduly limiting other approaches or other science goals.  The fact that HERA is an experiment and not meant to be a long-term general use facility greatly facilitates this optimization. This section describes the element, configuration, frequency and sensitivity requirements that largely set the overall design concept.
+From the science and techniques discussed above, we may derive some high-level requirements predicated on optimizing for the delay-spectrum approach of detecting the EOR power spectrum while not unduly limiting other approaches or other science goals.  The fact that HERA is an experiment and not meant to be a long-term general use facility greatly facilitates this optimization. This section describes the element, configuration, frequency and sensitivity requirements that largely set the overall design concept.
 
 \subsection{Antenna Design and Configuration}
-Thus, to open the widest possible window for EoR measurements, HERA must use close-packed antennas that
-minimize signal reflections and deliver significant forward gain relative to their horizon response.
+The primary new feature of HERA over previous generation experiments (in this context, primarily PAPER) is the use of large elements to increase the sensitivity.  The cost-performance optimization will 
+be discussed below, however we see that to address the central challenges of the delay-spectrum approach in the context of the wedge, to open the widest possible window for EoR measurements, 
+HERA must use close-packed antennas that
+minimize signal reflections over long delays and deliver significant forward gain relative to their horizon response.
 Tests with prototype HERA antennas (Figs. \ref{fig:orbcommexptandbeammap} and \ref{fig:reflectometry}, discussed in \S\ref{sec:antenna})
 indicate that a moderately large parabolic dish with a short focal height can meet these requirements
-\citep{ewall-wice_et_al2016-EoXLimits,neben_et_al2016,thyagarajan_et_al2016}.
+\citep{ewall-wice_et_al2016-EoXLimits,neben_et_al2016,thyagarajan_et_al2016}.  Note that to pursue map-making and hybrid techniques, additional antenna outriggers are valuable additions, so the design
+should be able to accommodate ~1km baselines.  In referring to the EOR sensitivity of the array however, the number of antennas just in the core is sometimes used.
 
 
 \subsection{Frequency and Bandwidth}
@@ -704,10 +711,26 @@ after marginalizing over astrophysical and cosmological parameters.
 
 From these measurements and models, HERA is required to cover a redshift range of $z=$6 to 13, corresponding to a frequency range of 101 - 203 MHz.  We adopt 100-200 MHz for full performance as the requirement.  Extending the science to include the Dark Ages remains a goal so that efforts are on-going to design a feed to increase the lower limit down to at least 70 MHz without compromising the performance in the above requirement range.  The fall-back position for the low-frequencies is a serial deployment of a scaled version of the HERA feed or to potentially build additional elements specifically for the low-frequencies.  The 100 MHz bandwidth is also the minimum fully digitized and correlated bandwidth.
 
-The scientific requirement on channel bandwidth is to allow access to k-modes of greater than 1 h/Mpc [ref], which requires about 256 channels over the 100 MHz bandwidth.  However, in order to handle radio frequency interference as well as to allow the bandpass to be characterized, a specification of 1024 channels has been chosen.  This yields a channel bandwidth of 97.7 kHz.
+The scientific requirement on channel bandwidth is to allow access to k-modes of 1 h/Mpc [ref], which requires about 256 channels over the 100 MHz bandwidth.  However, in order to handle radio frequency interference as well as to allow the bandpass to be characterized, a specification of 1024 channels has been chosen.  This yields a channel bandwidth of 97.7 kHz.
 
-As mentioned earlier (see Fig. \ref{fig:kperf}) we should be able to process at least 10 MHz 
+The total simultaneously processed bandwidth is the full 100 MHz, since we wish to efficiently probe the entire redshift range.  The main impact from this requirement is the bandwidth from the digitizer back to the correlator, however this bandwidth is easily handled with current generation digital back-ends.
 
+\subsection{Sensitivity Optimization}
+\label{sec:cost}
+As an instrument to characterize the power spectrum over its evolution, the specification on sensitivity is to make at least a nominal detection over the redshift region of support, or $z$=6-13, along with a very robust detection at the peak.  As seen in Fig. \ref{fig:Sensitivities} and Table \ref{tab:signif}, an array comprising 320 14-m core antennas (note, labelled HERA-350, which includes the outriggers) has sensitivity to a
+fiducial reionization model across that redshift range.  We therefore adopt the delay-spectrum power spectrum sensitivity of 320 14-m close-packed antennas as the minimum sensitivity needed.  
+For this sensitivity, the number of elements needed for a given diameter is
+\begin{equation}
+N_{\text core} = (320*14)/D
+\end{equation}
+where $N_{\text core}$ and $D$ are the number of antennas in the core and their diameter respectively.  Note that the number-diameter dependence was derived by running multiple sensitivity codes ({\em e.g.} Pober) over a range of values for the HERA configuration.  This dependency differs from Mellema and analytical epressions, mostly likely due to the assumed configuration.
+Optimization is 
+therefore done for this sensitivity against cost for various diameters and total element numbers, while trying to minimize multiple reflections on long delays.  Figure \ref{fig:costfig} summarizes this optimization, which
+is discussed below.
+
+To determine the optimal diameter, full system costings were done on a range of diameter sizes from 5m - 25m, where the total number was constrained to keep constant sensitivity at the minimum discussed in the previous paragraph.  This included the full system, except the post-processing (that is, everything after the archived correlator output).  
+Figure \ref{fig:costfig} shows the resulting normalized system cost/performance-curve as the horizontal shading relative to the canonical HERA design 
+which becomes very flat (colored purple) for diameters greater between about 12 and15 m, which is consistent with the chosen value of 14 meters based on other system considerations.
 \begin{figure}[t]
 \centerline{
 \includegraphics[width=7.5cm]{plots/costfigNew.png} 
@@ -715,20 +738,6 @@ As mentioned earlier (see Fig. \ref{fig:kperf}) we should be able to process at 
 \caption{\small Costing model for a fixed sensitivity system as a function of diameter (thick blue line and left axis) as well as the round-trip delay for 1,2 and 3 feed-vertex trips (dashed red lines and right axis).  The 60 ns spec is indicated by the horizontal dash line, and the two-trip intersection at about 14-meter is the vertical dashed line.  SEE TEXT...
 \label{fig:costfig}}
 \end{figure}
-
-
-
-\subsection{Sensitivity Optimization}
-\label{sec:cost}
-As an instrument to characterize the power spectrum over its evolution, the specification on sensitivity is to make at least a nominal detection over the redshift region of support, or $z$=6-12, along with a very robust detection at the peak.  As seen in Fig. \ref{fig:Sensitivities} and Table \ref{tab:signif}.
-To determine the optimal diameter, full system costings were done on a range of diameter sizes from 5m - 25m, where the total number was constrained to keep constant sensitivity for this measurement, which is shown in Figure \ref{fig:costfig}.  This included the full system, except the post-processing.  By assuming canonical values of 331 14-meter antennas, the number of elements needed for a given diameter to match the sensitivity is
-\begin{equation}
-N_a = 4634/D_a
-\end{equation}
-where $N_a$ and $D_a$ are the number of antennas and their diameter respectively.  Note that the number-diameter dependence was derived by running multiple sensitivity codes ({\em e.g.} Pober) over a range of values for the HERA configuration.  This dependency differs from Mellema, mostly likely due to the assumed configuration.
-Figure \ref{fig:costfig} shows the resulting normalized system cost/performance-curve as the horizontal shading relative to the canonical HERA design 
-which becomes very flat (colored purple) for diameters greater between about 12 and15 m, which is consistent with the chosen value of 14 meters based on other system considerations.
-
 
 \section{System Design} \label{sec:design}
 
