@@ -7,6 +7,9 @@ import numpy as np
 
 n = nedclass.ned(H0=100.0)
 
+def get_dz(z,B,rest=1420.):
+    return B*(1+z)**2/rest
+
 def mkPlot(restFreq,BW,b,coeff):
     X = []  # X Mpc/rad
     Xb = [] # scaled version
@@ -22,7 +25,7 @@ def mkPlot(restFreq,BW,b,coeff):
     Y2fit = []  #     "    Y's   "
 
     # Loop over red-shift
-    z = np.arange(0.1,25,.1)
+    z = np.arange(0.1,25.0,.1)
     for zi in z:
         DAi = n.calcUniverse(zi)
         DA.append(DAi)
@@ -109,6 +112,25 @@ for i,BW in enumerate(BW_list):
     plt.semilogy(z,kpar,lsc[i],label=lbl,linewidth=3)
     plt.text(txtloc[i][0],txtloc[i][1],lbl,rotation=txtloc[i][2],color='b',fontsize=16)
 #plt.fill_between(z,p[0],p[1],color='b',alpha='0.25')
+
+#fourth part (redshift bins)
+z_list = [6.,12.,18.]
+for z in z_list:
+    for BW in BW_list:
+        zback,kperp,kpar,ktot = mkPlot(restFreq,BW,D,coeff)
+        y = 0.9*kpar[int(np.where(zback>0.99*z)[0][0])]
+        dz = get_dz(z,BW,restFreq)
+        if BW<0.02:
+	    plotit=True
+	elif z>11. and z<13.:
+	    y = 0.9*y
+	    plotit = True
+	else:
+	    plotit = False
+	if plotit:
+            plt.plot([z-dz/2.,z+dz/2.],[y,y],'b',lw=2)
+            plt.plot([z-dz/2.,z-dz/2.],[0.9*y,1.1*y],'b',lw=2)
+            plt.plot([z+dz/2.,z+dz/2.],[0.9*y,1.1*y],'b',lw=2)
 
 
 plt.xlabel('Redshift [z]',fontsize=16)
