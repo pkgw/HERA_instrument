@@ -327,52 +327,6 @@ informing the design and science case of the low-frequency SKA, highlighting are
 Additionally, HERA's constraints enable principal component parameterizations of the
 sky-averaged $21\,\textrm{cm}$ signal measurements pursued by experiments such as EDGES, increasing their signal-to-noise and thus their science return \citep{liu_parsons2015}.
 
-\subsection{Existing Measurements}
-\label{sec:existing}
-PAPER adopted a foreground mitigation strategy based largely
-on filtering out the wedge in frequency domain (so-called ``delay filtering"; \citealt{parsons_et_al2012b}).  
-By reducing the need
-for image-domain foreground modeling, this approach allowed PAPER to switch to a grid-based antenna layout that
-enhanced sensitivity toward fewer Fourier modes and facilitated calibration
-based on the ``redundancy" of different antenna pairs measuring the same sky modes \citep{zheng_et_al2014}.
-Combined, redundancy and delay filtering provide a robust, inexpensive, and demonstrably successful solution 
-to the foreground problem.  
-Yet PAPER's lack of imaging support and its uneven $uv$ sampling 
-leave it with limited diagnostic capability, particularly for direction-dependent systematics
-such as polarization leakage from Faraday-rotated emission \Mycitep{moore_et_al2013}.
-While concern over such effects has decreased markedly since discovering that
-intrinsic point source polarization is lower than previously thought
-\citep{asad_et_al2015} and that variable Faraday rotation through the
-ionosphere averages down the polarized signal over long observing seasons
-\Mycitep{moore_et_al2016}, direction-dependent beam effects remain an area of interest.
-The MWA's image-based calibration and foreground subtraction strategy provides complementary
-capabilities. Imaging with subtraction, while still under development as a viable foreground strategy,
-can increase sensitivity by recovering more modes of the cosmological signal (see
-Table~\ref{tab:signif}) and help address systematic errors rooted
-in the image domain.  HERA's antenna configuration---shown in Figure \ref{fig:arrayConfig} and discussed in \S\ref{sec:arrayConfig}---emphasizes
-the proven approaches of redundant calibration and delay filtering, while simultaneously
-increasing the extent and density of $uv$ sampling for high-fidelity imaging.  
-
-\begin{figure}[t]
-	\centering
-	\includegraphics[width=.8\textwidth]{plots/current_limits.pdf}
-	\caption{The current best published $2\sigma$ upper limits on the 21cm power spectrum, $\Delta^2(k)$, (solid symbols represent analyses led by HERA collaborators) compared to 21cmFAST-generated models at $k=0.2$\,$h$\,Mpc$^{-1}$. 
-Analysis is still underway on PAPER and MWA observations that approach their projected 
-full sensitivities (see Fig.~\ref{fig:Sensitivities}); 
-HERA can deliver sub-$\text{mK}^2$ sensitivities.}
-	\vspace{-10pt}
-	\label{fig:limits}
-	\label{fig:IGMtemperatureConstraints}
-\end{figure}
-
-Despite progress, the fact remains that the 21\,cm EoR signal is intrinsically very faint; making a detection requires a
-large instrumental collecting area and a long, dedicated observing campaign.
-Although published PAPER and MWA results (Fig. \ref{fig:limits}) do not yet include observations 
-at full sensitivity that are still being analyzed (e.g. Fig. \ref{fig:Sensitivities}), 
-it is clear already that these instruments lack the sensitivity
-to make a conclusive detection (see Table~\ref{tab:signif}). 
-HERA addresses this shortcoming with a dish element that delivers a much larger collecting area 
-while retaining the necessary characteristics for both proven and forward-looking foreground removal strategies.
 
 \subsection{Secondary Scientific Objectives}%\\Precision Cosmology, Reionization Imaging, and High-$z$ IGM X-Ray Heating Science}
 
@@ -672,7 +626,52 @@ More generally, it is possible to express a map-making algorithm as a linear ope
 
 \subsection{Calibration}
 \label{sec:calibration}
+As examined above, for maximize sensitivity to a limited number of spatial modes using the delay-spectrum technique, a redundant grid greatly is advantageous.  This redundancy may also be exploited to calibrate the array as well, if the baselines are sufficiently redundant.  This technique has been pioneered with the MIT EoR experiment, and has resulted in a package called omnical \citep{zheng_et_al2014}.
 
+\section{Existing Measurements}
+\label{sec:existing}
+As mentioned earlier, a number of programs are underway to make the first detection of the EoR power spectrum using the above techniques.  
+PAPER adopted a foreground mitigation strategy based largely
+on filtering out the wedge in frequency domain (so-called ``delay filtering"; \citealt{parsons_et_al2012b}).  
+By reducing the need
+for image-domain foreground modeling, this approach allowed PAPER to switch to a grid-based antenna layout that
+enhanced sensitivity toward fewer Fourier modes and facilitated calibration
+based on the ``redundancy" of different antenna pairs measuring the same sky modes \citep{zheng_et_al2014}.
+Combined, redundancy and delay filtering provide a robust, inexpensive, and demonstrably successful solution 
+to the foreground problem.  
+Yet PAPER's lack of imaging support and its uneven $uv$ sampling 
+leave it with limited diagnostic capability, particularly for direction-dependent systematics
+such as polarization leakage from Faraday-rotated emission \Mycitep{moore_et_al2013}.
+While concern over such effects has decreased markedly since discovering that
+intrinsic point source polarization is lower than previously thought
+\citep{asad_et_al2015} and that variable Faraday rotation through the
+ionosphere averages down the polarized signal over long observing seasons
+\Mycitep{moore_et_al2016}, direction-dependent beam effects remain an area of interest.
+The MWA's image-based calibration and foreground subtraction strategy provides complementary
+capabilities. Imaging with subtraction, while still under development as a viable foreground strategy,
+can increase sensitivity by recovering more modes of the cosmological signal (see
+Table~\ref{tab:signif}) and help address systematic errors rooted
+in the image domain.  HERA's antenna configuration---shown in Figure \ref{fig:arrayConfig} and discussed in \S\ref{sec:arrayConfig}---emphasizes
+the proven approaches of redundant calibration and delay filtering, while simultaneously
+increasing the extent and density of $uv$ sampling for high-fidelity imaging.  
+
+\begin{figure}[t]
+	\centering
+	\includegraphics[width=.8\textwidth]{plots/current_limits.pdf}
+	\caption{The current best published $2\sigma$ upper limits on the 21cm power spectrum, $\Delta^2(k)$, (solid symbols represent analyses led by HERA collaborators) compared to 21cmFAST-generated models at $k=0.2$\,$h$\,Mpc$^{-1}$.   Analysis is still underway on PAPER and MWA observations that approach their projected full sensitivities;  HERA can deliver sub-$\text{mK}^2$ sensitivities.}
+	\vspace{-10pt}
+	\label{fig:limits}
+	\label{fig:IGMtemperatureConstraints}
+\end{figure}
+
+Despite progress, the fact remains that the 21\,cm EoR signal is intrinsically very faint; making a detection requires a
+large instrumental collecting area and a long, dedicated observing campaign.
+Although published PAPER and MWA results (Fig. \ref{fig:limits}) do not yet include observations 
+at full sensitivity that are still being analyzed (e.g. Fig. \ref{fig:Sensitivities}), 
+it is clear already that these instruments lack the sensitivity
+to make a conclusive detection (see Table~\ref{tab:signif}). 
+HERA addresses this shortcoming with a dish element that delivers a much larger collecting area 
+while retaining the necessary characteristics for both proven and forward-looking foreground removal strategies.
 
 
 \section{High-Level Requirements} 
