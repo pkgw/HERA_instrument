@@ -267,7 +267,7 @@ the Murchison Widefield Array (MWA; \citealt{bowman_et_al2012,tingay_et_al2013})
 the MIT EoR experiment (MITEoR; \citealt{zheng_et_al2014}) and the Experiment to Detect the Global EoR Step (EDGES; \citealt{bowman_rogers2010}).  
 Efforts by members of the HERA team
 have produced the first astrophysically constraining upper limits on the 21\,cm EoR power spectrum, 
-providing evidence for significant heating in the IGM prior to reionization \citep{parsons_etal2014,ali_et_al2015,pober_et_al2015}.
+providing evidence for significant heating in the IGM prior to reionization \citep{parsons_etal2014, 2015ApJ...809...61A,pober_et_al2015}.
 However, current experiments cannot expect more than marginal detections of the EoR signal. 
 Figure~\ref{fig:Sensitivities} compares telescope sensitivities as a function of redshift to models of 
 the evolving, spherically averaged 21\,cm EoR power spectrum $\Delta^2 (k) \equiv k^3 P(k) / 2 \pi^2$ (discussed later).  In contrast to current experiments,
@@ -278,7 +278,7 @@ mitigation strategies (see Table~\ref{tab:signif}). The development of enhanced 
 
 \begin{SCtable}
 \caption{\hspace{-1.2mm}: Predicted SNRs of 21\,cm experiments for an EoR model with 50\% ionization at $z=9.5$, with 1080 hours observation, integrated over a $\Delta z$ of $0.8$.
-Foreground avoidance represents an analysis comparable to \cite{ali_et_al2015}, whereas foreground modeling allows signifcantly more $k$ modes of the cosmological signal to be recovered.}
+Foreground avoidance represents an analysis comparable to \cite{2015ApJ...809...61A}, whereas foreground modeling allows signifcantly more $k$ modes of the cosmological signal to be recovered.}
 \small
  \centering
  \begin{tabular}{c||r||r|r} 
@@ -318,7 +318,7 @@ Based on the excursion-set formalism of
 this code models the astrophysics of
 reionization with three free parameters (see Figure~\ref{fig:paramConstraints} for details). 
 While the existing experiment with the most collecting area, 
-the LOw Frequency ARray (LOFAR; \citealt{yatawatta_et_al2013}),
+the LOw Frequency ARray (LOFAR; \citealt{2013A&A...556A...2V, yatawatta_et_al2013}),
 faces large
 uncertainties, 
 HERA's tight constraints on these parameters are comparable
@@ -542,11 +542,12 @@ dispersion. Detecting deviations would rule out broad classes of models and coul
 \section{Measuring the EOR}
 \label{sec:eormeas}
 Due to the expansion of the Universe over cosmological time, we can identify and measure the early Universe via the red-shift of spectral lines.  The hydrogen hyperfine transition at a rest frequency of 1420 MHz is a key spectral line due to the ubiquity of hydrogen and, being a ``forbidden'' transition, the optical depth lets us see through the entire Universe back almost to the period of recombination.  The bandwidth
-therefore equates to a cosmic volume along the site of the telescope, with the frequency determining the cosmic age.
+therefore equates to a cosmic distance along the site of the telescope, with the frequency determining the cosmic age.  An observation of an area of sky over a given bandwidth is therefore providing an average
+over a cosmic volume.
 
-Given the difficulty of the experiment, initial measurements of the EOR strive to measure a statistical power spectrum of the signal since the nature of the reionization process should have a specific spatial signature.  The goal is therefore to measure a range of aggregate spatial scales on the sky, rather than to image the signal directly.  Imaging does remain an ultimate goal to fully understand the process, however we will need a greater understanding of the full measurements to achieve this more difficult goal.  MANY PAPERS, see Nithya and Jonnie recent
+As the distance to the EOR is great (about 13 billion light-years) the signal is quite weak.  However, the signal also subtends the entire sky, so initial measurements of the EOR strive to measure a statistical power spectrum of the signal over the sky since the nature of the reionization process should have a specific spatial signature.  The goal is therefore to measure a range of aggregate spatial scales on the sky, rather than to image the signal directly.  Imaging does remain an ultimate goal to fully understand the process, however we will likely need a greater understanding of the signal characteristics and the systematics of our telescopes to achieve this more difficult goal.  MANY PAPERS, see Nithya and Jonnie recent
 
-Obviously between our present observation point and the Epoch of Reionization approximately 13 billion years ago lies the entire intervening Universe, which has an intrinsically much brighter signal (up to 6 orders of magnitude or more).  Primarily, this power is due to diffuse Galactic synchrotron radiation, supernova remnants and extragalactic radio sources.  As a first step, areas of the sky where these signals are minimal (for example, outside the galactic plane and away from strong point sources) are targeted (REF FOR THIS).  More importantly and most fortuitously however is the fact that all of these foreground signals are smooth spectrum sources whereas the expected spectrum of the EOR is expected to be rough since it is made up of non-ionized regions which are randomly distributed over a wide range of redshifts.  This fact allows us to try and isolate foregrounds from the EOR, as will be discussed.
+Obviously between our present observation point and the Epoch of Reionization lies the entire intervening Universe, which has an intrinsically much brighter signal (up to 6 orders of magnitude or more).  Primarily, this power is due to diffuse Galactic synchrotron radiation, supernova remnants and extragalactic radio sources.  As a first step, areas of the sky where these signals are minimal (for example, outside the galactic plane and away from strong point sources) are targeted (REF FOR THIS).  More importantly and most fortuitously however is the fact that all of these foreground signals are smooth spectrum sources whereas the expected spectrum of the EOR is expected to be rough since it is made up of non-ionized regions which are randomly distributed over a wide range of redshifts.  This fact allows us to try and isolate foregrounds from the EOR, as will be discussed.
 
 This section will provide a brief overview of  the theoretical underpinning of how foregrounds contaminate the measurement (the so-called ``wedge''), discuss the various techniques used to make the measurement and finally provide a brief discussion on calibration issues and techniques.
 
@@ -554,7 +555,7 @@ This section will provide a brief overview of  the theoretical underpinning of h
 The past three years have seen deep EoR observations with PAPER, the MWA, 
 the Giant Metrewave Radio Telescope (GMRT; \citealt{paciga_et_al2013}), and LOFAR.
 PAPER and the MWA have produced progressively deeper limits
-\citep{dillon_et_al2015,parsons_etal2014,ali_et_al2015}, with PAPER
+\citep{dillon_et_al2015,parsons_etal2014,2015ApJ...809...61A}, with PAPER
 yielding the first meaningful constraints on the 21\,cm spin temperature during reionization
 (Fig. \ref{fig:limits}).
 The inherent challenge is to simultaneously meet stringent sensitivity requirements 
@@ -575,7 +576,7 @@ Through theoretical and observational work
 we have learned how the boundary between the wedge and  the EoR window is determined by the separation between antennas,
 signal reflections within antennas, and the angular response of the antenna beam.  Deep integrations also show us
 that, to the limits of current sensitivity, foreground emission is absent outside of the wedge; it can only 
-appear there through instrumental leakage \citep{parsons_etal2014,ali_et_al2015,moore_et_al2016,kohn_et_al2016}.
+appear there through instrumental leakage \citep{parsons_etal2014,2015,ApJ...809...61A,moore_et_al2016,kohn_et_al2016}.
 
 Though the power spectrum measurement is over a volume, it is instructive to split the spatial wavenumbers into two components,  $\kvec =  \kvpr + \kpar{\hat {\bf z}}$ where $\kvpr$ is determined by the antenna baseline and $\kpar$ by the bandwidth.  This is useful since it allows us to split out the chromatic response of the interferometer and isolate a phase space where foreground sources ({\em i.e.} everything {\em not} the EOR) contaminate the signal of interest from where they don't.  As mentioned above, this contaminated phase space may be shown [REF] to be a wedge-shaped region in $\kpr$:$\kpar$ space:
 \begin{equation}
@@ -591,7 +592,7 @@ A key issue to measuring the EOR power spectrum is to understand and minimize su
 }
 \caption{Foregrounds are a primary challenge facing 21\,cm cosmology experiments. 
 HERA leverages a ``wedge'' in the spherically-averaged ($\mathbf{k}$ is broken into $k_\|$ and $k_\perp$) power spectrum (center panel; \citealt{dillon_et_al2015}). Smooth-spectrum foregrounds (right panel) $\sim$5 orders of magnitude brighter than fiducial EoR models (left panel; \citealt{mesinger_et_al2011}) create the ``wedge'' when they interact with the interferometer's chromatic response. By avoiding foregrounds, PAPER has placed limits within an order
-of magnitude (in mK) of these models \citep{ali_et_al2015} and show the ``EoR Window'' to be foreground-free.
+of magnitude (in mK) of these models \citep{2015ApJ...809...61A} and show the ``EoR Window'' to be foreground-free.
 HERA's dish and configuration optimize wedge/window isolation and direct sensitivity to low-$k_\perp$ modes where EoR is brightest.
 %v2
 Cartoon of the wedge.  The gray rectangle represents the smooth-spectrum foregrounds as they would be if the instrument had a perfect achromatic response.  The pink wedge area shows the chromatic response of the interferometer, where additional power is thrown up from the gray region to higher k-values with increasing baseline.  The additional horizontal pink line illustrates the affect that other systematics, such as reflections on cables, can have in contaminating the measurement.  The white region shown the 'eor window', where the measurement is not contaminated by foregrounds or systematics.}
@@ -602,7 +603,7 @@ The techniques to measure the power spectrum may be broken down into two princip
 
 \subsection{Delay-Spectrum Approach}
 \label{sec:delayapproach}
-Given that the response of an interferometer natively measures the power in Fourier modes of the sky within its beam, we see that it is a natural instrument to use for this measurement of the EOR spatial power spectrum.  There are now numerous papers in the literature on the technique of measuring the power spectrum using an interferometer and the attendant issues [[[list of citations]]].  Below, a high-level overview based on  \cite{parsons_et_al2012b} will be presented. The so-called delay-spectrum approach leverages the interferometer measurement to optimize sensitivity to the desired modes while rejecting modes contaminated by the foreground power in the wedge.  Other than potentially handling overlapping bins in {\em uv} space, the delay-spectrum approach does not combine baselines before squaring and calculating the power spectrum, which contrasts to the map-making techniques briefly described below.
+Given that the response of an interferometer natively measures the power in Fourier modes of the sky within its beam, we see that it is a natural instrument to use for this measurement of the EOR spatial power spectrum.  There are now numerous papers in the literature on the technique of measuring the power spectrum using an interferometer and the attendant issues [[[list of citations]]].  Below, a high-level overview based on  \cite{parsons_et_al2012b} will be presented. The so-called delay-spectrum approach leverages the interferometer measurement to optimize sensitivity to the desired modes while rejecting modes contaminated by the foreground power in the wedge.  Other than potentially handling overlapping bins in {\em uv} space, the delay-spectrum approach does not combine baselines before squaring and calculating the power spectrum, which contrasts to the map-making techniques briefly described in the following section.
 
 We can essentially relate the sky power spectrum mode ${\hat P}(\kvec)$ to an interferometer baseline visibility ${\tilde V}(\bvec)$, which is the equivalent of the (complex) fringe pattern in a double slit experiment:
 \begin{equation}
@@ -1037,7 +1038,7 @@ HERA's data management system archives this on-site in a 1.5 PB storage array, c
 on the basis of redundancy, compresses it by a factor of 20, and transfers it to our computing facility at NRAO.
 This real-time pipeline, based on a similar system for PAPER, is mature, computationally manageable, and 
 relatively agnostic with respect to observing parameters, making it a safe and robust first step in data processing
-\citep{zheng_et_al2014,parsons_etal2014,ali_et_al2015}.
+\citep{zheng_et_al2014,parsons_etal2014,2015ApJ...809...61A}.
 The Internet link between the Karoo and data centers in the U.S.\ has been extensively tested, with assistance from SKA-SA, TENET
 (South African to London link provider) and GEANT (London to U.S.\ provider).   
 Transfer speeds are sufficient for streaming compressed data to the U.S.\ via the Internet. Portable storage is also
