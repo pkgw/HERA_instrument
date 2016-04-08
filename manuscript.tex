@@ -98,7 +98,14 @@ purpose-built radio
 interferometer is optimized to deliver high signal-to-noise measurements of
 redshifted 21\,cm emission.
 With the first generation 21\,cm telescopes approaching the limits of their sensitivity, HERA continues the experiment by bringing significantly more sensitivity to bear
-while continuing to optimize its design along the delay-spectrum approach.
+while continuing to optimize its design along the delay-spectrum approach to detect the power spectrum of the EoR (discussed in Sec. \ref{sec:delayapproach}).
+Key science results include
+\begin{itemize}[noitemsep,nolistsep]
+\item measuring the 21\,cm power spectrum with high significance (\S\ref{sec:EoRPowerSpectra}),
+\item characterizing parametrized models of reionization and the first ionizing sources (\S\ref{sec:EoRPowerSpectra}),
+\item improving cosmic microwave background (CMB) constraints on primordial density fluctuations and neutrino masses by removing the optical depth degeneracy (\S\ref{sec:tau}), and
+\item directly imaging large scale reionization structure (\S\ref{sec:imaging}).
+\end{itemize}
 
 \begin{figure}[h!]
 	\centering
@@ -108,17 +115,9 @@ while continuing to optimize its design along the delay-spectrum approach.
 	\label{fig:HERApictures}
 \end{figure}
 
-HERA brings to bear both the sensitivity and the precision to deliver its key science results on the basis of proven techniques.
-These science results include
-\begin{itemize}[noitemsep,nolistsep]
-\item measuring the 21\,cm power spectrum with high significance (\S\ref{sec:EoRPowerSpectra}),
-\item characterizing parametrized models of reionization and the first ionizing sources (\S\ref{sec:EoRPowerSpectra}),
-\item improving cosmic microwave background (CMB) constraints on primordial density fluctuations and neutrino masses by removing the optical depth degeneracy (\S\ref{sec:tau}), and
-\item directly imaging large scale reionization structure (\S\ref{sec:imaging}).
-\end{itemize}
-At the same time, HERA continues the development of new techniques that extend and improve its capabilities.
+At the same time, HERA continues the development of new techniques to extend and improve its capabilities.
 Examples include improving foreground subtraction to expand the information content 
-in power spectral and imaging measurements and, with support from the Moore Foundation,
+in power spectral and imaging measurements and, with support from the Gordon Moore Foundation [[FOOTNOTE?]],
 extending HERA's performance at lower frequencies to probe IGM heating in the pre-reionization epoch (\S\ref{sec:EoX}).
 Beyond these directly supported applications, HERA's public data products and instrumentation platform enable other high-impact science, including 
 \begin{itemize}[noitemsep,nolistsep]
@@ -129,11 +128,13 @@ Beyond these directly supported applications, HERA's public data products and in
 
 The HERA experiment will comprise 
 350 14-m parabolic dishes (320 in a dense core $+$ 30 outriggers) in the South African Karoo Radio
-Astronomy Reserve.
+Astronomy Reserve (see Fig. \ref{fig:HERApictures} (top) for a rendering).
 HERA has been funded under the US National Science Foundation's Mid-Scale Innovations Program to begin building elements optimized for robust power spectrum detection in a 
-staged deployment.  The key is to produce inexpensive collecting area optimized to detect the EOR.  This has resulted in a close-packed array of transit 14-meter dishes (Fig. \ref{fig:HERApictures}), with the first 19-element array completed and construction underway for 37 elements with additional funding from Cambridge University. 
+staged deployment.  The key is to produce inexpensive collecting area optimized to detect the EOR.  
+The first 19-element array is complete and, with additional funding from Cambridge University, construction underway on the next 18 elements, for a total of 37.
+The South African National Research Foundation SKA-SA group (SKA-SA) is a key partner in the construction and science.
 
-The current 19 elements are testing the HERA element design for performance and manufacturability at location.  The 37 elements, to be completed in 2016, will provide nearly an order of magnitude more 
+The current 19 elements are testing the HERA element design for performance and manufacturability on location.  The 37 elements, to be completed in 2016, will provide nearly an order of magnitude more 
 sensitivity than the 128-element PAPER array and provide a significant chance at detecting the EoR power spectrum signal.  The next proposed phase will build out to 128 elements and use the existing 128 dual-polarization analog and digital signal paths that have been in use with PAPER \citep{ali_et_al2015}, which should provide a very robust detection of the EOR signal and allow some characterization.  Finally, extending to 2020, HERA will build out to 350 elements to further EOR science as a function 
 of redshift and spatial scale, potentially producing the first images of the EOR.
 
@@ -156,14 +157,14 @@ University of Western Cape (Cape Town, South Africa),
 Imperial College London  (London, UK) and 
 California State Polytechnic University (Pomona, CA USA).
 
-This paper has the following structure.  Section \ref{sec:science} will give a high-level overview of the science motivating HERA's construction, including primary and secondary science objectives.  Section \ref{sec:eormeas} will present the techniques used to make the measurement, focussing on the delay-spectrum approach.  Section \ref{sec:existing} will provide a brief summary of the existing measured limits. Section \ref{sec:requirements} will present the high-level requirements and Section \ref{sec:design} will present the system description..   Section \ref{sec:status} will present a brief status and outline the deployement timetable and Section \ref{sec:conclusion} will conclude by summarizing and providing additional context.
+This paper has the following structure.  Section \ref{sec:science} will give a high-level overview of the science motivating HERA's construction, including primary and secondary science objectives.  Section \ref{sec:eormeas} will present the techniques used to make the measurement, focussing on the delay-spectrum approach.  Section \ref{sec:requirements} will present the high-level requirements and Section \ref{sec:design} will present the system description..   Section \ref{sec:status} will present a brief status and outline the deployement timetable and Section \ref{sec:conclusion} will conclude by summarizing and providing additional context.
 
 \section{Scientific Background}
 \label{sec:science}
 
 \noindent The {\it Cosmic Dawn} of our universe is one of the last unexplored
-frontiers in cosmic history, which is summarized in Fig. \ref{fig:cosmos}. On the left is the Big Bang, then the hot, young universe slowly cools until it begins to gravitationally contract to the first structures that relit the universe.
-The Cosmic Dawn saw the evolution of the universe from a very homogeneous ``gas'' to the formation of the first stars and galaxies en route to the structure of galaxies
+frontiers in cosmic history.  This history is summarized in Fig. \ref{fig:cosmos}, starting with the Big Bang on the left. The hot, young universe slowly cools until it begins to gravitationally contract to the first structures that relit the universe.
+This Cosmic Dawn saw the evolution of the universe from a very homogeneous ``gas'' to the formation of the first stars and galaxies en route to the structure of galaxies
 of our current time.
 During this period, encoded in the structure of the 
 intergalactic medium (IGM) lies a panoply of information about the underlying astrophysical and cosmological phenomena governing cosmic evolution.
@@ -234,11 +235,10 @@ a conservative $25\%$ modeling error in the $21\,\textrm{cm}$ power spectrum can
 \subsection{Precision Constraints on Reionization}
 \label{sec:EoRPowerSpectra}
 
-
 \noindent HERA's top science goal is to transform our understanding of the first stars, galaxies, 
 and black holes, and their role in driving reionization. 
 Through power-spectral measurements of the 21\,cm line of hydrogen in the primordial IGM,
-HERA directly constrains the topology and evolution of reionization, 
+HERA will be able to direct constrain the topology and evolution of reionization, 
 opening a unique window into the complex astrophysical interplay between the 
 first luminous objects and their environments.
 Using cosmological redshift, HERA can associate 
@@ -255,7 +255,7 @@ modeling efforts, the HERA program will advance our understanding of early galax
     \includegraphics[width=0.49\textwidth,clip]{plots/sensitivity_wideband.pdf}
   \caption{ 1$\sigma$ thermal noise errors on $\Delta^2(k)$, the 21\,cm power spectrum, at $k\!=\!0.2$\,$h$\,Mpc$^{-1}$ (the dominant error at that $k$)
 with 1080 hours of integration (black)
-compared with various heating and reionization models (colored).}
+compared with various heating and reionization models (colored).  Note that only predicted results using the delay-spectrum approach are shown.}
 	\label{fig:Sensitivities}
 \end{figure}
 
@@ -263,7 +263,7 @@ HERA builds on the advances of first-generation
 21\,cm EoR experiments led by HERA team members, particularly 
 the Donald C. Backer Precision Array for Probing the Epoch of Reionization (PAPER; \citealt{parsons_et_al2010}),
 the Murchison Widefield Array (MWA; \citealt{bowman_et_al2012,tingay_et_al2013}),
-the MIT EoR experiment (MITEoR; \citealt{zheng_et_al2014}) and the Experiment to Detect the Global EoR Step (EDGES; \citealt{bowman_rogers2010}) (see Sec. \ref{sec:existing}).
+the MIT EoR experiment (MITEoR; \citealt{zheng_et_al2014}) and the Experiment to Detect the Global EoR Step (EDGES; \citealt{bowman_rogers2010}).
 Recent measurements
 have produced the first astrophysically constraining upper limits on the 21\,cm EoR power spectrum, 
 providing evidence for significant heating in the IGM prior to reionization \citep{parsons_etal2014, parsons_et_al2015, ali_et_al2015,pober_et_al2015}.
@@ -272,7 +272,7 @@ Figure~\ref{fig:Sensitivities} compares telescope sensitivities as a function of
 the evolving, spherically averaged 21\,cm EoR power spectrum $\Delta^2 (k) \equiv k^3 P(k) / 2 \pi^2$ (discussed later).  In contrast to current experiments,
 HERA's optimized design and collecting area make it capable of
 high-significance detections of virtually any realistic reionization scenario, even using only currently demonstrated foreground
-mitigation strategies (see Table~\ref{tab:signif}). The development of enhanced foreground modeling and subtraction further improve the achievable constraints.
+mitigation strategies (see Table~\ref{tab:signif}). The development of enhanced foreground modeling and subtraction further improve the achievable results.
 
 
 \begin{SCtable}
@@ -319,7 +319,7 @@ reionization with three free parameters (see Figure~\ref{fig:paramConstraints} f
 While the existing experiment with the most collecting area, 
 the LOw Frequency ARray (LOFAR; \citealt{2013A&A...556A...2V, yatawatta_et_al2013}),
 faces large
-uncertainties, 
+uncertainties [[[change this?]]], 
 HERA's tight constraints on these parameters are comparable
 to what could be achieved with the SKA.  Such results would be valuable for
 informing the design and science case of the low-frequency SKA, highlighting areas where the SKA has unique capability.
@@ -619,7 +619,7 @@ to determine the sensitivity of an instrument to the power spectrum per baseline
 where $\mathcal{N}$ represents the improvement in sensitivity based on the array configuration, which may significantly boost the sensitivity if optimized for this measurement 
 (see \cite{parsons_et_al2012b}).  
 
-Fig. \ref{fig:boost} (left) plots this ``redundancy boost'' factor for various configuration types relative to an array in a 19-element hexagonal configuration.  They are labelled for the type of configuration (hex, grid, imaging) and the number of antennas (from 37 to 350).  Note that the (a) hex is based on the configuration used for HERA (14.6m center-to-center spacing); (b) grid for that of PAPER (4m N-S, 16m E-W spacing); (c) Imaging-128 for MWA (\cite{mwa}); and (d) Imaging-48 for LOFAR (\cite{2013A&A...556A...2V}; note that this assumes the ability to fully correlate the HBA-pairs).  The plot shows that for a fixed number using the delay-spectrum approach, redundant arrays (hex/grid) provide about an order of magnitude improvement over imaging arrays.  Since the baselines go as order $N^2$, this corresponds to using about 1/3 of the number of elements to yield the same performance (as verified by the Hex-37/Imaging-128 lines).  This advantage does not extend to the other approaches discussed below and imaging configurations would be preferred.  Note that a filled hexagonal-packed array provides excellent imaging as well, but with potentially limited resolution unless outriggers are includes.
+Fig. \ref{fig:boost} (left) plots this ``redundancy boost'' factor for various configuration types relative to an array in a 19-element hexagonal configuration.  They are labelled for the type of configuration (hex, grid, imaging) and the number of antennas (from 37 to 350).  Note that the (a) hex is based on the configuration used for HERA (14.6m center-to-center spacing); (b) grid for that of PAPER (4m N-S, 16m E-W spacing); (c) Imaging-128 for MWA \citep{tingay_et_al2013}; and (d) Imaging-48 for LOFAR \citep{2013A&A...556A...2V}; note that this assumes the ability to fully correlate the HBA-pairs).  The plot shows that for a fixed number using the delay-spectrum approach, redundant arrays (hex/grid) provide about an order of magnitude improvement over imaging arrays.  Since the baselines go as order $N^2$, this corresponds to using about 1/3 of the number of elements to yield the same performance (as verified by the Hex-37/Imaging-128 lines).  This advantage does not extend to the other approaches discussed below and imaging configurations would be preferred.  Note that a filled hexagonal-packed array provides excellent imaging as well, but with potentially limited resolution unless outriggers are includes.
 
 Another approach to improving sensitivity is to make the collecting area per element larger.  In the limit, this yields a fully filled aperture as mentioned.  A larger element limits the accessible field-of-view, which however is not a huge liability for a focussed experiment, as long as an appropriate patch of ``cold'' pass passes within its field.  One method combining both advantages is to use small elements to build up phased array ``tiles'' and then electronically produce many beams, which may get correlated.  This adds additional complexity and potential systematics, however it is the method employed by both MWA and LOFAR.  Fig. \ref{fig:boost} (right) shows the relative sensitivity of the various array relative to HERA-19.  The circles near the array name indicate the relative sizes of the element.  Note that MWA and LOFAR are cross-hatched to indicated phased array tiles.
 
