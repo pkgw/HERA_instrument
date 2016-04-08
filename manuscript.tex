@@ -311,7 +311,7 @@ SKA1 Low Core & 416,595 & 13.4$\sigma$ & 109.90$\sigma$
 HERA's 21\,cm measurements can be used in conjunction with our semi-analytic models to constrain the ionization history. 
 The red band in Fig.~\ref{fig:IonHist} shows the forecasted 95\% confidence region derived from HERA data after marginalizing over astrophysical and cosmological parameters.
 Figure~\ref{fig:paramConstraints} shows the results of a Markov Chain Monte
-Carlo (MCMC) pipeline for fitting models to 21\,cm power spectrum data \citep{greig_and_mesinger2015}, which we have conservatively limited to the range $8 < z < 10$ (although in practice a much broader bandwidth will be available; see Table \ref{tab:BasicParameters}).
+Carlo (MCMC) pipeline for fitting models to 21\,cm power spectrum data \citep{greig_and_mesinger2015}, which we have conservatively limited to the range $8 < z < 10$ (although in practice a much broader bandwidth will be available; see Sec. \ref{sec:freqs}).
 Based on the excursion-set formalism of
 \citet{furlanetto_et_al2004} and the 21cmFAST code \citep{mesinger_et_al2011},
 this code models the astrophysics of
@@ -492,7 +492,7 @@ dispersion. Detecting deviations would rule out broad classes of models and coul
 \section{Measuring the EOR}
 \label{sec:eormeas}
 Due to the expansion of the Universe over cosmological time, we can identify and measure the early Universe via the red-shift of spectral lines.  The hydrogen hyperfine transition at a rest frequency of 1420 MHz is a key spectral line due to the ubiquity of hydrogen and, being a ``forbidden'' transition, the optical depth lets us see through the entire Universe back almost to the period of recombination.  The bandwidth
-therefore equates to a cosmic distance along the site of the telescope, with the frequency determining the cosmic age.  An observation of an area of sky over a given bandwidth is therefore providing an average
+therefore equates to a cosmic distance along the line-of-site of the telescope, with the frequency determining the cosmic age.  An observation of an area of sky over a given bandwidth is therefore providing an average
 over a cosmic volume.
 
 As the distance to the EOR is great (about 13 billion light-years) the signal is quite weak.  However, the signal also subtends the entire sky, so initial measurements of the EOR strive to measure a statistical power spectrum of the signal over the sky since the nature of the reionization process should have a specific spatial signature.  The goal is therefore to measure a range of aggregate spatial scales on the sky, rather than to image the signal directly.  Imaging does remain an ultimate goal to fully understand the process, however we will likely need a greater understanding of the signal characteristics and the systematics of our telescopes to achieve this more difficult goal.  MANY PAPERS, see Nithya and Jonnie recent
@@ -685,6 +685,7 @@ should be able to accommodate ~1km baselines.  In referring to the EOR sensitivi
 
 
 \subsection{Frequency and Bandwidth}
+\label{sec:freqs}
 Figure \ref{fig:cosmos} indicates the frequency range requirement to probe the expected timescale of the epoch of reionization using the 21cm line of hydrogen as the probe.  
 These limits are derived from to-date complementary probes of reionization which include measurements of
 the optical depth to last scattering in the CMB, QSO spectra, Ly-$\alpha$
