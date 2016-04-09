@@ -491,13 +491,13 @@ dispersion. Detecting deviations would rule out broad classes of models and coul
 
 \section{Measuring the EOR}
 \label{sec:eormeas}
-Due to the expansion of the Universe over cosmological time, we can identify and measure the early Universe via the red-shift of spectral lines.  The hydrogen hyperfine transition at a rest frequency of 1420 MHz is a key spectral line due to the ubiquity of hydrogen and, being a ``forbidden'' transition, the optical depth lets us see through the entire Universe back almost to the period of recombination.  The bandwidth
+Due to the expansion of the universe over cosmological time, we can identify and measure the early Universe via the red-shift of spectral lines.  The hydrogen hyperfine transition at a rest frequency of 1420 MHz is a key spectral line due to the ubiquity of hydrogen and, being a ``forbidden'' transition, the optical depth lets us see through the entire universe back almost to the period of recombination.  The bandwidth
 therefore equates to a cosmic distance along the line-of-site of the telescope, with the frequency determining the cosmic age.  An observation of an area of sky over a given bandwidth is therefore providing an average
 over a cosmic volume.
 
 As the distance to the EOR is great (about 13 billion light-years) the signal is quite weak.  However, the signal also subtends the entire sky, so initial measurements of the EOR strive to measure a statistical power spectrum of the signal over the sky since the nature of the reionization process should have a specific spatial signature.  The goal is therefore to measure a range of aggregate spatial scales on the sky, rather than to image the signal directly.  Imaging does remain an ultimate goal to fully understand the process, however we will likely need a greater understanding of the signal characteristics and the systematics of our telescopes to achieve this more difficult goal.  MANY PAPERS, see Nithya and Jonnie recent
 
-Obviously between our present observation point and the Epoch of Reionization lies the entire intervening Universe, which has an intrinsically much brighter signal (up to 6 orders of magnitude or more).  Primarily, this power is due to diffuse Galactic synchrotron radiation, supernova remnants and extragalactic radio sources.  As a first step, areas of the sky where these signals are minimal (for example, outside the galactic plane and away from strong point sources) are targeted (REF FOR THIS).  More importantly and most fortuitously however is the fact that all of these foreground signals are smooth spectrum sources whereas the expected spectrum of the EOR is expected to be rough since it is made up of non-ionized regions which are randomly distributed over a wide range of redshifts.  This fact allows us to try and isolate foregrounds from the EOR, as will be discussed.
+Obviously between our present observation point and the Epoch of Reionization lies the entire intervening universe, which has an intrinsically much brighter signal (up to 6 orders of magnitude or more).  Primarily, this power is due to diffuse Galactic synchrotron radiation, supernova remnants and extragalactic radio sources.  As a first step, areas of the sky where these signals are minimal (for example, outside the galactic plane and away from strong point sources) are targeted (REF FOR THIS).  More importantly and most fortuitously however is the fact that all of these foreground signals are smooth spectrum sources whereas the expected spectrum of the EOR is expected to be rough since it is made up of non-ionized regions which are randomly distributed over a wide range of redshifts.  This fact allows us to try and isolate foregrounds from the EOR, as will be discussed.
 
 The past three years have seen deep EoR observations with PAPER, the MWA, 
 the Giant Metrewave Radio Telescope (GMRT; \citealt{paciga_et_al2013}), and LOFAR.
@@ -572,13 +572,19 @@ signal reflections within antennas, and the angular response of the antenna beam
 that, to the limits of current sensitivity, foreground emission is absent outside of the wedge; it can only 
 appear there through instrumental leakage \citep{parsons_etal2014,ali_et_al2015,moore_et_al2016,kohn_et_al2016}.
 
-Though the power spectrum measurement is over a volume, it is instructive to split the spatial wavenumbers into two components,  $\kvec =  \kvpr + \kpar{\hat {\bf z}}$ where $\kvpr$ is determined by the antenna baseline and $\kpar$ by the bandwidth.  This is useful since it allows us to split out the chromatic response of the interferometer and isolate a phase space where foreground sources ({\em i.e.} everything {\em not} the EOR) contaminate the signal of interest from where they don't.  As mentioned above, this contaminated phase space may be shown [REF] to be a wedge-shaped region in $\kpr$:$\kpar$ space:
+Though the power spectrum measurement is over a volume, it is instructive to split the spatial wavenumbers into two components,  $\kvec =  \kvpr + \kpar{\hat {\bf z}}$ where $|\kvpr|\equiv \kpr = 2\pi b/\lambda X$ is determined by the antenna baseline ($b$) and $\kpar=2\pi/Y\Delta\nu$ by the bandwidth ($\Delta\nu$).  Here $X$ and $Y$ are cosmological parameters relating angular size and spectral frequency to cosmic volumes respectively (so, relating wavenumber to physical volume at a given redshift).  This is useful since it allows us to split out the chromatic response of the interferometer visibility measurement and isolate a phase space where foreground sources ({\em i.e.} everything {\em not} the EOR) contaminate the signal of interest from where they don't.  
+
+In these variables, the ``contaminated'' phase space is a wedge-shaped region in $\kpr$:$\kpar$ space such that the ratio of the time-delay across a given baseline ($b/c$,  which impacts the chromatic visilbility) and the delay associated with a given bandwidth ($1/\Delta\nu$) is less than some parameter determined by the details of the system, which we denote as $1/\beta$.  Substituting $\kpr$ and $\kpar$ in for $b$ and $\Delta\nu$ in this ratio, we find that this wedge is bounded by
 \begin{equation}
-|\kpar| \le \beta\frac{X\lambda}{Yc}\kpr + \frac{S}{Y}
+\kpar \le \beta\frac{X\lambda}{Yc}\kpr + \frac{S}{Y}
 \end{equation}
-where $c$ is the speed of light and $S$ is a parameter accounting for offsets related to the combined spectral smoothness of the foregrounds and the antenna response (see Fig. \ref{fig:wedge}).  
-A key issue to measuring the EOR power spectrum is to understand and minimize such effects.  For an analytical derivation, see \cite{zahn_etal2012,vedantham_2012,liu_et_al2014b},  in simulation see \cite{datta_etal2010,hazelton_et_al2013} and for observations
-\cite{pober_etal2013b,2015arXiv150601026P,parsons_etal2014,2015arXiv150206016A}.  Note that the unit of the spatial wavenumber $k$ is 1/length, in this case the relevant length scale is megaparsecs (Mpc; 1 Mpc = 3.086$\times10^{22}$ m).  In order to normalize for updated measurements of the Hubble constant, it is further normalized by a factor $h$, where Hubble's constant is expressed as $H_o=100h$ (km/s)/Mpc , such that the wavenumbers are expressed as $h$/Mpc.
+where we've included an offset parameterized by $S$ accounting for affects related to the combined spectral smoothness of the foregrounds and the antenna response (see Fig. \ref{fig:wedge}). 
+
+If this $\beta$ factor is determined by the chromaticity of the longest baseline, we see that $\beta=1$ and we call this line the ``horizon line'' ({\em i.e.}, the delay of a source at the horizon).  Systematics will push that line such as to close the EOR ``window'' to the upper left ($\beta > 1$).  If we can completely control systematics and constrain the affects of the foreground to {\em e.g.} the main beam, the line will move to decrease the size of the ``wedge'' ($\beta<1$).
+Therefore, a key issue to measuring the EOR power spectrum is to understand and minimize systematics.  For further discussion and an analytical derivation, see \cite{zahn_etal2012,vedantham_2012,liu_et_al2014b},  in simulation see \cite{datta_etal2010,hazelton_et_al2013} and for observations
+\cite{pober_etal2013b,2015arXiv150601026P,parsons_etal2014,2015arXiv150206016A}.  
+
+Note that the unit of the spatial wavenumber $k$ is 1/length, in this case the relevant length scale is megaparsecs (Mpc; 1 Mpc = 3.086$\times10^{22}$ m).  In order to normalize for updated measurements of the Hubble constant, it is further normalized by a factor $h$, where Hubble's constant is expressed as $H_o=100h$ (km/s)/Mpc , such that the wavenumbers are expressed as $h$/Mpc.  Also note that at the red-shifts of interest $X$ has a value of about 160 Mpc/deg and $Y$ has a value of about 16 Mpc/MHz.
 
 \begin{figure}[t]
 \centerline{
@@ -601,8 +607,7 @@ We can essentially relate the sky power spectrum mode ${\hat P}(\kvec)$ to an in
 {\hat P}(\kvec) \approx\frac{X^2Y}{4k_B^2}   \left[\frac{{\tilde V}^2(\bvec)}{\Omega_b B/ \lambda^4} \right]
 \label{eq:Pk_baseline}
 \end{equation}
-where $X$ and $Y$ are cosmological parameters relating angular size and spectral frequency to cosmic volumes (so, relating wavenumber to physical volume at a given redshift), $\Omega_b$ is the integrated beam response, $B$ is the effective bandwidth, $\lambda$ is the observation wavelength, and $k_B$ is Boltzmann's constant.  The terms in square brackets are instrumental terms, as opposed to the constants and cosmological parameters.  
-Note that at the red-shifts of interest $X$ has a value of about 160 Mpc/deg and $Y$ has a value of about 16 Mpc/MHz.
+where $X$ and $Y$ were introduced above, $\Omega_b$ is the integrated beam response, $B$ is the effective bandwidth, $\lambda$ is the observation wavelength, and $k_B$ is Boltzmann's constant.  The terms in square brackets are instrumental terms, as opposed to the constants and cosmological parameters.  
 Rather than ${\hat P}(\kvec)$, the literature generally works with a volume-normalized parameter given by $\Delta^2(k) = \frac{k^3}{2\pi^2}{\hat P}(\kvec)$.    
 
 Since the thermal noise per visibility baseline may be expressed as
