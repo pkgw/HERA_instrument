@@ -717,7 +717,14 @@ The total simultaneously processed bandwidth is the full 100 MHz, since we wish 
 
 \subsection{Delay Response}
 \label{sec:delayspec}
-Need to include initial 60 at 60 and Nithya etc etc etc
+Early analysis \citep{elementmemo} indicated that to trace the EoR over a wide range of redshift, internal reflections should be attenuated by about 60 dB from the initial incoming wave by about 60 ns, or a VSWR $<$ 1.002 for frequencies $<$ 17 MHz.  This provided the basis for the initial design of the element.    For the contemplated feeds for a primary focus antenna, it was found that a focal length/diameter radio ($f/D$ of approximately 0.32 was optimal \citep{elementmemo}.  We may therefore estimate the attenuation as a function of delay and diameter and assign this a ``cost function''.  The vertical axis of Fig. \ref{fig:costfig} shows a very steep cost function at 60 ns.  The curves labelled `1', `2' and `3' are the round-trip travel time for 1, 2 and 3 reflections.  
+
+To get 60 dB at 60 ns we may interpret those lines in one of two ways:  (1) set the spec on how much attentuation per reflection is needed and (2) at a fixed attenuation/reflection, what diameter we need.  For 1 round-trip, for the assumed $f/D$ over the diameters of interest, all delays are less than 60 ns, so it provides no constraint.  For
+3 round-trips, all diameters exceed 60 ns, so the attenuation should be less than 60 dB for that path-length.  The case for 2 round-trips provides a constraint on attenuation and diameter, which is discussed at length in \cite{elementmemo}.
+To estimate, it was assumed that the main reflection time constant was due to the standing waves between the feed and vertex of the parabola and that each reflection redirected about -15 dB of the total power in each reflection for additional standing wave power, which leads to a diameter of about 14m.
+
+As a key specification, this has been a focus of study with our prototypes and a series of papers based on analysis and measurements have been produced to provide much more rigor than this simple early analysis \citep{nithya, ewall-wice, patra}.  The simple specification set above more appropriately becomes a series of curves for attenuation and delay at different wavenumbers for realistic foreground models.  Fig \ref{fig:nithadelay} taken from \cite{nitha} shows the results at $k$ = 0.2 $h$/Mpc for the adopted design.  The analysis shows that for $k>0.15 h/$Mpc, HERA should be able to detect the EoR.  The analysis also shows which baselines produce the best information.
+
 
 \subsection{Sensitivity Optimization}
 \label{sec:cost}
@@ -730,20 +737,18 @@ N_{\text core} = (320*14)/D
 \end{equation}
 where $N_{\text core}$ and $D$ are the number of antennas in the core and their diameter respectively.  Note that the linear number-diameter dependence was derived by running multiple sensitivity codes ({\em e.g.} Pober) over a range of values for the HERA configuration for wavenumbers greater than 0.15.  This dependency differs from \cite{2013ExA....36..235M} and analytical expressions, mostly likely due to the assumed configuration.
 Optimization is 
-therefore done for this sensitivity against cost for various diameters and total element numbers, while trying to minimize multiple reflections on long delays.  Figure \ref{fig:costfig} summarizes this optimization, which
-is discussed below.
+therefore done for this sensitivity against cost for various diameters and total element numbers, while trying to minimize multiple reflections on long delays.   
 
+The cost function in Fig. \ref{fig:costfig} is shown as the colored background and color bar, with the delay-spec vertically and the cost at a fixed sensitivity horizontally. 
 To determine the optimal diameter, full system costings were done on a range of diameter sizes from 5m - 25m, with the total number set by Eq. \ref{eq:ND}.  This included the full system, except the post-processing (that is, everything after the archived correlator output).  
-Figure \ref{fig:costfig} shows the resulting normalized system cost/performance-curve as the horizontal shading relative to the canonical HERA design 
-which becomes very flat (colored purple) for diameters greater between about 12 and15 m, which is consistent with the chosen value of 14 meters based on other system considerations.
+The resulting normalized system cost/performance-curve  becomes very flat (colored purple) for diameters greater between about 12 and15 m, which is consistent with the chosen value of 14 meters based on other system considerations.
 
-OTHER LINES IN FIG 12.
 
 \begin{figure}[t]
 \centerline{
 \includegraphics[width=0.6\textwidth]{plots/costfig.pdf} 
 }
-\caption{\small The background coloring with colorbar shows the relative cost/performance at a fixed performance as a function of element diameter.  Costing model for a fixed sensitivity system as a function of diameter (thick blue line and left axis) as well as the round-trip delay for 1,2 and 3 feed-vertex trips (dashed red lines and right axis).  The 60 ns spec is indicated by the horizontal dash line, and the two-trip intersection at about 14-meter is the vertical dashed line.  SEE TEXT...
+\caption{\small The background coloring with colorbar shows the relative cost/performance for delay and cost at a fixed performance as a function of element diameter.  See text and \cite{elementmemo} for details.  A diameter of 14-m (vertical dashed line) is near the cost minimum and consistent with assumption for the delay specification.
 \label{fig:costfig}}
 \end{figure}
 
