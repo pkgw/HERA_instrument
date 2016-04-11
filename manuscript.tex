@@ -671,7 +671,9 @@ More generally, it is possible to express a map-making algorithm as a linear ope
 
 \subsection{Calibration}
 \label{sec:calibration}
-As examined above, for maximize sensitivity to a limited number of spatial modes using the delay-spectrum technique, a redundant grid greatly is advantageous.  This redundancy may also be exploited to calibrate the array as well, if the baselines are sufficiently redundant.  This technique has been pioneered with the MIT EoR experiment, and has resulted in a package called omnical \citep{zheng_et_al2014}.
+As examined above, for maximize sensitivity to a limited number of spatial modes using the delay-spectrum technique, a redundant grid greatly is advantageous.  This redundancy may also be exploited to calibrate the array as well, if the baselines are sufficiently redundant.  This technique has been pioneered with the MIT EoR experiment \citep{zheng_et_al2014}, and has resulted in a package called OMNICAL developed for PAPER and HERA .  \cite{ali_et_al2015} provides a description of this technique as it applies to calibrating the PAPER array, which is mostly situated on a grid with many redundant baselines.  This section provides a high-level overview of calibration as it applies to HERA.
+
+Given that the technique requires redundant baselines
 
 \section{High-Level Requirements} 
 \label{sec:requirements}
@@ -741,8 +743,7 @@ therefore done for this sensitivity against cost for various diameters and total
 
 The cost function in Fig. \ref{fig:costfig} is shown as the colored background and color bar, with the delay-spec vertically and the cost at a fixed sensitivity horizontally. 
 To determine the optimal diameter, full system costings were done on a range of diameter sizes from 5m - 25m, with the total number set by Eq. \ref{eq:ND}.  This included the full system, except the post-processing (that is, everything after the archived correlator output).  
-The resulting normalized system cost/performance-curve  becomes very flat (colored purple) for diameters greater between about 12 and15 m, which is consistent with the chosen value of 14 meters based on other system considerations.
-
+The resulting normalized system cost/performance-curve  becomes very flat (colored dark blue/purple) for diameters greater between about 12 and15 m, which is consistent with the chosen value of 14 meters based on other system considerations.
 
 \begin{figure}[t]
 \centerline{
@@ -753,10 +754,8 @@ The resulting normalized system cost/performance-curve  becomes very flat (color
 \end{figure}
 
 \section{System Design} \label{sec:design}
-
-As described in the previous section, we have applied 
-critical insights from first generation 21\,cm EoR experiments to define
-the requirements for HERA---an instrument that ensures foregrounds remain bounded
+As described in the previous section, the critical insights from the first generation 21\,cm EoR experiments have been applied to define
+the requirements for HERA---an instrument designed to ensure that foregrounds remain bounded
 within the wedge while delivering the sensitivity for
 high-significance detections of the 21\,cm reionization power spectrum with
 established foreground filtering techniques
@@ -773,7 +772,9 @@ This cycle ensures that HERA's instrument is always growing, that systematics ar
 earliest build-out stages, that data analysis pipelines are tested and debugged while data volumes are smaller,
 and that HERA is always producing high quality science.
 
-For details of the first generation HERA system (the existing and commissioned PAPER signal path), see \cite{PAPERSYS}.  This paper will discuss the new system to be deployed beginning and 2016 and tested in conjunction with the previous system.  Fig \ref{fig:overallBlockDiagram} provides a system block diagram of the new version.
+Note that in addition to the 19 elements in South Africa (and an initial prototype near Berkeley, CA), a pair of elements at the Green Bank Observatory in West Virginia have been used extensively in the validation testing, the results of which are highlighted in the earlier referenced material and discussed below.  Also, three elements are currently under construction at the Mullard Radio Astronomyl Observatory outside Cambridge, UK for additional feed and element tests.
+
+For details of the first generation HERA system (the existing and commissioned PAPER signal path), see \cite{parsons_et_al2010}.  This paper will discuss the new system to be deployed beginning and 2016 and tested in conjunction with the previous system.  Fig \ref{fig:overallBlockDiagram} provides a system block diagram of the new HERA architecture.
 
 \begin{table}[t]
 \small
@@ -822,39 +823,9 @@ As discussed in the previous section, the design of the design principles are th
 \item minimize costs, and
 \item the experiment has a limited lifetime of about five years.
 \end{itemize}
-The first item primarily means that chromatic effects corresponding to delays appropriate for the measurement described above must be below the expected signal level, which essentially determines the focal length.  The second item constrains the diameter and element count, as well as the focal length over diameter ratio ($f/D$), based on a cost function and maximizing sensitivity per element.  And the third items constrains the construction materials and methods and the operational model.  This led to a fixed transit element with a diameter of 14 meters.
+The first item primarily means that chromatic effects corresponding to delays appropriate for the measurement described above must be below the expected signal level, which essentially determines the focal length.  The second item constrains the diameter and element count, as well as the focal length over diameter ratio ($f/D$), based on a cost function and maximizing sensitivity per element.  And the third item constrains the construction materials and methods and the operational model.  This led to a fixed transit element with a diameter of 14 meters to strike an optimal balance between sensitivity and systematics.
 
-\subsubsection{Element Construction}
-To minimize cost and aid in construction in a remote location, the construction materials are readily available standard construction materials, making for a very cost-effective design.  The feed is supported from three utility poles using line and hardware primarily from boating activities which can handle the load and external environment.  Given the close-packed design, each pole (except for the perimeter) are shared between three antennas.  This both reduces the number of poles, but also makes for a balanced load.  Note that the perimeter poles can be stayed with guy lines if needed.   The rim is also supported off of these poles, with three smaller posts in between such that the outer perimeter is regular dodecagon shape.  Two of the three posts are shared with adjacent antennas.
-
-The center of the antenna is a cast concrete donut-shaped hub with 12 sleeves for PVC spars which provide the support for the surface and 12 horizontal spars which allow for additional support.  The twelve surface spars are made of 60mm PVC pipe, which are stressed along three support points to approximate a parabolic shape.  Note that an ideal moment-loaded beam actually attains a true parabola.  Note that the three support points (one at the hub, one about 3 meters out radially and one at the rim-end) are at the correct height and angle for the underlying parabola.  The PVC essentially acts as a spatial filter.
-
-The shape between the spars is actually a one-dimensional parabola rather than a two-dimensional paraboloid, so the dish surface may more properly be called a ``facetted parabola''.  If only twelve spars were used for the entire surface, simple Ruze losses would be quite high (about 10\% at 150 MHz).  Therefore, at about 2.1 meters another horizontal member is placed, which launches another parabolic spar.  The simple Ruze loss is then less than 1\%, which is much more acceptable.  Fig \ref{fig:elementplan} shows this surface scheme and the panelization (left) and the offsets (in mm) of that scheme from an ideal parabola.  The panel that is ``left out'' is the location of a door to allow access into the hub (via a small removable door and bridge).  The additional intermediate spars also make the panel sizes much more manageable and better secured.  The panel arrangement is also set by a standard width of mesh roll of 1.22m.
-
-\begin{figure}[h!]
-\centerline{
-\includegraphics[height=6cm]{plots/antPlan.png}
-\includegraphics[height=6cm]{plots/offset.png} 
-}
-\caption{\small Element.
-\label{fig:elementplan}}
-\end{figure}
-
-\subsubsection{Feed}
-The feed is to be deployed along the two separate phases.  Initially, the feed reuses the dipole portion of the PAPER element, however in a new optimized cylindrical feed-cage configuration.  The optimization was based on main beam efficiency, cross-coupling (integrated feed pattern on dish), standing waves (blockage, {\em e.g.} Baars), and frequency response.  The design parameters were size of backplane, height of mast, height of skirt, and cone versus cylinder.  Cones were ruled out since it was found they introduce additional frequency structure with no real improvement in performance and a range of cylinders were evaluated.  The phase 1 design is documented in a memo \cite{feedmemo}, while additional studies are on-going at NRAO and Cambridge University.  The chosen feed design is shown in Figure X.
-
-%Additionally, to lessen cross-coupling, a screen fence around the perimeter is also under investigation.  
-%Rather than being vertical, it will have a slight angle and potentially some edge treatment to try and lessen diffraction.  
-%Tests of the antennas are discussed in a number of papers CITE.  Figure Y shows beam patterns.
-
-The feed is supported by lines from the three poles via a rigid support to which the feed cage and dipole attach.  Another line goes down centrally to the hub to hold the feed rigidly in place at the correct height.
-
-The low noise amplifier/balun integrates directly to the base of the feed dipole in the same configuration as per PAPER (REF).  The 150m length of 75 $\Omega$ cable used in the initial design also runs down centrally and then over to the post-amplifier module, which is housed near the RFI-shielded container containing the digital electronics.  This will be replaced by the 35m cable/node design.
-
-The novel design of HERA's antenna element (Figs. \ref{fig:HERApictures} and \ref{fig:orbcommexptandbeammap}), now extensively field-tested with MSIP seed funding, 
-is one of the critical advances that enables HERA to achieve its science
-goals cost-effectively.  The 14-m fixed zenith-pointing parabolic dish strikes an optimal
-balance between sensitivity and systematics.  The large collecting area of a
+The large collecting area of a
 HERA element yields nearly 5 times the sensitivity of an MWA tile and more
 than 20 times that of a PAPER element, but it does so without substantially
 degrading our ability to isolate and remove foreground emission on the basis of
@@ -907,19 +878,35 @@ half maximum of $\sim$$10^\circ$, and a first sidelobe at -20 dB \citep{ewallwic
 Feed-to-feed coupling between adjacent antennas has been measured to be below -50 dB, indicating
 that mutual coupling will not be problematic.
 
-With observing wavelengths of 1.5 to 3 m, meeting the required accuracy
-in placing the components of HERA's dish is straightforward.
-Dish centers are fixed
-by a concrete hub placed with final surveyed accuracy of $\sim$10 cm.  These
-hubs constrain radial PVC spars, tensioned into approximate parabolas against a
-rim supported by utility poles.  The resulting faceted paraboloid has
-a measured RMS surface accuracy of 3 cm, which is well within the 0.1$\lambda$ tolerance for
-coherent phasing.  Feed placement relative to the dish is the most stringent requirement, with
-a tolerance of 5 cm.  This placement is ensured by spring-tensioned Kevlar lines attached to
-three utility poles at the dish rim and a 165-lb tensioning down to the concrete hub with
-a fixed length line that ensures a correct focal height.  With 19 dishes constructed in South Africa
-and 2 in Green Bank, we are confident in the ability of our trained field teams to construct HERA
-elements to specification.  CAMBRIDGE
+
+\subsubsection{Element Construction}
+To minimize cost and aid in construction in a remote location, the construction materials are readily available standard construction materials, making for a very cost-effective design.  The feed is supported from three utility poles using line and hardware primarily from boating activities which can handle the load and external environment.  Given the close-packed design, each pole (except for the perimeter) are shared between three antennas.  This both reduces the number of poles, but also makes for a balanced load.  Note that the perimeter poles can be stayed with guy lines if needed.   The rim is also supported off of these poles, with three smaller posts in between such that the outer perimeter is regular dodecagon shape.  Two of the three posts are shared with adjacent antennas.
+
+The center of the antenna is a cast concrete donut-shaped hub with 12 sleeves for PVC spars which provide the support for the surface and 12 horizontal spars which allow for additional support.  The twelve surface spars are made of 60mm PVC pipe, which are stressed along three support points to approximate a parabolic shape.  Note that an ideal moment-loaded beam actually attains a true parabola.  Note that the three support points (one at the hub, one about 3 meters out radially and one at the rim-end) are at the correct height and angle for the underlying parabola.  The PVC essentially acts as a spatial filter.
+
+The shape between the spars is actually a one-dimensional parabola rather than a two-dimensional paraboloid, so the dish surface may more properly be called a ``facetted parabola''.  If only twelve spars were used for the entire surface, simple Ruze losses would be quite high (about 10\% at 150 MHz).  Therefore, at about 2.4 meters another horizontal member is placed, which launches another parabolic spar.  The simple Ruze loss is then less than 1\%, which is much more acceptable.  Fig \ref{fig:elementplan} shows this surface scheme and the panelization (left) and the offsets (in mm) of that scheme from an ideal parabola.  The panel that is ``left out'' is the location of a door to allow access into the hub (via a small removable door and bridge).  The additional intermediate spars also make the panel sizes much more manageable and better secured.  The panel arrangement is also set by a standard width of mesh roll of 1.22m.
+
+\begin{figure}[h!]
+\centerline{
+\includegraphics[height=6cm]{plots/antPlan.png}
+\includegraphics[height=6cm]{plots/offset.png} 
+}
+\caption{\small Element.
+\label{fig:elementplan}}
+\end{figure}
+
+
+
+\subsubsection{Feed}
+The feed is to be deployed along the two separate phases.  Initially, the feed reuses the dipole portion of the PAPER element, however in a new optimized cylindrical feed-cage configuration.  The optimization was based on main beam efficiency, cross-coupling (integrated feed pattern on the dish), standing waves (blockage size), and frequency response.  The original PAPER sleeved dipole is held on a PVC mast within the cylindrical structure. The design parameters were size of backplane, height of mast, and height of cylinder.  A range of conical structures were looked at but were ruled out since it was found they introduce additional frequency structure with no real improvement in performance.  The phase 1 design is documented in a memo \cite{feedmemo}, which are currently under test on the 19 elements in South Africa. Additional studies are on-going at NRAO and Cambridge University.
+
+%Additionally, to lessen cross-coupling, a screen fence around the perimeter is also under investigation.  
+%Rather than being vertical, it will have a slight angle and potentially some edge treatment to try and lessen diffraction.  
+%Tests of the antennas are discussed in a number of papers CITE.  Figure Y shows beam patterns.
+
+The feed is supported by spring-tensioned aramid fiber lines from the three poles via a rigid support to which the feed cage and dipole attach.  The tensioning line goes down centrally to the hub to hold the feed rigidly in place at the correct height.  This also stabilizes the feed in position and allows for strain relief on the coaxial cables.  
+
+The low noise amplifier/balun integrates directly to the base of the feed dipole in the same configuration as per PAPER (REF).  The 150m length of 75 $\Omega$ cable used in the initial design also runs down centrally and then over to the post-amplifier module, which is housed near the RFI-shielded container containing the digital electronics.  This will be replaced by the 35m cable/node design.
 
 
 \subsection{Array Configuration}
