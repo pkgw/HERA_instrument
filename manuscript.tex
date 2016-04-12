@@ -556,6 +556,7 @@ while retaining the necessary characteristics for both proven and forward-lookin
 This section will provide a brief overview of  the theoretical underpinning of how foregrounds contaminate the measurement (the so-called ``wedge''), discuss the various techniques used to make the measurement and finally provide a brief discussion on calibration issues and techniques.
 
 \subsection{The ``Wedge''}
+\label{sec:wedge}
 Perhaps the most important advance informing HERA's design is a
 refined understanding of how smooth-spectrum foregrounds interact
 with instrument chromaticity to produce a characteristic ``wedge" of
@@ -621,7 +622,7 @@ where $\mathcal{N}$ represents the improvement in sensitivity based on the array
 
 Fig. \ref{fig:boost} (left) plots this ``redundancy boost'' factor for various configuration types relative to an array in a 19-element hexagonal configuration.  They are labelled for the type of configuration (hex, grid, imaging) and the number of antennas (from 37 to 350).  Note that (a) {\em hex} is based on the configuration used for HERA (14.6m center-to-center spacing); (b) {\em grid} for that of PAPER (4m N-S, 16m E-W spacing); (c) {\em imaging-128} for MWA \citep{tingay_et_al2013}; and (d) {\em imaging-48} for LOFAR (\citealt{2013A&A...556A...2V}; note that this assumes the ability to fully correlate the HBA-pairs).  The plot shows that for a fixed number of elements using the delay-spectrum approach, redundant arrays (hex/grid) provide about an order of magnitude improvement over imaging arrays.  Since the baselines go as order $N^2$, this corresponds to using about 1/3 of the number of elements to yield the same performance (as verified by the Hex-37/Imaging-128 lines).  This advantage does not extend to the other approaches discussed below and imaging configurations would be preferred.  Note that a filled hexagonal-packed array provides excellent imaging as well, but with potentially limited resolution unless outriggers are included.
 
-Another approach to improving sensitivity is to make the collecting area per element larger.  In the limit, this yields a fully filled aperture as mentioned.  A larger element limits the accessible field-of-view, which however is not a huge liability for a focussed experiment, as long as an appropriate patch of ``cold'' sky passes within its field-of-view.  One method combining both advantages is to use small elements to build up phased array ``tiles'' and then electronically produce many beams, which may get correlated.  This adds additional complexity and potential systematics, however it is the method employed by both MWA and LOFAR.  Fig. \ref{fig:boost} (right) shows the relative sensitivity of the various array relative to HERA-19, calculated for a redshift corresponding to the peak signal at a hydrogen reionization fraction of 1/2.  The circles near the array name indicate the relative sizes of the element.  Note that MWA and LOFAR are cross-hatched to indicated phased array tiles.
+Another approach to improving sensitivity is to make the collecting area per element larger.  In the limit, this yields a fully filled aperture as mentioned.  A larger element limits the accessible field-of-view, which however is not a huge liability for a focussed experiment, as long as an appropriate patch of ``cold'' sky passes within its field-of-view.  One method combining both advantages is to use small elements to build up phased array ``tiles'' and then electronically produce many beams, which may get correlated.  This adds additional complexity and potential systematics, however it is the method employed by both MWA and LOFAR.  Fig. \ref{fig:boost} (right) shows the relative sensitivity of the various array relative to HERA-19, calculated for a redshift corresponding to the peak signal at a hydrogen reionization fraction of 0.5.  The circles near the array name indicate the relative sizes of the element.  Note that MWA and LOFAR are cross-hatched to indicated phased array tiles.
 
 
 \begin{figure}[h!]
@@ -768,7 +769,7 @@ This cycle ensures that HERA's instrument is always growing, that systematics ar
 earliest build-out stages, that data analysis pipelines are tested and debugged while data volumes are smaller,
 and that HERA is always producing high quality science.
 
-Note that in addition to the 19 elements in South Africa (and an initial prototype near Berkeley, CA), a pair of elements at the Green Bank Observatory in West Virginia have been used extensively in the validation testing, the results of which are highlighted in the earlier referenced material and discussed below.  Also, three elements are currently under construction at the Mullard Radio Astronomyl Observatory outside Cambridge, UK for additional feed and element tests.
+Note that in addition to the 19 elements in South Africa (and an initial prototype near Berkeley, CA), a pair of elements at the Green Bank Observatory in West Virginia have been used extensively in the validation testing, discussed below.  Also, three elements are currently under construction at the Mullard Radio Astronomy Observatory outside Cambridge, UK for additional feed and element tests.
 
 For details of the first generation HERA system (the existing and commissioned PAPER signal path), see \cite{parsons_et_al2010}.  This paper will discuss the new system to be deployed beginning and 2016 and tested in conjunction with the previous system.  Fig \ref{fig:overallBlockDiagram} provides a system block diagram of the new HERA architecture.
 
@@ -828,23 +829,11 @@ degrading our ability to isolate and remove foreground emission on the basis of
 spectral smoothness (Fig. \ref{fig:reflectometry}, right panel).  As shown in
 \Mycitet{parsons_et_al2012b}, the amplitude and timescale of signal reflections
 relates directly to the leakage of smooth-spectrum foregrounds into regions of Fourier space 
-used to measure reionization.
+used to measure reionization, as discuss in Sec. \ref{sec:wedge}.
 To facilitate foreground filtering, HERA's antenna element is designed to suppress reflections at long time delays.
 
-\begin{figure}[h!]
-	\begin{tabular}{ll}
-	\begin{minipage}{4.2in}
-\includegraphics[width=2.1in]{plots/ref_dipole_and_hera_dish.jpg}
-\includegraphics[width=2.1in]{plots/orbcomm_dish_beam_map_530cm_feed.pdf}
-	\end{minipage} & 
-	\begin{minipage}{2.05in}
-	\caption{Left: The first of three prototype dishes at NRAO--Green Bank, used for measuring beam frequency structure with reflectometry and the beam pattern at 137\,MHz by comparing satellite signals to the reference dipole in the foreground \citep{neben_et_al2016}. Right: The measured EW power pattern plotted with dashed lines marking zenith angles of 20$^\circ$, 40$^\circ$, 60$^\circ$, 80$^\circ$.} 
-	\label{fig:orbcommexptandbeammap}
-	\end{minipage}
-	\end{tabular}
-	\vspace{-15pt}
-\end{figure}
 
+%%%%%%%%%%FIXUP HERE
 \begin{figure}[h!]
 	\centering
     \includegraphics[width=0.49\textwidth]{plots/s11_compare_msip.pdf}
@@ -864,7 +853,10 @@ relatively short (4.5\,m) focal height of the parabolic dish
 minimizes the timescale of feed-dish reflections while maintaining the feed's
 illumination of the dish.  HERA's feed design is based on the PAPER sleeved
 dipole element, inverted above a backplane, with a skirting cylinder to
-improve symmetry in the polarized beam response patterns.  Figure
+improve symmetry in the polarized beam response patterns.  
+%%%%%%%%%%%
+
+Figure
 \ref{fig:orbcommexptandbeammap} shows the beam pattern measured at 137 MHz with a beam mapping
 system using the ORBCOMM satellite network \Mycitep{neben_et_al2016}.  Results
 indicate an effective per-element collecting area of 93\,m$^2$, compared with the
@@ -873,28 +865,42 @@ consistent with simulations at the 0.1\% to 0.5\% level, with a full width at
 half maximum of $\sim$$10^\circ$, and a first sidelobe at -20 dB \citep{ewallwice_et_al2016,neben_et_al2016,patra_et_al2016,thyagarajan_et_al2016}.
 Feed-to-feed coupling between adjacent antennas has been measured to be below -50 dB, indicating
 that mutual coupling will not be problematic.
-
+%%%%%%%%%%%%
+SHOW CALCULATED BEAM PATTERNS
+\begin{figure}[h!]
+	\begin{tabular}{ll}
+	\begin{minipage}{4.2in}
+\includegraphics[width=2.1in]{plots/ref_dipole_and_hera_dish.jpg}
+\includegraphics[width=2.1in]{plots/orbcomm_dish_beam_map_530cm_feed.pdf}
+	\end{minipage} & 
+	\begin{minipage}{2.05in}
+	\caption{Left: The first of three prototype dishes at NRAO--Green Bank, used for measuring beam frequency structure with reflectometry and the beam pattern at 137\,MHz by comparing satellite signals to the reference dipole in the foreground \citep{neben_et_al2016}. Right: The measured EW power pattern plotted with dashed lines marking zenith angles of 20$^\circ$, 40$^\circ$, 60$^\circ$, 80$^\circ$.} 
+	\label{fig:orbcommexptandbeammap}
+	\end{minipage}
+	\end{tabular}
+	\vspace{-15pt}
+\end{figure}
 
 \subsubsection{Element Construction}
-To minimize cost and aid in construction in a remote location, the construction materials are readily available standard construction materials, making for a very cost-effective design.  The feed is supported from three utility poles using line and hardware primarily from boating activities which can handle the load and external environment.  Given the close-packed design, each pole (except for the perimeter) are shared between three antennas.  This both reduces the number of poles, but also makes for a balanced load.  Note that the perimeter poles can be stayed with guy lines if needed.   The rim is also supported off of these poles, with three smaller posts in between such that the outer perimeter is regular dodecagon shape.  Two of the three posts are shared with adjacent antennas.
+To minimize cost and aid in construction in a remote location, the construction materials are readily available standard construction materials, making for a very cost-effective design.  The feed is supported from three utility poles using line and hardware primarily from boating activities which can handle the load and external environment.  Given the close-packed design, each pole (except for the perimeter) are shared between three antennas.  This both reduces the number of poles, but also makes for a balanced load.  Note that the perimeter poles can be stayed with guy lines if needed.   The rim is also supported off of these poles, with three smaller posts in between such that the outer perimeter is regular dodecagon shape.  Two of the three intermediate posts are shared with adjacent antennas.
 
-The center of the antenna is a cast concrete donut-shaped hub with 12 sleeves for PVC spars which provide the support for the surface and 12 horizontal spars which allow for additional support.  The twelve surface spars are made of 60mm PVC pipe, which are stressed along three support points to approximate a parabolic shape.  Note that an ideal moment-loaded beam actually attains a true parabola.  Note that the three support points (one at the hub, one about 3 meters out radially and one at the rim-end) are at the correct height and angle for the underlying parabola.  The PVC essentially acts as a spatial filter.
+The center of the antenna is a cast-in-place concrete donut-shaped hub with 12 sleeves for PVC spars which provide the support for the surface and 12 horizontal spars which allow for additional support.  The twelve surface spars are made of 60mm PVC pipe, which are stressed along three support points to approximate a parabolic shape.  Note that an ideal moment-loaded beam actually attains a true parabola.  The three support points (one at the hub, one about 3 meters out radially and one at the rim-end) are at the correct height and angle for the underlying parabola and the PVC essentially acts as a spatial filter.
 
-The shape between the spars is actually a one-dimensional parabola rather than a two-dimensional paraboloid, so the dish surface may more properly be called a ``facetted parabola''.  If only twelve spars were used for the entire surface, simple Ruze losses would be quite high (about 10\% at 150 MHz).  Therefore, at about 2.4 meters another horizontal member is placed, which launches another parabolic spar.  The simple Ruze loss is then less than 1\%, which is much more acceptable.  Fig \ref{fig:elementplan} shows this surface scheme and the panelization (left) and the offsets (in mm) of that scheme from an ideal parabola.  The panel that is ``left out'' is the location of a door to allow access into the hub (via a small removable door and bridge).  The additional intermediate spars also make the panel sizes much more manageable and better secured.  The panel arrangement is also set by a standard width of mesh roll of 1.22m.
+The shape between the spars is actually a parabola rather than a tparaboloid, so the dish surface may more properly be called a ``faceted parabola''.  If only twelve spars were used for the entire surface, simple Ruze losses would be quite high (about 10\% at 150 MHz).  Therefore, at about 2.4 meters another horizontal member is placed, which launches another parabolic spar.  The simple Ruze loss is then less than 1\%, which is much more acceptable.  Fig \ref{fig:elementplan} shows this surface scheme and the panelization (left) and the offsets (in mm) of that scheme from an ideal parabola.  The panel that is ``left out'' is the location of a door to allow access into the hub (via a small removable door and bridge).  The additional intermediate spars also make the panel sizes much more manageable and better secured.  The panel arrangement is also set by a standard width of mesh roll of 1.22m.
 
 \begin{figure}[h!]
 \centerline{
-\includegraphics[height=6cm]{plots/antPlan.png}
-\includegraphics[height=6cm]{plots/offset.png} 
+\includegraphics[height=6cm]{plots/antPlan.pdf}
+\includegraphics[height=6cm]{plots/offset.pdf} 
 }
-\caption{\small Element.
+\caption{\small Element panel plan (left) and residual from a true paraboloid (right).
 \label{fig:elementplan}}
 \end{figure}
 
 
 
 \subsubsection{Feed}
-The feed is to be deployed along the two separate phases.  Initially, the feed reuses the dipole portion of the PAPER element, however in a new optimized cylindrical feed-cage configuration.  The optimization was based on main beam efficiency, cross-coupling (integrated feed pattern on the dish), standing waves (blockage size), and frequency response.  The original PAPER sleeved dipole is held on a PVC mast within the cylindrical structure. The design parameters were size of backplane, height of mast, and height of cylinder.  A range of conical structures were looked at but were ruled out since it was found they introduce additional frequency structure with no real improvement in performance.  The phase 1 design is documented in a memo \cite{feedmemo}, which are currently under test on the 19 elements in South Africa. Additional studies are on-going at NRAO and Cambridge University.
+The feed is to be deployed along two separate phases.  Initially, the feed reuses the original PAPER sleeved dipole, however in a new optimized cylindrical feed-cage configuration.  The optimization was based on main beam efficiency, cross-coupling (integrated feed pattern on the dish), standing waves (blockage size), and frequency response.  The design parameters were size of backplane, height of mast, and height of cylinder.  A range of conical structures were looked at but were ruled out since it was found they introduce additional frequency structure with no real improvement in performance.  The phase 1 design documented in a memo \cite{feedmemo} is currently under test on the 19 elements in South Africa. Additional studies are on-going at NRAO and Cambridge University.
 
 %Additionally, to lessen cross-coupling, a screen fence around the perimeter is also under investigation.  
 %Rather than being vertical, it will have a slight angle and potentially some edge treatment to try and lessen diffraction.  
@@ -902,13 +908,15 @@ The feed is to be deployed along the two separate phases.  Initially, the feed r
 
 The feed is supported by spring-tensioned aramid fiber lines from the three poles via a rigid support to which the feed cage and dipole attach.  The tensioning line goes down centrally to the hub to hold the feed rigidly in place at the correct height.  This also stabilizes the feed in position and allows for strain relief on the coaxial cables.  
 
-The low noise amplifier/balun integrates directly to the base of the feed dipole in the same configuration as per PAPER (REF).  The 150m length of 75 $\Omega$ cable used in the initial design also runs down centrally and then over to the post-amplifier module, which is housed near the RFI-shielded container containing the digital electronics.  This will be replaced by the 35m cable/node design.
+The low noise amplifier/balun integrates directly to the base of the feed dipole in the same configuration as per PAPER.  The 150m length of 75 $\Omega$ cable used in the initial design also runs down centrally and then over to the post-amplifier module, which is housed near the RFI-shielded container containing the digital electronics.  This will be replaced by the 35m cable/node design, to be discussed.
 
 
 \subsection{Array Configuration}
 \label{sec:arrayConfig}
 
-\noindent HERA's 320 core elements are arranged in a compact hexagonal grid, split into three displaced segments 
+As an experiment, HERA has optimized its configuration for the delay-spectrum approach to measure the EoR power spectrum.  This means that it should be on short redundant baselines.  Measurements conducted with PAPER showed that baselines of about 15m allow \cite{dillon_parsons2016}.
+
+HERA's 320 core elements are arranged in a compact hexagonal grid, split into three displaced segments 
 to cover the $uv$-plane with sub-element sampling density (see Fig.~\ref{fig:arrayConfig}). The dense core maximizes 
 sensitivity on the short baselines for which PAPER's proven foreground filtering strategy works best.
 The core is supplemented by 30 additional outrigger elements 
@@ -919,7 +927,7 @@ direction-dependent antenna responses \citep{dillon_parsons2016}.
 Even with the sub-aperture dithering and long baselines, all 350 HERA elements can be robustly calibrated by taking advantage of 
 its highly redundant configuration \citep{liu_et_al2010,zheng_et_al2014}. 
 Resulting calibration errors range from $\sim5\%$ (in the core) to $\sim10\%$ (for outriggers)
-of the residual fractional noise per antenna after averaging.  DILLON REF
+of the residual fractional noise per antenna after averaging.
 
 \begin{figure}[h]
 	\centering
