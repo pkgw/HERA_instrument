@@ -493,9 +493,9 @@ Due to the expansion of the universe over cosmological time, we can identify and
 therefore equates to a cosmic distance along the line-of-site of the telescope, with the frequency determining the cosmic age.  An observation of an area of sky over a given bandwidth is therefore providing an average
 over a cosmic volume.
 
-As the distance to the EOR is great (about 13 billion light-years) the signal is quite weak.  However, the signal also subtends the entire sky, so initial measurements of the EOR strive to measure a statistical power spectrum of the signal over the sky since the nature of the reionization process should have a specific spatial signature.  The goal is therefore to measure a range of aggregate spatial scales on the sky, rather than to image the signal directly.  Imaging does remain an ultimate goal to fully understand the process, however we will likely need a greater understanding of the signal characteristics and the systematics of our telescopes to achieve this more difficult goal.  MANY PAPERS, see Nithya and Jonnie recent
+As the distance to the EOR is great (about 13 billion light-years) the signal is quite weak.  However, the signal also subtends the entire sky, so initial measurements of the EOR strive to measure a statistical power spectrum of the signal over the sky since the nature of the reionization process should have a specific spatial signature.  The goal is therefore to measure a range of aggregate spatial scales on the sky, rather than to image the signal directly.  Imaging does remain an ultimate goal to fully understand the process, however we will likely need a greater understanding of the signal characteristics and the systematics of our telescopes to achieve this more difficult goal.  
 
-Obviously between our present observation point and the Epoch of Reionization lies the entire intervening universe, which has an intrinsically much brighter signal (up to 6 orders of magnitude or more).  Primarily, this power is due to diffuse Galactic synchrotron radiation, supernova remnants and extragalactic radio sources.  As a first step, areas of the sky where these signals are minimal (for example, outside the galactic plane and away from strong point sources) are targeted (REF FOR THIS).  More importantly and most fortuitously however is the fact that all of these foreground signals are smooth spectrum sources whereas the expected spectrum of the EOR is expected to be rough since it is made up of non-ionized regions which are randomly distributed over a wide range of redshifts.  This fact allows us to try and isolate foregrounds from the EOR, as will be discussed.
+Obviously between our present observation point and the Epoch of Reionization lies the entire intervening universe, which has an intrinsically much brighter signal (up to 6 orders of magnitude or more).  Primarily, this power is due to diffuse Galactic synchrotron radiation, supernova remnants and extragalactic radio sources.  As a first step, areas of the sky where these signals are minimal (for example, outside the galactic plane and away from strong point sources) are targeted \citep{bernardi_2013}.  More importantly and most fortuitously however is the fact that all of these foreground signals are smooth spectrum sources whereas the expected spectrum of the EOR is expected to be rough since it is made up of non-ionized regions which are randomly distributed over a wide range of redshifts.  This fact allows us to try and isolate foregrounds from the EOR, as will be discussed.
 
 The past three years have seen deep EoR observations with PAPER, the MWA, 
 the Giant Metrewave Radio Telescope (GMRT; \citealt{paciga_et_al2013}), and LOFAR.
@@ -511,9 +511,10 @@ calibration ({\em e.g.} \cite{zheng_et_al2014, jacobs_et_al2016, barry_et_al2016
 ({\em e.g.} \cite{moore_et_al2013,moore_et_al2016,thyagarajan_et_al2015a,pober_et_al2016}),
 and the interferometer design itself ({\em e.g.} \cite{parsons_et_al2012a,dillon_parsons2016}).
 
-As mentioned, a number of programs are underway to make the first detection of the EoR power spectrum using a number of approaches.  
-PAPER adopted a foreground mitigation strategy based largely
-on identifying and filtering out a region of phase space where the strong foregrounds are largely confined (Sec. \ref{sec:delayapproach}).  
+A promising approach to make the first detection of the EoR power spectrum 
+is a foreground mitigation strategy based largely
+on identifying and filtering out a region of phase space where the strong foregrounds are largely confined (Sec. \ref{sec:delayapproach}).  This is the approach
+pioneered by PAPER.
 By reducing the need
 for foreground modeling and subtraction, this approach allowed PAPER to switch to a grid-based antenna layout that
 enhanced sensitivity toward fewer Fourier modes and facilitated calibration
@@ -599,7 +600,7 @@ The techniques to measure the power spectrum may be broken down into two princip
 
 \subsection{Delay-Spectrum Approach}
 \label{sec:delayapproach}
-Given that the response of an interferometer natively measures the power in Fourier modes of the sky within its beam, we see that it is a natural instrument to use for this measurement of the EOR spatial power spectrum.  There are now numerous papers in the literature on the technique of measuring the power spectrum using an interferometer and the attendant issues [[[list of citations]]].  Below, a high-level overview based on  \cite{parsons_et_al2012b} will be presented. The so-called delay-spectrum approach leverages the interferometer measurement to optimize sensitivity to the desired modes while rejecting modes contaminated by the foreground power in the wedge.  Other than potentially handling overlapping bins in {\em uv} space, the delay-spectrum approach does not combine baselines before squaring and calculating the power spectrum, which contrasts to the map-making techniques briefly described in the following section.
+Given that the response of an interferometer natively measures the power in Fourier modes of the sky within its beam, we see that it is a natural instrument to use for this measurement of the EOR spatial power spectrum.  There are now numerous papers in the literature on the technique of measuring the power spectrum using an interferometer and the attendant issues as addressed in nearly all of the cited references.  Below, a high-level overview based on  \cite{parsons_et_al2012b} will be presented. The so-called delay-spectrum approach leverages the interferometer measurement to optimize sensitivity to the desired modes while rejecting modes contaminated by the foreground power in the wedge.  Other than potentially handling overlapping bins in {\em uv} space, the delay-spectrum approach does not combine baselines before squaring and calculating the power spectrum, which contrasts to the map-making techniques briefly described in the following section.
 
 We can essentially relate the sky power spectrum mode ${\hat P}(\kvec)$ to an interferometer baseline visibility ${\tilde V}(\bvec)$, which is the equivalent of the (complex) fringe pattern in a double slit experiment:
 \begin{equation}
@@ -724,8 +725,19 @@ To get 60 dB at 60 ns we may interpret those lines in one of two ways:  (1) set 
 3 round-trips, all diameters exceed 60 ns, so the attenuation should be less than 60 dB for that path-length.  The case for 2 round-trips provides a constraint on attenuation and diameter, which is discussed at length in \cite{elementmemo}.
 To estimate, it was assumed that the main reflection time constant was due to the standing waves between the feed and vertex of the parabola and that each reflection redirected about -15 dB of the total power in each reflection for additional standing wave power, which leads to a diameter of about 14m.
 
-As a key specification, this has been a focus of study with our prototypes and a series of papers based on analysis and measurements have been produced to provide much more rigor than this simple early analysis \citep{ewall-wice_et_al2016-EoXLimits,neben_et_al2016,thyagarajan_et_al2016,patra_et_al0216}.  The simple specification set above more appropriately becomes a series of curves for attenuation and delay at different wavenumbers for realistic foreground models.  Fig \ref{fig:nithadelay} taken from \cite{thyagarajan_et_al2016} shows the results at $k$ = 0.2 $h$/Mpc for the adopted design.  The analysis shows that for $k>0.15 h/$Mpc, HERA should be able to detect the EoR.  The analysis also shows which baselines produce the best information.
+As a key specification, this has been a focus of study with our prototypes and a series of papers based on analysis and measurements have been produced to provide much more rigor than this simple early analysis \citep{ewall-wice_et_al2016-EoXLimits,neben_et_al2016,thyagarajan_et_al2016,patra_et_al0216}.  The simple specification set above more appropriately becomes a series of curves for attenuation and delay at different wavenumbers for realistic foreground models.  Fig \ref{fig:delayspec}, adapted from \cite{thyagarajan_et_al2016}, shows the results at $k$ = 0.2 $h$/Mpc for the adopted design.  The analysis shows that for $k>0.15 h/$Mpc, HERA should be able to detect the EoR.  We also see that the initial simple ``60@60'' specification was an overly restrictive, however was a good initial goal.  The analysis also indicates which baselines produce the best information on different scales.
 
+\begin{figure}[h!]
+	\centering
+    \includegraphics[width=0.49\textwidth]{plots/delayspecplot.pdf}
+     \includegraphics[width=0.5\textwidth]{plots/ps1d_with_delay_kernel.pdf}
+	\vspace{-25pt}
+	\caption{Left:  Antenna delay attenuation specification with realistic foregrounds from \cite{thyagarajan_et_al2016} with measurements from Green Bank prototype \citep{patra_et_al2016}.  Also shown is the initial aggressive ``60@60'' specification.
+       agree with field measurements (grey; \citealt{patra_et_al2016}). 
+Right: Modeled foreground power spectra with (green) and without (blue) the antenna chromaticism over a 10\,MHz subband centered at $z=7.5$. The spectral smoothness of the dish enables foreground isolation below the level of a fiducial reionization signal (black) for most $k_{\parallel}$ modes, yielding percent-level constraints on model parameters.}
+	\label{fig:delayspec}
+	\vspace{-10pt}
+\end{figure}
 
 \subsection{Sensitivity Optimization}
 \label{sec:cost}
@@ -761,8 +773,7 @@ established foreground filtering techniques
 \citep{pober_et_al2014,greig_and_mesinger2015}.
 In this section, we summarize key features of the HERA design (see Table~\ref{tab:BasicParameters}) 
 and system architecture (see Fig.~\ref{fig:overallBlockDiagram}).
-This architecture
-directly inherits from the PAPER and MWA experiments; HERA begins by reusing the
+This architecture directly inherits from the PAPER and MWA experiments; HERA begins by reusing the
 analog, digital, and real-time processing systems deployed for PAPER-128.  As HERA develops, this
 architecture is incrementally upgraded to improve performance and add features while simultaneously
 addressing issues of modularity and scalability.  As with PAPER, HERA proceeds in stages of development,
@@ -824,8 +835,7 @@ As discussed in the previous section, the design of the design principles are th
 \end{itemize}
 The first item primarily means that chromatic effects corresponding to delays appropriate for the measurement described above must be below the expected signal level, which essentially determines the focal length.  The second item constrains the diameter and element count, as well as the focal length over diameter ratio ($f/D$), based on a cost function and maximizing sensitivity per element.  And the third item constrains the construction materials and methods and the operational model.  This led to a fixed transit element with a diameter of 14 meters to strike an optimal balance between sensitivity and systematics.
 
-The large collecting area of a
-HERA element yields nearly 5 times the sensitivity of an MWA tile and more
+The large collecting area of a HERA element yields nearly 5 times the sensitivity of an MWA tile and more
 than 20 times that of a PAPER element, but it does so without substantially
 degrading our ability to isolate and remove foreground emission on the basis of
 spectral smoothness (Fig. \ref{fig:reflectometry}, right panel).  As shown in
@@ -834,33 +844,17 @@ relates directly to the leakage of smooth-spectrum foregrounds into regions of F
 used to measure reionization, as discuss in Sec. \ref{sec:wedge}.
 To facilitate foreground filtering, HERA's antenna element is designed to suppress reflections at long time delays.
 
-%%%%%%%%%%%%%%%
-FIXUPHERE
-\begin{figure}[h!]
-	\centering
-    \includegraphics[width=0.49\textwidth]{plots/s11_compare_msip.pdf}
-	%\includegraphics[width=0.49\textwidth]{plots/compare_kernels_msip_subband.pdf}
-\includegraphics[width=0.5\textwidth]{plots/ps1d_with_delay_kernel.pdf}
-	\vspace{-25pt}
-	\caption{Left: Electromagnetic simulations (black; \citealt{ewallwice_et_al2016}) of the response of the HERA dish as a function of time delay, $\tau$,
-       agree with field measurements (grey; \citealt{patra_et_al2016}). 
-Right: Modeled foreground power spectra with (green) and without (blue) the antenna chromaticism over a 10\,MHz subband centered at $z=7.5$. The spectral smoothness of the dish enables foreground isolation below the level of a fiducial reionization signal (black) for most $k_{\parallel}$ modes, yielding percent-level constraints on model parameters.}
-	\label{fig:reflectometry}
-	\vspace{-10pt}
-\end{figure}
 
-As shown in Fig.~\ref{fig:reflectometry}, HERA's element meets this requirement in
+As shown in Fig.~\ref{fig:delayspec}, HERA's element meets this requirement in
 reflectometry tests, performing comparably to the PAPER element.  The
 relatively short (4.5\,m) focal height of the parabolic dish 
 minimizes the timescale of feed-dish reflections while maintaining the feed's
 illumination of the dish.  HERA's feed design is based on the PAPER sleeved
-dipole element, inverted above a backplane, with a skirting cylinder to
+dipole element incorporating a cylindrical backplane to
 improve symmetry in the polarized beam response patterns.  
-TOHERE
-%%%%%%%%%%%
 
-Figure
-\ref{fig:orbcommexptandbeammap} shows the beam pattern measured at 137 MHz with a beam mapping
+
+Figure \ref{fig:orbcommexptandbeammap} shows the beam pattern measured at 137 MHz with a beam mapping
 system using the ORBCOMM satellite network \Mycitep{neben_et_al2016}.  Results
 indicate an effective per-element collecting area of 93\,m$^2$, compared with the
 theoretical maximum Airy response of 155 m$^2$.  The measured primary beam is
@@ -940,7 +934,7 @@ The low noise amplifier/balun integrates directly to the base of the feed dipole
 \subsection{Array Configuration}
 \label{sec:arrayConfig}
 
-As an experiment, HERA has optimized its configuration for the delay-spectrum approach to measure the EoR power spectrum.  This means that it should be on short redundant baselines.  Measurements conducted with PAPER showed that baselines of about 15m allow \cite{dillon_parsons2016}.
+As an experiment, HERA has optimized its configuration for the delay-spectrum approach to measure the EoR power spectrum.  This means that it should be on short redundant baselines.  Measurements conducted with PAPER showed that baselines of about 15m allow foreground reduction with real systematics and provide a proof of concept for this scale as well.  The ability to fully calibrate the array is also a key consideration.  The details of the process and adopted configuration may be found in \cite{dillon_parsons2016}.  This section will briefly present the configuration.
 
 HERA's 320 core elements are arranged in a compact hexagonal grid, split into three displaced segments 
 to cover the $uv$-plane with sub-element sampling density (see Fig.~\ref{fig:arrayConfig}). The dense core maximizes 
