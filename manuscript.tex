@@ -537,7 +537,7 @@ increasing the extent and density of $uv$ sampling for high-fidelity imaging.
 
 \begin{figure}[t]
 	\centering
-	\includegraphics[width=.8\textwidth]{plots/current_limits.pdf}
+	\includegraphics[width=.8\textwidth]{plots/summary_results.png}
 	\caption{The current best published $2\sigma$ upper limits on the 21cm power spectrum, $\Delta^2(k)$, (solid symbols represent analyses led by HERA collaborators) compared to 21cmFAST-generated models at $k=0.2$\,$h$\,Mpc$^{-1}$.   Analysis is still underway on PAPER and MWA observations that approach their projected full sensitivities;  HERA can deliver sub-$\text{mK}^2$ sensitivities.}
 	\vspace{-10pt}
 	\label{fig:limits}
@@ -865,8 +865,7 @@ consistent with simulations at the 0.1\% to 0.5\% level, with a full width at
 half maximum of $\sim$$10^\circ$, and a first sidelobe at -20 dB \citep{ewallwice_et_al2016,neben_et_al2016,patra_et_al2016,thyagarajan_et_al2016}.
 Feed-to-feed coupling between adjacent antennas has been measured to be below -50 dB, indicating
 that mutual coupling will not be problematic.
-%%%%%%%%%%%%
-SHOW CALCULATED BEAM PATTERNS
+
 \begin{figure}[h!]
 	\begin{tabular}{ll}
 	\begin{minipage}{4.2in}
@@ -900,7 +899,27 @@ The shape between the spars is actually a parabola rather than a tparaboloid, so
 
 
 \subsubsection{Feed}
-The feed is to be deployed along two separate phases.  Initially, the feed reuses the original PAPER sleeved dipole, however in a new optimized cylindrical feed-cage configuration.  The optimization was based on main beam efficiency, cross-coupling (integrated feed pattern on the dish), standing waves (blockage size), and frequency response.  The design parameters were size of backplane, height of mast, and height of cylinder.  A range of conical structures were looked at but were ruled out since it was found they introduce additional frequency structure with no real improvement in performance.  The phase 1 design documented in a memo \cite{feedmemo} is currently under test on the 19 elements in South Africa. Additional studies are on-going at NRAO and Cambridge University.
+The feed is to be deployed along two separate phases.  Initially, the feed reuses the original PAPER sleeved dipole, however in a new optimized cylindrical feed-cage configuration.  The optimization was based on main beam efficiency, cross-coupling (integrated feed pattern on the dish), standing waves (blockage size), and frequency response.  The design parameters were size of backplane, height of mast, and height of cylinder.  A range of conical structures were looked at but were ruled out since it was found they introduce additional frequency structure with no real improvement in performance.  The phase 1 design process and outcome is documented in  \cite{feedmemo} and is currently under test on the 19 elements in South Africa. Additional studies are on-going at NRAO and Cambridge University.
+
+The first phase design uses a 172cm diameter backplane, with a 36cm cylinder height.  The dipole is held at 36cm from the backplane and the back of the feed is rigged at 4.9m above the vertex of the dish.  The 10 dB input match for the feed itself spans from about 105 - 200 MHz.  The resultant calculated antenna performance parameters are shown in Fig. \ref{fig:ant_params} and beam-patterns for 110 MHz, 155 MHz and 190 MHz are shown in Fig. \ref{fig:beampatterns}.
+
+\begin{figure}[h!]
+\centerline{
+\includegraphics[height=0.6\textwidth]{plots/ant_params.pdf}
+}
+\caption{\small Antenna parameters}
+\label{fig:ant_params}
+\end{figure}
+
+\begin{figure}[h!]
+\centerline{
+\includegraphics[height=0.3\textwidth]{plots/pat_110.pdf}
+\includegraphics[height=0.3\textwidth]{plots/pat_155.pdf}
+\includegraphics[height=0.3\textwidth]{plots/pat_190.pdf}
+}
+\caption{\small Antenna patterns at 110 MHz, 155 MHz and 190 MHz.}
+\label{fig:ant_params}
+\end{figure}
 
 %Additionally, to lessen cross-coupling, a screen fence around the perimeter is also under investigation.  
 %Rather than being vertical, it will have a slight angle and potentially some edge treatment to try and lessen diffraction.  
