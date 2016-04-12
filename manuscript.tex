@@ -3,6 +3,7 @@
 \let\captionbox=\undefined
 \usepackage[top=1in, bottom=1in, left=1in, right=1in]{geometry}
 \usepackage{amsmath}
+\usepackage{amssymb}
 \usepackage{graphicx}
 \usepackage{mdwlist}
 \usepackage{natbib}
@@ -50,6 +51,7 @@
 \newcommand{\inch}{$^{\prime\prime}$}
 \newcommand{\foot}{$^{\prime}$}
 \renewcommand{\deg}{^\circ}
+\newcommand{\integral}{\int\limits}
 
 \newcommand{\simgt}{\stackrel{>}{_{\sim}}}
 \newcommand{\compress}{\vspace{-0.25in}}
@@ -832,8 +834,8 @@ relates directly to the leakage of smooth-spectrum foregrounds into regions of F
 used to measure reionization, as discuss in Sec. \ref{sec:wedge}.
 To facilitate foreground filtering, HERA's antenna element is designed to suppress reflections at long time delays.
 
-
-%%%%%%%%%%FIXUP HERE
+%%%%%%%%%%%%%%%
+FIXUPHERE
 \begin{figure}[h!]
 	\centering
     \includegraphics[width=0.49\textwidth]{plots/s11_compare_msip.pdf}
@@ -854,6 +856,7 @@ minimizes the timescale of feed-dish reflections while maintaining the feed's
 illumination of the dish.  HERA's feed design is based on the PAPER sleeved
 dipole element, inverted above a backplane, with a skirting cylinder to
 improve symmetry in the polarized beam response patterns.  
+TOHERE
 %%%%%%%%%%%
 
 Figure
@@ -896,10 +899,14 @@ The shape between the spars is actually a parabola rather than a tparaboloid, so
 \label{fig:elementplan}}
 \end{figure}
 
-
-
 \subsubsection{Feed}
-The feed is to be deployed along two separate phases.  Initially, the feed reuses the original PAPER sleeved dipole, however in a new optimized cylindrical feed-cage configuration.  The optimization was based on main beam efficiency, cross-coupling (integrated feed pattern on the dish), standing waves (blockage size), and frequency response.  The design parameters were size of backplane, height of mast, and height of cylinder.  A range of conical structures were looked at but were ruled out since it was found they introduce additional frequency structure with no real improvement in performance.  The phase 1 design process and outcome is documented in  \cite{feedmemo} and is currently under test on the 19 elements in South Africa. Additional studies are on-going at NRAO and Cambridge University.
+The feed is to be deployed along two separate phases.  Initially, the feed reuses the original PAPER sleeved dipole, however in a new optimized cylindrical feed-cage configuration.  The optimization was based on main beam efficiency, cross-coupling (integrated feed pattern on the dish), standing waves (blockage size), frequency response and polarization match.  The design parameters were size of backplane, height of mast, and height of cylinder.  A range of conical structures were looked at but were ruled out since it was found they introduce additional frequency structure with no real improvement in performance.  The polarization figure-of-merit shown in Fig. \ref{fig:ant_params} is a simplified variant of the fractional power leakage as defined in \cite{Moore_et_al2015}:
+\begin{equation}
+\xi = \frac{\integral_{-\pi}^{\pi}\left[\sqrt{G(\theta,\phi=0)} - \sqrt{G(\theta,\phi=90)}\right]^2\sin\theta d\theta}
+               {\integral_{-\pi}^{\pi}\left[\sqrt{G(\theta,\phi=0)} + \sqrt{G(\theta,\phi=90)}\right]^2\sin\theta d\theta}
+\end{equation}
+where $G$ is the beam pattern.
+The phase 1 design process and outcome is documented in  \cite{feedmemo} and is currently under test on the 19 elements in South Africa. Additional studies are on-going at NRAO and Cambridge University.
 
 The first phase design uses a 172cm diameter backplane, with a 36cm cylinder height.  The dipole is held at 36cm from the backplane and the back of the feed is rigged at 4.9m above the vertex of the dish.  The 10 dB input match for the feed itself spans from about 105 - 200 MHz.  The resultant calculated antenna performance parameters are shown in Fig. \ref{fig:ant_params} and beam-patterns for 110 MHz, 155 MHz and 190 MHz are shown in Fig. \ref{fig:beampatterns}.
 
@@ -918,7 +925,7 @@ The first phase design uses a 172cm diameter backplane, with a 36cm cylinder hei
 \includegraphics[height=0.3\textwidth]{plots/pat_190.pdf}
 }
 \caption{\small Antenna patterns at 110 MHz, 155 MHz and 190 MHz.}
-\label{fig:ant_params}
+\label{fig:beampatterns}
 \end{figure}
 
 %Additionally, to lessen cross-coupling, a screen fence around the perimeter is also under investigation.  
