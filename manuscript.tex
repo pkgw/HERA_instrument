@@ -164,7 +164,7 @@ This paper has the following structure.  Section \ref{sec:science} will give a h
 \section{Scientific Background}
 \label{sec:science}
 
-\noindent The {\it Cosmic Dawn} of our universe is one of the last unexplored
+The {\it Cosmic Dawn} of our universe is one of the last unexplored
 frontiers in cosmic history.  This history is summarized in Fig. \ref{fig:cosmos}, starting with the Big Bang on the left. The hot, young universe expands and cools slowly in the background while gravitational instability causes primordial density fluctuations to grow.
 The Cosmic Dawn represents a specific epoch in this growth, where the first stars and galaxies formed and illuminated the Universe en route to forming the astronomical structures we see today. Ultimately, this early population of gravitationally condensed material produced sufficiently energetic flux to reionize the intergalactic medium (IGM) from its previous neutral state in a period called the Epoch of Reionization.  This period is shown in Fig \ref{fig:cosmos} as the rapid transition from the big bubble structures to structures that begin to resemble the denizens of our current universe. The structure of the 
 intergalactic medium (IGM) thus contains a panoply of information about the underlying astrophysical and cosmological phenomena governing cosmic evolution.
@@ -684,7 +684,7 @@ The primary new feature of HERA over previous generation experiments (in this co
 be discussed below, however we see that to address the central challenges of the delay-spectrum approach in the context of the wedge, to open the widest possible window for EoR measurements, 
 HERA must use close-packed antennas that
 minimize signal reflections over long delays and deliver significant forward gain relative to their horizon response.
-Tests with prototype HERA antennas (Figs. \ref{fig:orbcommexptandbeammap} and \ref{fig:reflectometry}, discussed in \S\ref{sec:antenna})
+Tests with prototype HERA antennas (Figs.  \ref{fig:delayspec} and \ref{fig:orbcommexptandbeammap}, discussed in \S\ref{sec:antenna})
 indicate that a moderately large parabolic dish with a short focal height can meet these requirements
 \citep{ewall-wice_et_al2016-EoXLimits,neben_et_al2016,thyagarajan_et_al2016}.  Note that to pursue map-making and hybrid techniques, additional antenna outriggers are valuable additions, so the design
 should be able to accommodate $\approx$1km baselines.  Note that in referring to the EOR sensitivity of the array, often the number of antennas just in the core are
@@ -788,6 +788,8 @@ For details of the first generation HERA system (the existing and commissioned P
 
 \begin{table}[t]
 \small
+\Caption{0.0in}{0.99}{-0.1in}{HERA-350 design parameters and their observational consequences. Angular scales computed at 150\,MHz.}
+\label{tab:BasicParameters}
 \begin{center}
 \begin{tabular}{l | l}
 \multicolumn{1}{c}{\emph{\textbf{Instrument Design Specification}}} & \multicolumn{1}{c}{\emph{\textbf{Observational Performance}}}\\
@@ -802,9 +804,6 @@ For details of the first generation HERA system (the existing and commissioned P
 $\mathbf{T_\textbf{sys}}$: $100 + 120 (\nu/\rm{150~MHz})^{-2.55}$ K & \textbf{Sensitivity after 100\,hrs:} 50 $\mu \rm{Jy}~\rm{beam}^{-1}$  \\
 \hline
 \end{tabular}
-\Caption{-0.1in}{0.99}{-0.4in}{HERA-350 design parameters and their observational consequences. Angular scales computed at 150\,MHz.}
-\label{tab:BasicParameters}
-\vspace{.2in}
 \end{center}
 \end{table}
 
@@ -851,7 +850,7 @@ relatively short (4.5\,m) focal height of the parabolic dish
 minimizes the timescale of feed-dish reflections while maintaining the feed's
 illumination of the dish.  HERA's feed design is based on the PAPER sleeved
 dipole element incorporating a cylindrical backplane to
-improve symmetry in the polarized beam response patterns.  
+improve symmetry in the polarized beam response patterns (Sec. \ref{sec:feed}, which also presents HFSS calculations of the full feed/element system).
 
 
 Figure \ref{fig:orbcommexptandbeammap} shows the beam pattern measured at 137 MHz with a beam mapping
@@ -882,7 +881,7 @@ To minimize cost and aid in construction in a remote location, the construction 
 
 The center of the antenna is a cast-in-place concrete donut-shaped hub with 12 sleeves for PVC spars which provide the support for the surface and 12 horizontal spars which allow for additional support.  The twelve surface spars are made of 60mm PVC pipe, which are stressed along three support points to approximate a parabolic shape.  Note that an ideal moment-loaded beam actually attains a true parabola.  The three support points (one at the hub, one about 3 meters out radially and one at the rim-end) are at the correct height and angle for the underlying parabola and the PVC essentially acts as a spatial filter.
 
-The shape between the spars is actually a parabola rather than a tparaboloid, so the dish surface may more properly be called a ``faceted parabola''.  If only twelve spars were used for the entire surface, simple Ruze losses would be quite high (about 10\% at 150 MHz).  Therefore, at about 2.4 meters another horizontal member is placed, which launches another parabolic spar.  The simple Ruze loss is then less than 1\%, which is much more acceptable.  Fig \ref{fig:elementplan} shows this surface scheme and the panelization (left) and the offsets (in mm) of that scheme from an ideal parabola.  The panel that is ``left out'' is the location of a door to allow access into the hub (via a small removable door and bridge).  The additional intermediate spars also make the panel sizes much more manageable and better secured.  The panel arrangement is also set by a standard width of mesh roll of 1.22m.
+The shape between the spars is actually a parabola rather than a paraboloid, so the dish surface may more properly be called a ``faceted parabola''.  If only twelve spars were used for the entire surface, simple Ruze losses would be quite high (about 10\% at 150 MHz).  Therefore, at about 2.4 meters another horizontal member is placed, which launches another parabolic spar.  The simple Ruze loss is then less than 1\%, which is much more acceptable.  Fig \ref{fig:elementplan} shows this surface scheme and the panelization (left) and the offsets (in mm) of that scheme from an ideal parabola.  The panel that is ``left out'' is the location of a door to allow access into the hub (via a small removable door and bridge).  The additional intermediate spars also make the panel sizes much more manageable and better secured.  The panel arrangement is also set by a standard width of mesh roll of 1.22m.
 
 \begin{figure}[h!]
 \centerline{
@@ -894,6 +893,7 @@ The shape between the spars is actually a parabola rather than a tparaboloid, so
 \end{figure}
 
 \subsubsection{Feed}
+\label{sec:feed}
 The feed is to be deployed along two separate phases.  Initially, the feed reuses the original PAPER sleeved dipole, however in a new optimized cylindrical feed-cage configuration.  The optimization was based on main beam efficiency, cross-coupling (integrated feed pattern on the dish), standing waves (blockage size), frequency response and polarization match.  The design parameters were size of backplane, height of mast, and height of cylinder.  A range of conical structures were looked at but were ruled out since it was found they introduce additional frequency structure with no real improvement in performance.  The polarization figure-of-merit shown in Fig. \ref{fig:ant_params} is a simplified variant of the fractional power leakage as defined in \cite{Moore_et_al2015}:
 \begin{equation}
 \xi = \frac{\integral_{-\pi}^{\pi}\left[\sqrt{G(\theta,\phi=0)} - \sqrt{G(\theta,\phi=90)}\right]^2\sin\theta d\theta}
@@ -962,22 +962,19 @@ using the \citet{liu_et_al2010} technique, yielding calibration errors that are 
 \end{figure}
 
 \subsection{Analog Signal Path}
-
-\noindent HERA's analog signal path, which operates from 50--250 MHz, emphasizes spectral smoothness and robustness.
-With receiver temperatures of 50--100 K readily achievable with ambient temperature electronics, 
-sky noise dominates the system temperature of telescopes operating below 300 MHz.  As a result,
-HERA's low-noise amplifiers (LNAs) are inexpensive, passively cooled components integrated into the
+HERA's analog signal path from 70--250 MHz with the full performance EoR band of 100-200 MHz, as shown in Fig. \ref{fig:cosmos} and discussed in Sec. \ref{sec:freqs}, emphasizes spectral smoothness and robustness.  Although the low-frequency sky has an intrinsically bright signal level, in the desired ``cold patches'' the sky temperature is only about 30 K at the upper frequency end, so relatively low receiver temperatures are desired.  Note that at the low end of the band (70 MHz), the sky temperature is about 1000 K and across the EoR band it ranges from about 100-400 K.
+With receiver temperatures of 30--100 K readily achievable with ambient temperature electronics however
+HERA's low-noise amplifiers (LNAs) may be inexpensive, passively cooled components integrated into the
 antenna feed.  
-HERA's signal path emphasizes careful impedance matching between each component to avoid signal reflections that can induce foreground leakage.
+
+As part of the delay specification,
+HERA's signal path emphasizes careful impedance matching between each component to avoid signal reflections that can worsen foreground leakage.
 In particular, impedance matching between free space (377$\Omega$) and coaxial cable (50$\Omega$) is undertaken
 in the feed/balun at the front end of the signal chain, where the time constants of inevitable reflections are
 minimized.  For a similar reason, HERA houses analog-to-digital converters (ADCs) in nodes near the antenna elements
-to limit the total analog path length.
+to limit the total analog path length.  This length is set to be 35m, such that the round-trip delay corresponds to about 0.15 $h$/Mpc, which remains in the wavenumbers  contaminated by the wedge.  The project is also examining the impact of having a range of analog path lengths of $35\pm10$ m.
 
-While building to 128 elements during the first two project years, HERA reuses PAPER's tested and characterized 
-LNAs, cables, and post-amplifier modules, operating
-from 100--200 MHz.  In the third project year, these components are replaced by the 50--250 MHz, length-constrained signal
-path described above, supporting HERA's pre-reionization science and extending the lever-arm for modeling and suppressing smooth-spectrum foreground emission.
+
 
 \subsection{Digital Signal Path}
 \label{sec:digital}
