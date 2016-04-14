@@ -68,7 +68,7 @@ def plotPwr(p=2,title='-',ylabel='-'):
     plt.title(title)
     plt.xlabel('k [h/Mpc]',fontsize=14)
     plt.ylabel(ylabel,fontsize=14)
-    plt.axis(xmin=0.12,xmax=1.5)
+    plt.axis(xmin=0.09,xmax=1.5)
     #plt.legend()
 
 plotPwr(0,'Sensitivity Ratio',r'$\Delta_{19}^2/\Delta_x^2$')
