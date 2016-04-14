@@ -628,8 +628,9 @@ Another approach to improving sensitivity is to make the collecting area per ele
 
 \begin{figure}[h!]
 \centerline{
-\includegraphics[height=6.2cm]{plots/boost.pdf}
+\includegraphics[height=6cm]{plots/boost.pdf}
 \includegraphics[height=6cm]{plots/sensratio.pdf}
+\includegraphics[height=5cm]{plots/elementSizes.pdf}
 }
 \caption{Left: Representative boost factors ($\mathcal{N}$ in Eq. \ref{eq:sensitivity}) normalized to a 19-element hexagonal configuration spaced at 14.6m.  For a given element count, one can get about an order of
 magnitude improvement in delay-spectrum sensitivity.  Alternatively, for the same sensitivity one can build roughly 1/3 the antennas.  Right:  Power spectrum sensitivities for various arrays normalized to HERA-19.  Here the element size is included, which is shown as an appropriately sized circle.}
@@ -648,7 +649,7 @@ Also in Fig. \ref{fig:kperf}, the lime-green shaded region indicates a plausible
 
 \begin{figure}[h!]
 \centerline{
-\includegraphics[width=.4\textwidth]{plots/kperf.png} 
+\includegraphics[width=.4\textwidth]{plots/kperf.pdf} 
 }
 \caption{\small $\kvec, \kpar, \kperp$ resolution wavenumbers with various bandwidths and baselines as a function of redshift.  See text for discussion.  The full redshift range is the HERA extended goal.  The initial HERA delay-spectrum power spectrum goal is the light square region in the upper right.}
 \label{fig:kperf}
@@ -746,8 +747,7 @@ As a key specification, this has been a focus of study with our prototypes and a
     \includegraphics[width=0.49\textwidth]{plots/delayspecplot.pdf}
      \includegraphics[width=0.5\textwidth]{plots/ps1d_with_delay_kernel.pdf}
 	\vspace{-25pt}
-	\caption{Left:  Antenna delay attenuation specification with realistic foregrounds from \cite{thyagarajan_et_al2016} with measurements from Green Bank prototype \citep{patra_et_al2016}.  Also shown is the initial aggressive ``60@60'' specification.
-       agree with field measurements (grey; \citealt{patra_et_al2016}). 
+	\caption{Left:  Antenna delay attenuation specification with realistic foregrounds from \cite{thyagarajan_et_al2016} along with the initial conservative ``60@60'' specification.  HFSS calculations (black line) show HERA meeting the specification.  Measurements on the Green Bank prototype are shown in  \citep{patra_et_al2016}.
 Right: Modeled foreground power spectra with (green) and without (blue) the antenna chromaticism over a 10\,MHz subband centered at $z=7.5$. The spectral smoothness of the dish enables foreground isolation below the level of a fiducial reionization signal (black) for most $k_{\parallel}$ modes, yielding percent-level constraints on model parameters.}
 	\label{fig:delayspec}
 	\vspace{-10pt}

@@ -9,46 +9,56 @@ n = nedclass.ned(H0=100.0)
 
 def get_dz(z,B,rest=1420.):
     return B*(1+z)**2/rest
+def just_z_stuff(z,restFreq,b):  #just pass one z
+    #X = []  # X Mpc/rad
+    #Xb = [] # scaled version
+    #Xinstr = []  # observed extent in Mpc
+    #Y = []  # Y Mpc/GHz
+    #DA = [] # angular scale term
+    #E = []  # Hubble parameter evolution
+    DAi = n.calcUniverse(z)
+    #DA.append(DAi)
+    Xi = DAi*(1.+z)
+    obsFreq = restFreq/(1.+z)
+    obsWavelength = 0.3/obsFreq
+    Xbi = Xi/((180.0/math.pi)*1.0)  #convert to degrees
+    #X.append(Xi)
+    #Xb.append(Xbi)
+    Xbi = Xi*coeff*obsWavelength/b
+    #Xinstr.append(Xbi)
+    #E.append(n.Ez)
+    Yi = ( n.Ynu )/restFreq
+    #Y.append(Yi)
+    #Y = np.array(Y)
+    #Xinstr = np.array(Xinstr)
+    return Xbi, Yi
 
-def mkPlot(restFreq,BW,b,coeff):
-    X = []  # X Mpc/rad
-    Xb = [] # scaled version
-    Xinstr = []  # observed extent in Mpc
-    Y = []  # Y Mpc/GHz
-    DA = [] # angular scale term
-    E = []  # Hubble parameter evolution
-    #Below are just used to get a power-law fit and then plot it post facto
-    apX = []    # approximated X (post-fit numbers put back in)
-    apY = []    # approximated Y ( " )
-    z2fit = []  # range of z's to fit for approximation
-    X2fit = []  #     "    X's   "
-    Y2fit = []  #     "    Y's   "
-
+def mkPlot(restFreq,BW,b,coeff,z=None):
     # Loop over red-shift
-    z = np.arange(0.1,25.0,.1)
-    for zi in z:
-        DAi = n.calcUniverse(zi)
-        DA.append(DAi)
-        Xi = DAi*(1.+zi)
-        obsFreq = restFreq/(1.+zi)
-        obsWavelength = 0.3/obsFreq
-        Xbi = Xi/((180.0/math.pi)*1.0)  #convert to degrees
-        X.append(Xi)
-        Xb.append(Xbi)
-        Xbi = Xi*coeff*obsWavelength/b
-        Xinstr.append(Xbi)
-        apX.append(4670.*pow(1.+zi,0.312))
-        E.append(n.Ez)
-        Yi = ( n.Ynu )/restFreq
+    if z is None:
+        calcNewz=False
+	z = np.arange(0.1,25.0,.1)
+    else:
+        calcNewz=True
+    Xb= []
+    Y = []
+    newz = []
+    for i,zi in enumerate(z):
+        Xinstr,Yi = just_z_stuff(zi,restFreq,b)
+        Xb.append(Xinstr)
         Y.append(Yi)
-        apY.append(64.*pow(1.+zi,0.56))
-        if zi > 6.0 and zi < 9.0:
-            z2fit.append(zi)
-            X2fit.append(Xi)
-            Y2fit.append(Yi)
+        if calcNewz:
+            newz.append(zi)
+            newz.append(zi)
+            dz = get_dz(zi,BW,restFreq)
+            Xinstr,Yi = just_z_stuff(zi+dz,restFreq,b)
+            Xb.append(Xinstr)
+            Y.append(Yi)
+    if calcNewz:
+        z = newz
     Y = np.array(Y)
-    Xinstr = np.array(Xinstr)
-    kperp = 2.0*np.pi/Xinstr
+    Xb = np.array(Xb)
+    kperp = 2.0*np.pi/Xb
     kpar = 2.0*np.pi/(BW*Y)
     ktot = np.sqrt(2.0*kperp**2 + kpar**2)
     return z,kperp,kpar,ktot
@@ -98,39 +108,46 @@ for i,D in enumerate(D_list):
     plt.text(txtloc[i][0],txtloc[i][1],lbl,rotation=txtloc[i][2],color='k',fontsize=16)
 #plt.fill_between(z,p[0],p[1],color='grey',alpha='0.65')
 
-
 #third part  (k_par)
 D = 14.6
 BW_list = [0.1,0.01,.001]
 lsc = ['b--','b-','b-']
 txtloc = [[6.0,4.6e-3,-9],[6,.07,-11],[15.3,.475,-5]]
 BW_show = ['100MHz','10MHz', '1MHz']
+zstart = 5.0
+zstop = 25.0
 for i,BW in enumerate(BW_list):
+    z = [zstart]
+    while z[-1]<zstop:
+        newz = z[-1] + get_dz(z[-1],BW,restFreq)
+        z.append(newz)
     show_label = BW_show[i]
-    z,kperp,kpar,ktot = mkPlot(restFreq,BW,D,coeff)
+    z,kperp,kpar,ktot = mkPlot(restFreq,BW,D,coeff,z)
     lbl = r'$k_{||}$ @%s' % (show_label)
     plt.semilogy(z,kpar,lsc[i],label=lbl,linewidth=3)
     plt.text(txtloc[i][0],txtloc[i][1],lbl,rotation=txtloc[i][2],color='b',fontsize=16)
 #plt.fill_between(z,p[0],p[1],color='b',alpha='0.25')
 
 #fourth part (redshift bins)
-z_list = [6.,12.,18.]
-for z in z_list:
-    for BW in BW_list:
-        zback,kperp,kpar,ktot = mkPlot(restFreq,BW,D,coeff)
-        y = 0.9*kpar[int(np.where(zback>0.99*z)[0][0])]
-        dz = get_dz(z,BW,restFreq)
-        if BW<0.02:
-	    plotit=True
-	elif z>11. and z<13.:
-	    y = 0.9*y
-	    plotit = True
-	else:
-	    plotit = False
-	if plotit:
-            plt.plot([z-dz/2.,z+dz/2.],[y,y],'b',lw=2)
-            plt.plot([z-dz/2.,z-dz/2.],[0.9*y,1.1*y],'b',lw=2)
-            plt.plot([z+dz/2.,z+dz/2.],[0.9*y,1.1*y],'b',lw=2)
+draw_z_bins = False
+if draw_z_bins:
+    z_list = [6.,12.,18.]
+    for z in z_list:
+        for BW in BW_list:
+            zback,kperp,kpar,ktot = mkPlot(restFreq,BW,D,coeff)
+            y = 0.9*kpar[int(np.where(zback>0.99*z)[0][0])]
+            dz = get_dz(z,BW,restFreq)
+            if BW<0.02:
+   	        plotit=True
+   	    elif z>11. and z<13.:
+   	        y = 0.9*y
+   	        plotit = True
+   	    else:
+   	        plotit = False
+   	    if plotit:
+                plt.plot([z-dz/2.,z+dz/2.],[y,y],'b',lw=2)
+                plt.plot([z-dz/2.,z-dz/2.],[0.9*y,1.1*y],'b',lw=2)
+                plt.plot([z+dz/2.,z+dz/2.],[0.9*y,1.1*y],'b',lw=2)
 
 
 plt.xlabel('Redshift [z]',fontsize=16)
