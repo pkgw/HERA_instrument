@@ -76,6 +76,8 @@ plt.semilogy(zhera,khera2,'w')
 plt.fill_between(zhera,khera1,khera2,color='w',alpha='0.65')
 
 #first part (k_tot)
+zstart = 5.0
+zstop = 25.0
 BW_list = [0.02,.002]
 D_list = [14.6,25.3]
 #txtloc = [[9,.02,-4],[7,.32,-5]]  #wide
@@ -83,15 +85,20 @@ txtloc = [[9.3,.02,-7],[6.0,.34,-10]]  #narrow
 lsc = ['g-','g-']
 tclr = ['g','g']
 for i,BW in enumerate(BW_list):
-    z,kperp,kper,ktot = mkPlot(restFreq,BW,D_list[i],coeff)
+    z = [zstart]
+    while z[-1]<zstop:
+        newz = z[-1] + get_dz(z[-1],BW,restFreq)
+        z.append(newz)
+    z,kperp,kper,ktot = mkPlot(restFreq,BW,D_list[i],coeff,z)
     if i==0:
+        zsave = z
         savek = ktot
     show_label='%.0f MHz, %.1fm' % (1000.*BW,D_list[i])
     lbl = r'${\bf |k|}$ @%s' % (show_label)
     plt.semilogy(z,ktot,lsc[i],label=show_label,lw=2) 
     plt.text(txtloc[i][0],txtloc[i][1],lbl,rotation=txtloc[i][2],color=tclr[i],fontsize=16)
-ktottop = 10.*np.ones(len(z))
-plt.fill_between(z,savek,ktottop,color='g',alpha='0.25')
+ktottop = 10.*np.ones(len(zsave))
+plt.fill_between(zsave,savek,ktottop,color='g',alpha='0.25')
 plt.fill_between(zhera,khera1,khera2,color='w',alpha='0.65')  ###AND REDO LINE 63
 
 #second part  (k_perp)
@@ -112,7 +119,7 @@ for i,D in enumerate(D_list):
 D = 14.6
 BW_list = [0.1,0.01,.001]
 lsc = ['b--','b-','b-']
-txtloc = [[6.0,4.6e-3,-9],[6,.07,-11],[15.3,.475,-5]]
+txtloc = [[7.6,3.5e-3,0],[6,.07,-11],[15.3,.475,-5]]
 BW_show = ['100MHz','10MHz', '1MHz']
 zstart = 5.0
 zstop = 25.0
