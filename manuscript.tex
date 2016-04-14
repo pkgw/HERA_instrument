@@ -84,8 +84,7 @@
 The Hydrogen Epoch of Reionization Array (HERA http://reionization.org) is a staged experiment that uses the unique properties of the 21-cm line from neutral hydrogen to probe the Epoch of Reionization (EOR). During this epoch, roughly 0.3 - 1 billion years after the Big Bang, the first galaxies and black holes heated and reionized the early Universe. Direct observation of the large scale structure of reionization and its evolution with time will have a profound impact on our understanding of the birth of the first galaxies and black holes, their influence on the intergalactic medium (IGM), and cosmology.  This paper will provide an overview of the project and describe the design of the system.
 
 \section{Introduction}
-
-\noindent The Hydrogen Epoch of Reionization Array (HERA) is a staged experiment to use the redshifted 21\,cm line
+The Hydrogen Epoch of Reionization Array (HERA) is a staged experiment to use the redshifted 21\,cm line
 of neutral hydrogen to characterize our Cosmic Dawn, from
 the formation of the first stars and black holes $\sim0.1~$Gyr after the Big
 Bang ($z\sim30$) through the full reionization of the intergalactic medium
@@ -93,38 +92,30 @@ Bang ($z\sim30$) through the full reionization of the intergalactic medium
 structure of the primordial IGM as it is heated and reionized, HERA complements
 other probes, adding transformative capabilities for
 understanding the astrophysics and fundamental cosmology of our early universe.
-Taking advantage of our new understanding of bright foreground systematics, HERA's
+Taking advantage of a new understanding of bright foreground systematics, HERA's
 purpose-built radio
 interferometer is optimized to deliver high signal-to-noise measurements of
-redshifted 21\,cm emission.
-With the first generation 21\,cm telescopes approaching the limits of their sensitivity, HERA continues the experiment by bringing significantly more sensitivity to bear
+redshifted 21\,cm emission to detect and characterize the Epoch of Reionization (EOR).
+
+Because of these key science questions that may be probed by highly redshifted hydrogen, there has been a resurgence in low frequency arrays  -- most with a primary
+objective of measuring the EOR.  These include the Precision Array Probing the Epoch of Reionization (PAPER; \citealt{parsons_et_al2010}), the Murchison Widefield Array (MWA; \citealt{tingay_et_al2013}), the LOw Frequency ARray (LOFAR; \citealt{2013A&A...556A...2V}), and the Long Wavelength Array (LWA; \citealt{2009IEEEP..97.1421E}), as well as systems for existing dish arrays like the Very Large Array (VLA; \citealt{2013AAS...22132804K}) and the Giant Metrewave Radio Telescope (GMRT; \citealt{paciga_et_al2011}).
+With the first generation 21\,cm telescopes approaching the limits of their sensitivity however, HERA continues the experiment by bringing significantly more sensitivity to bear
 while continuing to optimize its design along the delay-spectrum approach to detect the power spectrum of the EoR (discussed in Sec. \ref{sec:delayapproach}).
-Key science results include
-\begin{itemize}[noitemsep,nolistsep]
-\item measuring the 21\,cm power spectrum with high significance (\S\ref{sec:EoRPowerSpectra}),
-\item characterizing parametrized models of reionization and the first ionizing sources (\S\ref{sec:EoRPowerSpectra}),
-\item improving cosmic microwave background (CMB) constraints on primordial density fluctuations and neutrino masses by removing the optical depth degeneracy (\S\ref{sec:tau}), and
-\item directly imaging large scale reionization structure (\S\ref{sec:imaging}).
-\end{itemize}
+At the same time, HERA continues the development of new techniques to extend and improve its capabilities.
+Examples include improving foreground subtraction to expand the information content 
+in power spectral and imaging measurements and
+extending HERA's performance at lower frequencies to probe IGM heating in the pre-reionization epoch (\S\ref{sec:EoX}).
+
 
 \begin{figure}[h!]
 	\centering
-	\includegraphics[height=4.0in]{plots/hera_render_logo.pdf}
-	\includegraphics[height=4.0in]{plots/hera19H.png}
+	\includegraphics[height=2.0in]{plots/hera_render_logo.pdf}
+	\includegraphics[height=2.0in]{plots/hera19H.png}
 	\caption{Rendering of the 320-element core (left) of the full HERA-350 array and picture of 19 HERA 14-m, zenith-pointing dishes (with PAPER elements in the background) currently deployed in South Africa (right).} 
 	\label{fig:HERApictures}
 \end{figure}
 
-At the same time, HERA continues the development of new techniques to extend and improve its capabilities.
-Examples include improving foreground subtraction to expand the information content 
-in power spectral and imaging measurements and, with support from the Gordon Moore Foundation [[FOOTNOTE?]],
-extending HERA's performance at lower frequencies to probe IGM heating in the pre-reionization epoch (\S\ref{sec:EoX}).
-Beyond these directly supported applications, HERA's public data products and instrumentation platform enable other high-impact science, including 
-\begin{itemize}[noitemsep,nolistsep]
-\item 21\,cm cross-correlation (e.g. with JWST, WFIRST, CO, CII, and Ly$-\alpha$; \S\ref{sec:crossCorr}),
-\item searching for auroral radio bursts from exoplanetary magnetospheres (\S\ref{sec:exoplanets}), and
-\item performing triggered, low-frequency follow up and characterization of fast radio bursts (\S\ref{sec:FRBs}).
-\end{itemize}
+
 
 The HERA experiment will comprise 
 350 14-m parabolic dishes (320 in a dense core $+$ 30 outriggers) in the South African Karoo Radio
@@ -135,7 +126,7 @@ The first 19-element array is complete and, with additional funding from Cambrid
 The South African National Research Foundation SKA-SA group (SKA-SA) is a key partner in the construction and science.
 
 The current 19 elements are testing the HERA element design for performance and manufacturability on location.  The 37 elements, to be completed in 2016, will provide nearly an order of magnitude more 
-sensitivity than the 128-element PAPER array and provide a significant chance at detecting the EoR power spectrum signal.  The next proposed phase will build out to 128 elements and use the existing 128 dual-polarization analog and digital signal paths that have been in use with PAPER \citep{ali_et_al2015}, which should provide a very robust detection of the EOR signal and allow some characterization.  Finally, extending to 2020, HERA will build out to 350 elements to further EOR science as a function 
+sensitivity than current instruments and provide a significant chance at detecting the EoR power spectrum signal.  The next proposed phase will build out to 128 elements and use the existing 128 dual-polarization analog and digital signal paths that have been in use with PAPER \citep{ali_et_al2015}, which should provide a very robust detection of the EOR signal and allow some characterization.  Finally, extending to 2020, HERA will build out to 350 elements to further EOR science as a function 
 of redshift and spatial scale, potentially producing the first images of the EOR.
 
 HERA is a collaboration of the following Partner institutions:  
@@ -157,7 +148,20 @@ University of Western Cape (Cape Town, South Africa),
 Imperial College London  (London, UK) and 
 California State Polytechnic University (Pomona, CA USA).
 
-This paper has the following structure.  Section \ref{sec:science} will give a high-level overview of the science motivating HERA's construction, including primary and secondary science objectives.  Section \ref{sec:eormeas} will present the techniques used to make the measurement.  Section \ref{sec:requirements} will present the high-level requirements and Section \ref{sec:design} will present the system description..   Section \ref{sec:status} will present a brief status and outline the deployement timetable and Section \ref{sec:conclusion} will conclude by summarizing and providing additional context.
+This paper has the following structure.  Section \ref{sec:science} will give a high-level overview of the science motivating HERA's construction, including primary and secondary science objectives.  Key science results include
+measuring the 21\,cm power spectrum with high significance (\S\ref{sec:EoRPowerSpectra});
+characterizing parametrized models of reionization and the first ionizing sources (\S\ref{sec:EoRPowerSpectra});
+improving cosmic microwave background (CMB) constraints on primordial density fluctuations and neutrino masses by removing the optical depth degeneracy (\S\ref{sec:tau}); and
+directly imaging large scale reionization structure (\S\ref{sec:imaging}).
+Additionally, beyond these directly supported applications, HERA's public data products and instrumentation platform enable other high-impact science, including 
+21\,cm cross-correlation (e.g. with JWST, WFIRST, CO, CII, and Ly$-\alpha$; \S\ref{sec:crossCorr});
+searching for auroral radio bursts from exoplanetary magnetospheres (\S\ref{sec:exoplanets}); and
+performing triggered, low-frequency follow up and characterization of fast radio bursts (\S\ref{sec:FRBs}).
+
+Section \ref{sec:eormeas} will present the techniques used to make the measurement.  Section \ref{sec:requirements} will present the high-level requirements and Section \ref{sec:design} will present the system description..   Section \ref{sec:status} will present a brief status and outline the deployement timetable and Section \ref{sec:conclusion} will conclude by summarizing and providing additional context.
+
+
+
 
 \section{Scientific Background}
 \label{sec:science}
@@ -630,7 +634,7 @@ Another approach to improving sensitivity is to make the collecting area per ele
 \centerline{
 \includegraphics[height=6cm]{plots/boost.pdf}
 \includegraphics[height=6cm]{plots/sensratio.pdf}
-\includegraphics[height=5cm]{plots/elementSizes.pdf}
+\includegraphics[height=4cm]{plots/elementSizes.pdf}
 }
 \caption{Left: Representative boost factors ($\mathcal{N}$ in Eq. \ref{eq:sensitivity}) normalized to a 19-element hexagonal configuration spaced at 14.6m.  For a given element count, one can get about an order of
 magnitude improvement in delay-spectrum sensitivity.  Alternatively, for the same sensitivity one can build roughly 1/3 the antennas.  Right:  Power spectrum sensitivities for various arrays normalized to HERA-19.  Here the element size is included, which is shown as an appropriately sized circle.}
