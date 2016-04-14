@@ -498,9 +498,9 @@ Obviously between our present observation point and the Epoch of Reionization li
 The past three years have seen deep EoR observations with PAPER, the MWA, 
 the Giant Metrewave Radio Telescope (GMRT; \citealt{paciga_et_al2013}), and LOFAR.
 PAPER and the MWA have produced progressively deeper limits
-\citep{dillon_et_al2015,parsons_etal2014,ali_et_al2015}, with PAPER
+\citep{dillon_et_al2014,dillon_et_al2015,parsons_etal2014,ali_et_al2015}, with PAPER
 yielding the first meaningful constraints on the 21\,cm spin temperature during reionization
-(Fig. \ref{fig:limits}).
+(Fig. \ref{fig:limits}). %XXX: This figure doesn't really say much about spin temperature.
 The inherent challenge is to simultaneously meet stringent sensitivity requirements 
 while suppressing foregrounds $\sim5$ orders of magnitude
 brighter than the 21\,cm signal, which has been addressed along a number of approaches.  
@@ -539,7 +539,7 @@ increasing the extent and density of $uv$ sampling for high-fidelity imaging.
 \begin{figure}[t]
 	\centering
 	\includegraphics[width=.8\textwidth]{plots/summary_results.png}
-	\caption{The current best published $2\sigma$ upper limits on the 21cm power spectrum, $\Delta^2(k)$, (solid symbols represent analyses led by HERA collaborators) compared to 21cmFAST-generated models at $k=0.2$\,$h$\,Mpc$^{-1}$.   Analysis is still underway on PAPER and MWA observations that approach their projected full sensitivities;  HERA can deliver sub-$\text{mK}^2$ sensitivities.}
+	\caption{The current best published $2\sigma$ upper limits on the 21cm power spectrum, $\Delta^2(k)$, compared to a 21cmFAST-generated model at $k=0.2$\,$h$\,Mpc$^{-1}$.   Analysis is still underway on PAPER and MWA observations that approach their projected full sensitivities;  HERA can deliver sub-$\text{mK}^2$ sensitivities.}
 	\vspace{-10pt}
 	\label{fig:limits}
 	\label{fig:IGMtemperatureConstraints}
@@ -572,7 +572,7 @@ appear there through instrumental leakage \citep{parsons_etal2014,ali_et_al2015,
 
 Though the power spectrum measurement is over a volume, it is instructive to split the spatial wavenumbers into two components,  $\kvec =  \kvpr + \kpar{\hat {\bf z}}$ where $|\kvpr|\equiv \kpr = 2\pi b/\lambda X$ is determined by the antenna baseline ($b$) and $\kpar=2\pi/Y\Delta\nu$ by the bandwidth ($\Delta\nu$).  Here $X$ and $Y$ are cosmological parameters relating angular size and spectral frequency to cosmic volumes respectively (so, relating wavenumber to physical volume at a given redshift).  This is useful since it allows us to split out the chromatic response of the interferometer visibility measurement and isolate a phase space where foreground sources ({\em i.e.} everything {\em not} the EOR) contaminate the signal of interest from where they don't.  
 
-In these variables, the ``contaminated'' phase space is a wedge-shaped region in $\kpr$:$\kpar$ space such that the ratio of the time-delay across a given baseline ($b/c$,  which impacts the chromatic visilbility) and the delay associated with a given bandwidth ($1/\Delta\nu$) is less than some parameter determined by the details of the system, which we denote as $1/\beta$.  Substituting $\kpr$ and $\kpar$ in for $b$ and $\Delta\nu$ in this ratio, we find that this wedge is bounded by
+In these variables, the ``contaminated'' phase space is a wedge-shaped region in $\kpr$:$\kpar$ space such that the ratio of the time-delay across a given baseline ($b/c$,  which impacts the chromatic visibility) and the delay associated with a given bandwidth ($1/\Delta\nu$) is less than some parameter determined by the details of the system, which we denote as $1/\beta$.  Substituting $\kpr$ and $\kpar$ in for $b$ and $\Delta\nu$ in this ratio, we find that this wedge is bounded by
 \begin{equation}
 \kpar \le \beta\frac{X\lambda}{Yc}\kpr + \frac{S}{Y}
 \end{equation}
@@ -582,7 +582,7 @@ If this $\beta$ factor is determined by the chromaticity of the longest baseline
 Therefore, a key issue to measuring the EOR power spectrum is to understand and minimize systematics.  For further discussion and an analytical derivation, see \cite{zahn_etal2012,vedantham_2012,liu_et_al2014b},  in simulation see \cite{datta_etal2010,hazelton_et_al2013} and for observations
 \cite{pober_etal2013b,2015arXiv150601026P,parsons_etal2014,2015arXiv150206016A}.  
 
-Note that the unit of the spatial wavenumber $k$ is 1/length, in this case the relevant length scale is megaparsecs (Mpc; 1 Mpc = 3.086$\times10^{22}$ m).  In order to normalize for updated measurements of the Hubble constant, it is further normalized by a factor $h$, where Hubble's constant is expressed as $H_o=100h$ (km/s)/Mpc , such that the wavenumbers are expressed as $h$/Mpc.  Also note that at the red-shifts of interest $X$ has a value of about 160 Mpc/deg and $Y$ has a value of about 16 Mpc/MHz.
+Note that the unit of the spatial wavenumber $k$ is 1/length, in this case the relevant length scale is megaparsecs (Mpc; 1 Mpc = 3.086$\times10^{22}$ m).  In order to normalize for updated measurements of the Hubble constant, it is further normalized by a factor $h$, where Hubble's constant is expressed as $H_0=100h$ (km/s)/Mpc , such that the wavenumbers are expressed as $h$/Mpc.  Also note that at the red-shifts of interest $X$ has a value of about 160 Mpc/deg and $Y$ has a value of about 16 Mpc/MHz.
 
 \begin{figure}[t]
 \centerline{
@@ -654,24 +654,40 @@ Also in Fig. \ref{fig:kperf}, the lime-green shaded region indicates a plausible
 \label{fig:kperf}
 \end{figure}
 
-\subsection{Map-Making Approach}
+\subsection{Mapmaking Approach}
 \label{sec:mapapproach}
-In contrast to the delay-spectrum approach, map-making approaches combine baselines to build up information before squaring and calculating the power spectrum.  The conceptually easiest approach is to first make an image cube of the sky as a function of angular position and frequency, and then to Fourier transform, square, and bin the cube to determine the power spectrum. One advantage of such an approach is that sky images can be interesting in their own right, both for dealing with measurement systematics and for accessing the non-Gaussian observational signatures (such as ionized bubble structures) that are missed by variance statistics such as the power spectrum. The principal disadvantage of a map-making approach is its stringent calibration and forward-modeling requirements for propagating models of bright foregrounds through instrument systematics. In contrast, the delay-spectrum allows one to stay considerably closer to the format of raw visibility measurements, thus allowing systematic effects to be sequestered to localized regions of parameter space where they can much more easily be filtered out.
+In contrast to the delay-spectrum approach, map-making approaches combine baselines to build up information before squaring and calculating the power spectrum.  The conceptually simpler approach is to first make an image cube of the sky as a function of angular position and frequency, and then to Fourier transform, square, and bin the cube to determine the power spectrum \cite{liu_tegmark2011,dillon_et_al2013a}. The image domain is a natural place to combine information from partially-coherent pairs of visibility measurements (either from different baselines or from the same baseline at different times). Mapmaking can be lossless data compression step \citep{tegmark1997b}, though keeping track of statistical properties of the maps, when tend to have complex frequency and position dependent point spread functions and noise covariance matrices, can be computationally challenging \citep{dillon_et_al2015a}. Existing approaches have had to make a number of approximations, including the approximation that point spread functions do not vary over the field of view and that noise is not correlated between $uv$-cells.
 
-This approach is being pursued primarily via FHD.
+%This approach is being pursued primarily via FHD.
+%XXX: this needs the be expanded.
+
+One advantage of such an approach is that sky images can be interesting in their own right, both for dealing with measurement systematics and for accessing the non-Gaussian observational signatures (such as ionized bubble structures) that are missed by variance statistics such as the power spectrum. Mapmaking also allows for the direct subtraction of bright foregrounds, potentially expanding the EoR window. However, accessing these high-order statistics or the modes of the power spectrum inside the wedge using a mapmaking approach requires extreme (and so-far undemonstrated) precision in calibration and forward-modeling of bright foreground models through instrument systematics. 
+
+
 
 \subsection{Hybrid Approaches}
 \label{sec:hybridapproach}
 
 While they were presented separately above, the delay-spectrum and map-making approaches need not be viewed as mutually exclusive. For example, mapmaking need not be limited to the real space image basis; pipelines that combine multiple baselines into estimates of various Fourier amplitudes of the sky are formally also mapmaking pipelines. Like the delay-spectrum approach, such pipelines (see, e.g., \citealt{trott_et_al2016}) avoid the image domain entirely. This helps to prevent artifacts that may introduced by imaging algorithms.
 
-More generally, it is possible to express a map-making algorithm as a linear operator that acts on visibility data to produce a compressed dataset \citep{dillon_et_al2015a}. Squaring this to obtain an estimate of the power spectrum then results in a weighted quadratic combination of visibilities, where one multiplies the visibility from every baseline with that from every other baseline. These visibility product pairs are subsequently normalized to form their own individual estimates of the power spectrum before all the normalized pairs are summed together to form a final power spectrum. Measuring a power spectrum in this way combines the best aspects of the mapmaking and delay-spectrum approaches. Power spectra are formed directly by the cross-multiplication of visibility data, preserving the delay-spectrum approach's strategy of staying close to quantities measured by an interferometer; on the other hand, by multiplying together the data from every possible combination of baselines, one retains all the information captured by mapmaking. Indeed, it can be shown \citep{liu_et_al2014a} that in the limit of infinitely fine Fourier space bins, the hybrid method that we have just described is mathematically equivalent to the mapmaking approach. In practice, the hybrid method comes with the added benefit of allowing particular baseline pairs that are suspected of being affected by instrumental systematics to be more surgically downweighted.
+More generally, it is possible to express a mapmaking algorithm as a linear operator that acts on visibility data to produce a compressed dataset \citep{dillon_et_al2015a}. It follows then that squaring this to obtain an estimate of the power spectrum then results in a weighted quadratic combination of visibilities, where one multiplies the visibility from every baseline with that from every other baseline. These visibility product pairs are subsequently normalized to form their own individual estimates of the power spectrum before all the normalized pairs are summed together to form a final power spectrum. Measuring a power spectrum in this way combines the best aspects of the mapmaking and delay-spectrum approaches. Power spectra are formed directly by the cross-multiplication of visibility data, preserving the delay-spectrum approach's strategy of staying close to quantities measured by an interferometer; on the other hand, by multiplying together the data from every possible combination of baselines, one retains all the information from partially-coherent visibility pairs captured by mapmaking. Indeed, it can be shown \citep{liu_et_al2014a} that in the limit of infinitely fine Fourier space bins, the hybrid method that we have just described is mathematically equivalent to the mapmaking approach. In practice, the hybrid method comes with the added benefit of allowing particular baseline pairs that are suspected of being affected by instrumental systematics to be more surgically downweighted. 
+
+Fundamentally, the hybrid approach and the optimal mapmaking approach \citep{dillon_et_al2015a} are very similar. Whether it makes computational sense to examine all pairs of partially-coherent visibilities or to perform mapmaking as an intermediate data-compression step before power spectrum estimation (despite the complexity of the resultant map statistics) is an open question that depends on a number of factors, including the number of elements in the array, its layout, and its integration time.
+
+
 
 \subsection{Calibration}
 \label{sec:calibration}
-As examined above, maximizing sensitivity to a limited number of spatial modes for the delay-spectrum technique requires a grid of antennas that simultaneously measures the same baselines using many redundant pairs of antennas. This redundancy may also be exploited to calibrate the array as well, as long as the true antenna positions fall close enough to that ideal grid. This technique has been pioneered with the MITEoR experiment \citep{zheng_et_al2014}, and has resulted in a package called OMNICAL developed for PAPER and HERA.  \citet{ali_et_al2015} provides a description of this technique as it applies to calibrating the PAPER array, which is mostly situated on a grid with many redundant baselines.  This section provides a high-level overview of calibration as it applies to HERA.
+As examined above, maximizing sensitivity to a limited number of spatial modes for the delay-spectrum technique requires a grid of antennas that simultaneously measures the same baselines using many redundant pairs of antennas. This redundancy may also be exploited to calibrate the array as well, as long as the true antenna positions fall close enough to that ideal grid \citep{liu_et_al2010}. This technique has been pioneered with the MITEoR experiment \citep{zheng_et_al2014}, and has resulted in a package called OMNICAL developed for PAPER and HERA.  \citet{ali_et_al2015} provides a description of this technique as it applies to calibrating the PAPER array, which is mostly situated on a grid with many redundant baselines.  This section provides a high-level overview of calibration as it applies to HERA.
 
-Given that the technique requires redundant baselines
+Fundamentally, the problem of calibration is the determination of a single complex, frequency dependent gain for each antenna due to differences in amplifiers, cables, etc. Given those gains, the measured visibility measured by antennas $i$ and $j$ at frequency $\nu$ is given by 
+\begin{equation}
+V_{ij}^\text{measured}(\nu) = g_i(\nu) g_j^*(\nu) V_{ij}^\text{true}(\nu), 
+\end{equation}
+where each $V_{ij}(\nu)$ is the measured or true visibility and $g_i(\nu)$ is the gain on antenna $i$ at frequency $\nu$.\footnote{This discussion ignores electromagnetic cross-talk between antennas and antenna-to-antenna variation of the primary beam.} With its highly-redundant array configuration (see \S\ref{sec:arrayConfig}), HERA's 350 antennas measure 61,075 visibilities, but only 6,140 unique baselines. Given a set of measured visibilities, it is possible estimate both the 6,140 unique true visibilities and the 350 complex gains simultaneously because that system of equations is greatly overdetermined. A method for linearizing the system and applying standard minimum-variance linear estimators was developed by \citet{liu_et_al2010} and first applied in \citet{zheng_et_al2014}. Unlike traditional calibration of radio interferometers, redundant calibration makes no reference to any sky model, requiring merely that the sky is bright relative to the noise on each antenna (which is always true in the sky-noise dominated regime characteristic of 21\,cm observatories with wide fields of view). 
+
+However, at each frequency, degeneracies in the redundant calibration procedure prevent it from solving four numbers per frequency (down from 700 in HERA's case). The first is an overall gain---one can multiply each $g_i(\nu)$ by 2 and divide each $V_{ij}^\text{true}$ by 4, for example, and get exactly the same measured visibilities. The others are an overall phase and two other phase terms that describe the tip and tilt of the array. These degeneracies mean that the output of any redundant baseline calibration also needs a final, ``absolute'' calibration. Absolute bandpass calibration can be performed using a sky model, though it remains an open question whether this reduced set of calibration parameters can be further constrained without an explicit sky model.
+
 
 \section{High-Level Requirements} 
 \label{sec:requirements}
