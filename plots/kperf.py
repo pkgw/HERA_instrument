@@ -78,13 +78,15 @@ plt.fill_between(zhera,khera1,khera2,color='w',alpha='0.65')
 #first part (k_tot)
 zstart = 5.0
 zstop = 25.0
-BW_list = [0.02,.002]
-D_list = [14.6,25.3]
+BW_list = [0.02,0.01,.002]
+D_list = [14.6,25.3,25.3]
 #txtloc = [[9,.02,-4],[7,.32,-5]]  #wide
-txtloc = [[9.3,.02,-7],[6.0,.34,-10]]  #narrow
-lsc = ['g-','g-']
-tclr = ['g','g']
-for i,BW in enumerate(BW_list):
+txtloc = [[9.3,.02,-7],[10.3,.02,-7],[6.0,.34,-10]]  #narrow
+lsc = ['g-','r-','g-']
+tclr = ['g','r','g']
+use_i = [0,2]
+for i in use_i:
+    BW = BW_list[i]
     z = [zstart]
     while z[-1]<zstop:
         newz = z[-1] + get_dz(z[-1],BW,restFreq)
@@ -158,7 +160,7 @@ if draw_z_bins:
 
 
 plt.xlabel('Redshift [z]',fontsize=16)
-plt.ylabel('k(res) [h/Mpc]',fontsize=16)
+plt.ylabel('k [h/Mpc]',fontsize=16)
 #plt.legend(loc='upper right')
 plt.grid()
 plt.axis([restFreq/0.220 - 1.0,restFreq/0.065-1.0,2e-3,1])

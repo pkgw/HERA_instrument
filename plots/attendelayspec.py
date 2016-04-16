@@ -25,7 +25,7 @@ plt.legend()
 
 delay = np.load('delay_spectrum.npz')
 #plt.plot(delay['tau'],delay['dpaper'])
-plt.plot(delay['tau'],-1.*delay['dhera'],'k',lw=2)
+plt.plot(delay['tau_hera'],-1.*delay['dhera'],'k',lw=2)
 #plt.figure('aaa')
 #plt.plot(delay['tau'],delay['dhera'])
 
