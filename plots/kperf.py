@@ -100,8 +100,8 @@ for i in use_i:
     plt.semilogy(z,ktot,lsc[i],label=show_label,lw=2) 
     plt.text(txtloc[i][0],txtloc[i][1],lbl,rotation=txtloc[i][2],color=tclr[i],fontsize=16)
 ktottop = 10.*np.ones(len(zsave))
-plt.fill_between(zsave,savek,ktottop,color='g',alpha='0.25')
-plt.fill_between(zhera,khera1,khera2,color='w',alpha='0.65')  ###AND REDO LINE 63
+#plt.fill_between(zsave,savek,ktottop,color='g',alpha='0.25')
+plt.fill_between(zhera,khera1,khera2,color='g',alpha='0.25')  ###AND REDO LINE 63
 
 #second part  (k_perp)
 BW = 0.01
