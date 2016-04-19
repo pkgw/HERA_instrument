@@ -710,9 +710,9 @@ However, at each frequency, degeneracies in the redundant calibration procedure 
 From the science and techniques discussed above, we may derive some high-level requirements predicated on optimizing for the delay-spectrum approach of detecting the EOR power spectrum while not unduly limiting other approaches or other science goals.  The fact that HERA is an experiment and not meant to be a long-term general use facility greatly facilitates this optimization. This section describes the element, configuration, frequency and sensitivity requirements that largely set the overall design concept.
 
 \subsection{General Antenna Design and Configuration}
-The primary new feature of HERA over previous generation experiments (in this context, primarily PAPER) is the use of large elements to increase the sensitivity, as indicated in Fig. \ref{fig:boost}.  The cost-performance optimization will 
-be discussed below, however we see that to address the central challenges of the delay-spectrum approach in the context of the wedge, to open the widest possible window for EOR measurements, 
-HERA must use close-packed antennas that
+The primary new feature of HERA over previous generation experiments (in this context primarily PAPER) is the use of large elements to increase the sensitivity, as indicated in Fig. \ref{fig:boost}.  The cost-performance optimization will 
+be discussed below, however we see that to address the central challenges of the delay-spectrum approach in the context of the wedge.
+HERA should use close-packed antennas that
 minimize signal reflections over long delays and deliver significant forward gain relative to their horizon response.
 Tests with prototype HERA antennas (Figs.  \ref{fig:delayspec} and \ref{fig:orbcommexptandbeammap}, discussed in \S\ref{sec:antenna})
 indicate that a moderately large parabolic dish with a short focal height can meet these requirements
@@ -741,43 +741,50 @@ at $z=8$. 21\,cm reionization experiments place much tighter constraints on ioni
 red band showing the forecasted 95\% confidence region derived from HERA data,
 after marginalizing over astrophysical and cosmological parameters.
 
-From these measurements and models, HERA is required to cover a redshift range of $z=$6 to 13, corresponding to a frequency range of 101 - 203 MHz.  We adopt 100-200 MHz for full performance as the requirement.  Extending the science to include the Dark Ages remains a goal so that efforts are on-going to design a feed to increase the lower limit down to at least 70 MHz without compromising the performance in the above requirement range.  The fall-back position for the low-frequencies is a serial deployment of a scaled version of the HERA feed or to potentially build additional elements specifically for the low-frequencies.  
+From these measurements and models, HERA is required to cover a redshift range of $z=$6 to 13, corresponding to a frequency range of 101 - 203 MHz.  We adopt 100-200 MHz for full performance as the requirement.  Extending the science to include the Dark Ages remains a goal so that efforts are on-going to design a feed to increase the lower limit down to at least 70 MHz without compromising the performance in the above requirement range.  The fall-back position for low frequencies is a serial deployment of a scaled version of the HERA feed or to potentially build additional elements specifically for low frequencies.  
 
-The scientific requirement on channel bandwidth is to allow access to k-modes of 1 h/Mpc [ref], which requires about 256 channels over the 100 MHz bandwidth.  However, in order to handle radio frequency interference as well as to allow the bandpass to be characterized, a specification of 1024 channels has been chosen.  This yields a channel bandwidth of 97.7 kHz.
+The scientific requirement on channel bandwidth is to allow access to k-modes of $\sim1$ h/Mpc, which requires about 256 channels over the 100 MHz bandwidth.  However, in order to handle radio frequency interference as well as to allow the bandpass to be characterized, a specification of 1024 channels has been chosen.  This yields a channel bandwidth of 97.7 kHz.
 
 The total simultaneously processed bandwidth is the full 100 MHz, since we wish to efficiently probe the entire redshift range.  The main impact from this requirement is the bandwidth from the digitizer back to the correlator, however this bandwidth is easily handled with current generation digital back-ends.
 
 \subsection{Delay Response}
 \label{sec:delayspec}
-Early analysis \citep{elementmemo} indicated that to trace the EoR over a wide range of redshift, internal reflections should be attenuated by about 60 dB from the initial incoming wave by about 60 ns, or a VSWR $<$ 1.002 for frequencies $<$ 17 MHz.  This provided the basis for the initial design of the element.    For the contemplated feeds for a primary focus antenna, it was found that a focal length/diameter radio ($f/D$ of approximately 0.32 was optimal.  We may therefore estimate the attenuation as a function of delay and diameter and assign this a ``cost function''.  The vertical axis of Fig. \ref{fig:costfig} shows a very steep cost function at 60 ns.  The curves labelled `1', `2' and `3' are the round-trip travel time for 1, 2 and 3 reflections.  
+Early analysis \citep{elementmemo} indicated that to trace the EOR over a wide range of redshift, internal reflections should be attenuated by about 60 dB from the initial incoming wave by about 60 ns, or a VSWR $<$ 1.002 for frequencies $<$ 17 MHz.  This provided the basis for the initial design of the element.    For the contemplated feeds on a primary focus antenna, it was found that a focal length/diameter radio ($f/D$) of approximately 0.32 was optimal.  We may therefore estimate the attenuation as a function of delay and diameter and assign this a ``cost function''.  
 
-To obtain 60 dB at 60 ns we may interpret those lines in one of two ways:  (1) set the specification on how much attenuation per reflection is needed and (2) at a fixed attenuation/reflection, what diameter is required.  For 1 round-trip, for the assumed $f/D$ over the diameters of interest, all delays are less than 60 ns, so it provides no constraint.  For
-3 round-trips, all diameters exceed 60 ns, so the attenuation should be less than 60 dB for that path-length.  The case for 2 round-trips provides a constraint on attenuation and diameter, which is discussed at length in \cite{elementmemo}.
-To estimate, it was assumed that the main reflection time constant was due to the standing waves between the feed and vertex of the parabola and that each reflection redirected about -15 dB of the total power in each reflection for additional standing wave power, which leads to a diameter of about 14m.
+Figure \ref{fig:costfig} summarizes the adopted cost function.  
+The vertical axis shows a very steep delay ``cost'' at 60 ns and the horizontal axis is the cost/performance model, as described in the following section.  
+The color coding is the product of the two assigned costs, with red showing a high cost normalized to 350 14m elements (clipped at a ratio of 1.25) and purple being the minimum.
+The curves labelled `1', `2' and `3' are the round-trip travel times for 1, 2 and 3 reflections between the feed and the vertex.
+To obtain 60 dB by 60 ns we may interpret those lines in one of two ways:  
+(a) at a fixed attenuation/reflection, what diameter is required, and
+(b) at a fixed diameter how much attenuation per reflection can be allowed.
+For 1 round-trip, for the assumed $f/D$ over the diameters of interest, from Fig. \ref{fig:costfig} all delays are less than 60 ns, so this provides no constraint.   If we want to be able to handle 2 round-trips worth of delay, the diameter should be less than 14.2m, which is near the cost minimum.  If we assume 14.2m, then we can estimate that each reflection must average a return loss better than 15 dB, an aggressive target.  And finally, if we need to allow for 3 round-trips, our antenna diameter would have to be less than 9.4m, where the cost is quickly rising.  To handle the delay requirement therefore, the diameter should be less than 14.2m, or the return loss specification becomes very aggressive.
 
-As a key specification, this has been a focus of study with our prototypes and a series of papers based on analysis and measurements have been produced to provide much more rigor than this simple early analysis \citep{ewall-wice_et_al2016-EoXLimits,neben_et_al2016,thyagarajan_et_al2016,patra_et_al0216}.  The simple specification set above more appropriately becomes a series of curves for attenuation and delay at different wavenumbers for realistic foreground models.  Fig \ref{fig:delayspec}, adapted from \cite{thyagarajan_et_al2016}, shows the results at $k$ = 0.2 $h$/Mpc for the adopted design.  The analysis shows that for $k>0.15 h/$Mpc, HERA should be able to detect the EoR.  We also see that the initial simple ``60@60'' specification was a overly conservative, however it served as a good initial goal.  The analysis also indicates which baselines produce the best information on different scales.
+As a key specification, this has been a focus of study with a series of prototypes and analyses based on modeling, and measurements have been conducted to provide much more rigor than this early specification \citep{ewall-wice_et_al2016-EoXLimits,neben_et_al2016,thyagarajan_et_al2016,patra_et_al0216}.  The simple specification set above more appropriately becomes a series of curves for attenuation and delay at different wavenumbers for realistic foreground models.  Fig \ref{fig:delayspec}, adapted from \cite{thyagarajan_et_al2016}, shows the results at $k$ = 0.10, 0.15, and 0.20 $h$/Mpc for the adopted design.  The analysis shows that
+the dish design for should should allow for EOR detections for $k>0.10 h/$Mpc.  We also see that the initial simple ``60@60'' specification was a overly conservative, however it served as a good initial goal.
 
 \begin{figure}[h!]
 	\centering
     \includegraphics[width=0.49\textwidth]{plots/delayspecplot.pdf}
-     \includegraphics[width=0.5\textwidth]{plots/ps1d_with_delay_kernel.pdf}
-	\vspace{-25pt}
-	\caption{Left:  Antenna delay attenuation specification with realistic foregrounds from \cite{thyagarajan_et_al2016} along with the initial conservative ``60@60'' specification.  HFSS calculations (black line) show HERA meeting the specification.  Measurements on the Green Bank prototype are shown in  \citep{patra_et_al2016}.
-Right: Modeled foreground power spectra with (green) and without (blue) the antenna chromaticism over a 10\,MHz subband centered at $z=7.5$. The spectral smoothness of the dish enables foreground isolation below the level of a fiducial reionization signal (black) for most $k_{\parallel}$ modes, yielding percent-level constraints on model parameters.}
+     %\includegraphics[width=0.5\textwidth]{plots/ps1d_with_delay_kernel.pdf}
+	%\caption{Left:  
+	\caption{Antenna delay attenuation specification with realistic foregrounds from \cite{thyagarajan_et_al2016} along with the initial conservative ``60@60'' specification.  HFSS calculations (black line) show the HERA dish meeting the specification.  Measurements on the Green Bank prototype are shown in  \citep{patra_et_al2016}.
+}
+%Right: Modeled foreground power spectra with (green) and without (blue) the antenna chromaticism over a 10\,MHz subband centered at $z=7.5$. The spectral smoothness of the dish enables foreground isolation below the level of a fiducial reionization signal (black) for most $k_{\parallel}$ modes, yielding percent-level constraints on model parameters.}
 	\label{fig:delayspec}
 	\vspace{-10pt}
 \end{figure}
 
 \subsection{Sensitivity Optimization}
 \label{sec:cost}
-As an instrument to characterize the power spectrum over the evolution of the EoR, the specification on sensitivity is to make at least a nominal detection over the redshift region of support, or $z$=6-13, along with a very robust detection at the peak.  As seen in Fig. \ref{fig:Sensitivities} and Table \ref{tab:signif}, an array comprising 320 14-m core antennas (note, labelled HERA-350, which includes the outriggers) has sensitivity to a
+As an instrument to characterize the power spectrum over the evolution of the EOR, the specification on sensitivity is to make at least a nominal detection over the redshift region of support ($z$=6-13) along with a very robust detection at the peak.  As seen in Fig. \ref{fig:Sensitivities} and Table \ref{tab:signif}, an array comprising 320 14-m core antennas (labelled HERA-350, which includes the outriggers) has sensitivity to a
 fiducial reionization model across that redshift range.  We therefore adopt the delay-spectrum power spectrum sensitivity of 320 14-m close-packed antennas as the minimum sensitivity needed.  
 For this sensitivity, the number of elements needed for a given diameter is
 \begin{equation}
 \label{eq:ND}
 N_{\text core} = (320*14)/D
 \end{equation}
-where $N_{\text core}$ and $D$ are the number of antennas in the core and their diameter respectively.  Note that the linear number-diameter dependence was derived by running multiple sensitivity codes ({\em e.g.} Pober) over a range of values for the HERA configuration for wavenumbers greater than 0.15.  This dependency differs from \cite{2013ExA....36..235M} and analytical expressions, mostly likely due to the assumed configuration.
+where $N_{\text core}$ and $D$ are the number of antennas in the core and their diameter respectively.  Note that the linear number-diameter dependence was derived by running multiple sensitivity codes ({\em e.g.} 21cmSense) over a range of values for the HERA configuration for wavenumbers greater than 0.15.  This dependency differs from \cite{2013ExA....36..235M} and analytical expressions, mostly likely due to the assumed configuration.
 Optimization is 
 therefore done for this sensitivity against cost for various diameters and total element numbers, while trying to minimize multiple reflections on long delays.   
 
