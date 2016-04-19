@@ -884,6 +884,13 @@ relates directly to the leakage of smooth-spectrum foregrounds into regions of F
 used to measure reionization, as discuss in Sec. \ref{sec:wedge}.
 To facilitate foreground filtering, HERA's antenna element is designed to suppress reflections at long time delays.
 
+The feed design will proceed in three phases:
+\begin{itemize}
+\item {\em Phase 1:}  use existing PAPER dipole with new ground screen (\S\ref{sec:feed}) and existing PAPER signal path,
+\item {\em Phase 2:}  updated ground screen, matching network and analog signal path (\S\ref{sec:analog})
+\item {\em Phase 3:}  broad-band or separate low-frequency for full spectral coverage.
+\end{itemize}
+Models and measurements discussed below are for the current Phase 1 system.
 
 As shown in Fig.~\ref{fig:delayspec}, HERA's element meets this requirement in
 reflectometry tests, performing comparably to the PAPER element.  The
@@ -900,8 +907,8 @@ indicate an effective per-element collecting area of 93\,m$^2$, compared with th
 theoretical maximum Airy response of 155 m$^2$.  The measured primary beam is
 consistent with simulations at the 0.1\% to 0.5\% level, with a full width at
 half maximum of $\sim$$10^\circ$, and a first sidelobe at -20 dB \citep{ewallwice_et_al2016,neben_et_al2016,patra_et_al2016,thyagarajan_et_al2016}.
-Feed-to-feed coupling between adjacent antennas has been measured to be below -50 dB, indicating
-that mutual coupling will not be problematic.
+Feed-to-feed coupling between the two adjacent antennas in Green Bank has been measured to be below -50 dB, providing some confidence that mutual coupling will be at a 
+manageable level.  Studies of elements in a bigger array and potential screening approaches are also underway.
 
 \begin{figure}[h!]
 	\begin{tabular}{ll}
@@ -935,7 +942,7 @@ The shape between the spars is actually a parabola rather than a paraboloid, so 
 
 \subsubsection{Feed}
 \label{sec:feed}
-The feed is to be deployed along two separate phases.  Initially, the feed reuses the original PAPER sleeved dipole, however in a new optimized cylindrical feed-cage configuration.  The optimization was based on main beam efficiency, cross-coupling (integrated feed pattern on the dish), standing waves (blockage size), frequency response and polarization match.  The design parameters were size of backplane, height of mast, and height of cylinder.  A range of conical structures were looked at but were ruled out since it was found they introduce additional frequency structure with no real improvement in performance.  The polarization figure-of-merit shown in Fig. \ref{fig:ant_params} is a simplified variant of the fractional power leakage as defined in \cite{Moore_et_al2015}:
+The feed is to be deployed along two separate phases.  Initially, the feed reuses the original PAPER sleeved dipole, however in a new optimized cylindrical feed-cage configuration.  As discussed in \cite{feedmemo}, the optimization was based on (a) main beam efficiency, (b) cross-coupling (integrated feed pattern on the dish), (c) standing waves (blockage size), (d) frequency response and (e) polarization match.  The design parameters were size of backplane, height of mast, and height of cylinder.  A range of conical structures were looked at but were ruled out since it was found they introduce additional frequency structure with no real improvement in performance.  The polarization figure-of-merit shown in Fig. \ref{fig:ant_params} is a simplified variant of the fractional power leakage as defined in \cite{Moore_et_al2015}:
 \begin{equation}
 \xi = \frac{\integral_{-\pi}^{\pi}\left[\sqrt{G(\theta,\phi=0)} - \sqrt{G(\theta,\phi=90)}\right]^2\sin\theta d\theta}
                {\integral_{-\pi}^{\pi}\left[\sqrt{G(\theta,\phi=0)} + \sqrt{G(\theta,\phi=90)}\right]^2\sin\theta d\theta}
@@ -1000,6 +1007,7 @@ using the \citet{liu_et_al2010} technique, yielding calibration errors that are 
 \end{figure}
 
 \subsection{Analog Signal Path}
+\label{sec:analog}
 HERA's analog signal path from 70--250 MHz with the full performance EOR band of 100-200 MHz, as shown in Fig. \ref{fig:cosmos} and discussed in Sec. \ref{sec:freqs}, emphasizes spectral smoothness and robustness.  Although the low-frequency sky has an intrinsically bright signal level, in the desired ``cold patches'' the sky temperature is only about 30 K at the upper frequency end, so relatively low receiver temperatures are desired.  Note that at the low end of the band (70 MHz), the sky temperature is about 1000 K and across the EOR band it ranges from about 100-400 K.
 With receiver temperatures of 30--100 K readily achievable with ambient temperature electronics however
 HERA's low-noise amplifiers (LNAs) may be inexpensive, passively cooled components integrated into the
@@ -1007,8 +1015,14 @@ antenna feed.
 
 As part of the delay specification,
 HERA's signal path emphasizes careful impedance matching between each component to minimize signal reflections that can worsen foreground leakage for the delays of interest.  This means that the emphasis is to reduce the delay-value of a reflection, which allows for a design degree of freedom.  One such design element is to 
-house the analog-to-digital converters (ADCs) in nodes near the antenna elements
+house the analog-to-digital converters (ADCs) in ``nodes'' near the antenna elements
 to limit the total analog path length.  This length is set to be 35m, such that the round-trip delay corresponds to about 0.15 $h$/Mpc, which remains in the wavenumbers  near the wedge.  The project is also examining the impact of having a range of varying analog path lengths.
+
+The analog signal path comprises the front-end module (FEM) at the feed, the post-amplfier module (PAM) at field-deployed nodes, and the $\sim 35m$ coaxial cable in between.  Also included are the monitor and control aspects to control and measure its state.
+
+{\bf Front-End Module: }
+
+{\bf Post-Amplifier Module: }
 
 
 
@@ -1022,17 +1036,22 @@ open-source program to further the development of digital signal processing engi
 now has world-wide participation,
 with over 500 members at 73 institutions, and 
 five generations of hardware.
-On a modest budget, PAPER applied CASPER technology to develop and deploy new correlators
+PAPER has applied CASPER technology to develop and deploy new correlators
 annually for five years running, each quadrupling the computational capacity of its predecessor.
+ 
 Led at UC Berkeley's Radio Astronomy Lab (RAL),
 HERA efforts continue this incremental development cycle, using a packet-switched
 correlator architecture \Mycitep{parsons_et_al2008} that both PAPER and LEDA \citep{2015JAI.....450003K} have
 applied to systems employing FPGAs and GPUs \citep{clark_et_al2011}.
 
-In order to meet the 35\,m specification for a maximum analog signal path length, along with a growing need for system scalability, HERA will adopt a node-based architecture for amplification, digitization, channelization, and digital
+In order to meet the 35\,m specification for a maximum analog signal path length, along with a growing need for system scalability, HERA will 
+adopt a node-based architecture for amplification, digitization, channelization, and digital
 transmission in the field, building on MWA and Allen Telescope Array heritage. This design is merged with PAPER's clean 
 architecture for real-sampling and channelizing the entire analog passband at once, packetizing the data into
-10 Gb Ethernet format, and relying on commercial switches to perform the frequency/antenna corner-turn required for FX correlators.  This has led to a new analog-digital-optical board called the Smart Networked Analog-Digital Processor (SNAP), which will become a new modular CASPER device.  Figure \ref{fig:hardware} shows the procession of boards.  This section will step through the digital signal path organized by location:  node, container, processing building.
+10 Gb Ethernet format, and relying on commercial switches to perform the frequency/antenna corner-turn required for FX correlators.  
+This has led to a new analog-digital-optical board called the Smart Networked Analog-Digital Processor (SNAP), which will become a new modular CASPER device.  
+Figure \ref{fig:hardware} shows the series of primary CASPER processing boards, with SNAP on the far right.
+This section will step through the digital signal path organized by location:  node, container, processing building.
 
 {\bf Node}. HERA-350 employs RFI-tight node enclosures that each contain the final gain and digitization stages for
 signals from 12 antennas, along with power supplies, cooling, sensors, and a small server for monitor/control.  
