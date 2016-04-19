@@ -801,7 +801,7 @@ The resulting normalized system cost/performance-curve  becomes very flat (color
 \end{figure}
 
 \section{System Design} \label{sec:design}
-As described in the previous section, the critical insights from the first generation 21\,cm EoR experiments have been applied to define
+As described in the previous section, the critical insights from the first generation 21\,cm EOR experiments have been applied to define
 the requirements for HERA---an instrument designed to ensure that foregrounds remain bounded
 within the wedge while delivering the sensitivity for
 high-significance detections of the 21\,cm reionization power spectrum with
@@ -809,8 +809,10 @@ established foreground filtering techniques
 \citep{pober_et_al2014,greig_and_mesinger2015}.
 In this section, we summarize key features of the HERA design (see Table~\ref{tab:BasicParameters}) 
 and system architecture (see Fig.~\ref{fig:overallBlockDiagram}).
-This architecture directly inherits from the PAPER and MWA experiments; HERA begins by reusing the
-analog, digital, and real-time processing systems deployed for PAPER-128.  As HERA develops, this
+This architecture directly inherits from the PAPER and MWA experiments.  HERA begins by reusing the
+analog, digital, and real-time processing systems deployed for PAPER-128.  
+This allowed for immediate observing with the new elements with a well-characterized system.
+As HERA develops, this
 architecture is incrementally upgraded to improve performance and add features while simultaneously
 addressing issues of modularity and scalability.  As with PAPER, HERA proceeds in stages of development,
 with annual observing campaigns driving a cycle of development, testing, system integration, calibration, and analysis.
@@ -818,7 +820,7 @@ This cycle ensures that HERA's instrument is always growing, that systematics ar
 earliest build-out stages, that data analysis pipelines are tested and debugged while data volumes are smaller,
 and that HERA is always producing high quality science.
 
-Note that in addition to the 19 elements in South Africa (and an initial prototype near Berkeley, CA), a pair of elements at the Green Bank Observatory in West Virginia have been used extensively in the validation testing, discussed below.  Also, three elements are currently under construction at the Mullard Radio Astronomy Observatory outside Cambridge, UK for additional feed and element tests.
+Note that in addition to the 19 elements currently observing in South Africa (and an initial prototype near Berkeley, CA), a pair of elements at the Green Bank Observatory in West Virginia have been used extensively in validation testing.  Also, three elements are currently under construction at the Mullard Radio Astronomy Observatory outside Cambridge, UK for additional feed and element tests.  This allows for an independent testing platform as the group at Cavendish continues to investigate both a broad-band feed, as well as ways to improve the current analog system for an improved match and noise performance.
 
 For details of the first generation HERA system (the existing and commissioned PAPER signal path), see \cite{parsons_et_al2010}.  This section will discuss the new system to be deployed beginning and 2016 and tested in conjunction with the previous system.  Fig \ref{fig:overallBlockDiagram} provides a system block diagram of the new HERA architecture.
 
@@ -858,8 +860,8 @@ hosted on public-facing NRAO servers, with a web interface for selecting and dow
 	\vspace{-5pt}
 \end{figure}
 
-%\subsection{Site}
-%\label{sec:site}
+\subsection{Site}
+\label{sec:site}
 HERA is located at the Karoo Astronomy Reserve.
 
 \subsection{Antenna}
@@ -871,12 +873,12 @@ As discussed in the previous section, the design of the design principles are th
 \item minimize costs, and
 \item the experiment has a limited lifetime of about five years.
 \end{itemize}
-The first item primarily means that chromatic effects corresponding to delays appropriate for the measurement described above must be below the expected signal level, which essentially determines the focal length.  The second item constrains the diameter and element count, as well as the focal length over diameter ratio ($f/D$), based on a cost function and maximizing sensitivity per element.  And the third item constrains the construction materials and methods and the operational model.  This led to a fixed transit element with a diameter of 14 meters to strike an optimal balance between sensitivity and systematics.
+The first item primarily means that chromatic effects corresponding to delays appropriate for the measurement described above must be below the expected signal level, which essentially determines the focal length.  The second item constrains the diameter and element count, as well as the focal length over diameter ratio ($f/D$), based on a cost function and maximizing sensitivity per element.  And the third item constrains the construction materials and methods and the operational model.  This led to a fixed transit element with a diameter of 14 meters to strike an optimal balance between sensitivity and systematics, as discussed in the previous section.
 
 The large collecting area of a HERA element yields nearly 5 times the sensitivity of an MWA tile and more
 than 20 times that of a PAPER element, but it does so without substantially
 degrading our ability to isolate and remove foreground emission on the basis of
-spectral smoothness (Fig. \ref{fig:reflectometry}, right panel).  As shown in
+spectral smoothness.  As shown in
 \Mycitet{parsons_et_al2012b}, the amplitude and timescale of signal reflections
 relates directly to the leakage of smooth-spectrum foregrounds into regions of Fourier space 
 used to measure reionization, as discuss in Sec. \ref{sec:wedge}.
@@ -920,7 +922,7 @@ To minimize cost and aid in construction in a remote location, the construction 
 
 The center of the antenna is a cast-in-place concrete donut-shaped hub with 12 sleeves for PVC spars which provide the support for the surface and 12 horizontal spars which allow for additional support.  The twelve surface spars are made of 60mm PVC pipe, which are stressed along three support points to approximate a parabolic shape.  Note that an ideal moment-loaded beam actually attains a true parabola.  The three support points (one at the hub, one about 3 meters out radially and one at the rim-end) are at the correct height and angle for the underlying parabola and the PVC essentially acts as a spatial filter.
 
-The shape between the spars is actually a parabola rather than a paraboloid, so the dish surface may more properly be called a ``faceted parabola''.  If only twelve spars were used for the entire surface, simple Ruze losses would be quite high (about 10\% at 150 MHz).  Therefore, at about 2.4 meters another horizontal member is placed, which launches another parabolic spar.  The simple Ruze loss is then less than 1\%, which is much more acceptable.  Fig \ref{fig:elementplan} shows this surface scheme and the panelization (left) and the offsets (in mm) of that scheme from an ideal parabola.  The panel that is ``left out'' is the location of a door to allow access into the hub (via a small removable door and bridge).  The additional intermediate spars also make the panel sizes much more manageable and better secured.  The panel arrangement is also set by a standard width of mesh roll of 1.22m.
+The shape between the spars is actually a parabola rather than a paraboloid, so the dish surface may more properly be called a ``faceted parabola''.  If only twelve spars were used for the entire surface, simple Ruze losses would be quite high (about 10\% at 150 MHz).  Therefore, at about 2.4 meters another horizontal member is placed, which launches another parabolic spar leading to a Ruze loss less than 1\%.  Fig \ref{fig:elementplan} shows this surface scheme and the panelization (left) and the offsets (in mm) of that scheme from an ideal parabola.  The panel that is ``left out'' is the location of a door to allow access into the hub (via a small removable door and bridge).  The additional intermediate spars also make the panel sizes much more manageable and better secured.  The panel arrangement is also set by a standard width of mesh roll of 1.22m.
 
 \begin{figure}[h!]
 \centerline{
@@ -937,17 +939,18 @@ The feed is to be deployed along two separate phases.  Initially, the feed reuse
 \begin{equation}
 \xi = \frac{\integral_{-\pi}^{\pi}\left[\sqrt{G(\theta,\phi=0)} - \sqrt{G(\theta,\phi=90)}\right]^2\sin\theta d\theta}
                {\integral_{-\pi}^{\pi}\left[\sqrt{G(\theta,\phi=0)} + \sqrt{G(\theta,\phi=90)}\right]^2\sin\theta d\theta}
+     \label{eq:polarmismatch}
 \end{equation}
 where $G$ is the beam pattern.
 The phase 1 design process and outcome is documented in  \cite{feedmemo} and is currently under test on the 19 elements in South Africa. Additional studies are on-going at NRAO and Cambridge University.
 
-The first phase design uses a 172cm diameter backplane, with a 36cm cylinder height.  The dipole is held at 36cm from the backplane and the back of the feed is rigged at 4.9m above the vertex of the dish.  The 10 dB input match for the feed itself spans from about 105 - 200 MHz.  The resultant calculated antenna performance parameters are shown in Fig. \ref{fig:ant_params} and beam-patterns for 110 MHz, 155 MHz and 190 MHz are shown in Fig. \ref{fig:beampatterns}.
+The first phase design uses a 172cm diameter backplane, with a 36cm cylinder height.  The dipole is held at 36cm from the backplane and the back of the feed is rigged at 4.9m above the vertex of the dish.  The 10 dB input match for the feed itself spans from about 105 - 200 MHz.  The resultant HFSS-calculated antenna performance parameters are shown in Fig. \ref{fig:ant_params} and beam-patterns for 110 MHz, 155 MHz and 190 MHz are shown in Fig. \ref{fig:beampatterns}.
 
 \begin{figure}[h!]
 \centerline{
 \includegraphics[height=0.6\textwidth]{plots/ant_params.pdf}
 }
-\caption{\small Antenna parameters}
+\caption{\small Antenna parameters from the feed optimization analysis.  All calculations were done using HFSS on the final design as described.  {\bf Upper left:}  fraction of feed power illuminating the primary (main beam efficiency).  {\bf Upper right:}  polarization mismatch as defined in Eq.  \ref{eq:polarmismatch}.  {\bf Lower left:}  total gain (blue) contrasted with a fixed efficiency of 78\%.  {\bf Lower right:}  first side-lobe level relative to the main beam peak.}
 \label{fig:ant_params}
 \end{figure}
 
@@ -957,7 +960,7 @@ The first phase design uses a 172cm diameter backplane, with a 36cm cylinder hei
 \includegraphics[height=0.3\textwidth]{plots/pat_155.pdf}
 \includegraphics[height=0.3\textwidth]{plots/pat_190.pdf}
 }
-\caption{\small Antenna patterns at 110 MHz, 155 MHz and 190 MHz.}
+\caption{\small Antenna patterns at 110 MHz, 155 MHz and 190 MHz calculated with HFSS and the adopted design.  Red curves are E-plane, green are H-plane at blue at 45$^\circ$.  Inset is the full 3D pattern.}
 \label{fig:beampatterns}
 \end{figure}
 
@@ -974,7 +977,7 @@ The low noise amplifier/balun integrates directly to the base of the feed dipole
 \label{sec:arrayConfig}
 
 As a focused experiment, HERA's configuration is optimized for the robust foreground-avoidance approach to EoR power spectrum estimation. 
-This requires a densely-packed core of antenna elements, maximizing sensitivity to short baselines---those least contaminated by foreground chromaticity (i.e.\ the wedge). 
+This requires a densely-packed core of antenna elements, maximizing sensitivity to short baselines---those least contaminated by foreground chromaticity ({\em i.e} the wedge). 
 Furthermore, the configuration should be highly redundant, both to enable the delay-spectrum strategy of PAPER \citep{parsons_et_al2012a} and redundant baseline calibration \citep{liu_et_al2010,zheng_et_al2014}.
 On the other hand, it is also desirable to improve the mapmaking ability of the array for calibration and map-based power spectrum estimation with longer baselines and a densely-sampled $uv$-plane \citep{dillon_et_al2015a}. This tradeoff was closely examined by \citet{dillon_parsons2016} and the ultimate HERA configuration was drawn from one of the designs they considered.
 
@@ -997,27 +1000,25 @@ using the \citet{liu_et_al2010} technique, yielding calibration errors that are 
 \end{figure}
 
 \subsection{Analog Signal Path}
-HERA's analog signal path from 70--250 MHz with the full performance EoR band of 100-200 MHz, as shown in Fig. \ref{fig:cosmos} and discussed in Sec. \ref{sec:freqs}, emphasizes spectral smoothness and robustness.  Although the low-frequency sky has an intrinsically bright signal level, in the desired ``cold patches'' the sky temperature is only about 30 K at the upper frequency end, so relatively low receiver temperatures are desired.  Note that at the low end of the band (70 MHz), the sky temperature is about 1000 K and across the EoR band it ranges from about 100-400 K.
+HERA's analog signal path from 70--250 MHz with the full performance EOR band of 100-200 MHz, as shown in Fig. \ref{fig:cosmos} and discussed in Sec. \ref{sec:freqs}, emphasizes spectral smoothness and robustness.  Although the low-frequency sky has an intrinsically bright signal level, in the desired ``cold patches'' the sky temperature is only about 30 K at the upper frequency end, so relatively low receiver temperatures are desired.  Note that at the low end of the band (70 MHz), the sky temperature is about 1000 K and across the EOR band it ranges from about 100-400 K.
 With receiver temperatures of 30--100 K readily achievable with ambient temperature electronics however
 HERA's low-noise amplifiers (LNAs) may be inexpensive, passively cooled components integrated into the
 antenna feed.  
 
 As part of the delay specification,
-HERA's signal path emphasizes careful impedance matching between each component to avoid signal reflections that can worsen foreground leakage.
-In particular, impedance matching between free space (377$\Omega$) and coaxial cable (50$\Omega$) is undertaken
-in the feed/balun at the front end of the signal chain, where the time constants of inevitable reflections are
-minimized.  For a similar reason, HERA houses analog-to-digital converters (ADCs) in nodes near the antenna elements
-to limit the total analog path length.  This length is set to be 35m, such that the round-trip delay corresponds to about 0.15 $h$/Mpc, which remains in the wavenumbers  contaminated by the wedge.  The project is also examining the impact of having a range of analog path lengths of $35\pm10$ m.
+HERA's signal path emphasizes careful impedance matching between each component to minimize signal reflections that can worsen foreground leakage for the delays of interest.  This means that the emphasis is to reduce the delay-value of a reflection, which allows for a design degree of freedom.  One such design element is to 
+house the analog-to-digital converters (ADCs) in nodes near the antenna elements
+to limit the total analog path length.  This length is set to be 35m, such that the round-trip delay corresponds to about 0.15 $h$/Mpc, which remains in the wavenumbers  near the wedge.  The project is also examining the impact of having a range of varying analog path lengths.
 
 
 
 \subsection{Digital Signal Path}
 \label{sec:digital}
 
-\noindent Although correlator development has historically been one of the most 
+Although correlator development has historically been one of the most 
 expensive aspects of building a large radio interferometer, this is no longer the case.
-CASPER \Mycitep{parsons_et_al2006}
-open-sourced the development of digital signal processing engines for astronomy and
+The Collaboration for Astronomy Signal Processing and Electronics Research (CASPER) is an \Mycitep{parsons_et_al2006}
+open-source program to further the development of digital signal processing engines for astronomy and
 now has world-wide participation,
 with over 500 members at 73 institutions, and 
 five generations of hardware.
@@ -1025,7 +1026,7 @@ On a modest budget, PAPER applied CASPER technology to develop and deploy new co
 annually for five years running, each quadrupling the computational capacity of its predecessor.
 Led at UC Berkeley's Radio Astronomy Lab (RAL),
 HERA efforts continue this incremental development cycle, using a packet-switched
-correlator architecture \Mycitep{parsons_et_al2008} that both PAPER and LEDA have
+correlator architecture \Mycitep{parsons_et_al2008} that both PAPER and LEDA \citep{2015JAI.....450003K} have
 applied to systems employing FPGAs and GPUs \citep{clark_et_al2011}.
 
 In order to meet the 35\,m specification for a maximum analog signal path length, along with a growing need for system scalability, HERA will adopt a node-based architecture for amplification, digitization, channelization, and digital
