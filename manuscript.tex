@@ -619,15 +619,29 @@ Therefore, a key issue to measuring the EOR power spectrum is to understand and 
 
 Note that the unit of the spatial wavenumber $k$ is 1/length, in this case the relevant length scale is megaparsecs (Mpc; 1 Mpc = 3.086$\times10^{22}$ m).  In order to normalize for updated measurements of the Hubble constant, it is further normalized by a factor $h$, where Hubble's constant is expressed as $H_0=100h$ (km/s)/Mpc , such that the wavenumbers are expressed as $h$/Mpc.  Also note that at the redshifts of interest $X$ has a value of about 160 Mpc/deg and $Y$ has a value of about 16 Mpc/MHz.
 
+%\begin{figure}[t]
+%\centerline{
+%\includegraphics[height=3in]{plots/wedges.pdf}
+%}
+%\caption{The EoR ``window'' and foreground ``wedge'' are shown in this plot, which splits the wavenumber into $\kvpr$ (horizontal) and $\kpar$ (vertical) components.
+%Smooth-spectrum foregrounds with an intrinsic spectrum indicated by the gray bar along the bottom create the ``wedge'' when they interact with the interferometer's chromatic response, shown with a foreground image from the MWA.  Systematics can extend the wedge to the upper left.  The EoR window (shown with a simulation
+%from \citealt{mesinger_et_al2011}) to the upper left should be free from foregrounds.}
+%\label{fig:wedge}
+%\end{figure}
+
 \begin{figure}[t]
-\centerline{
-\includegraphics[height=3in]{plots/wedges.pdf}
-}
-\caption{The EoR ``window'' and foreground ``wedge'' are shown in this plot, which splits the wavenumber into $\kvpr$ (horizontal) and $\kpar$ (vertical) components.
-Smooth-spectrum foregrounds with an intrinsic spectrum indicated by the gray bar along the bottom create the ``wedge'' when they interact with the interferometer's chromatic response, shown with a foreground image from the MWA.  Systematics can extend the wedge to the upper left.  The EoR window (shown with a simulation
-from \citealt{mesinger_et_al2011}) to the upper left should be free from foregrounds.}
-\label{fig:wedge}
+	\centering
+%	\vspace{-10pt}
+	\includegraphics[width=1\textwidth,clip]{plots/Josh_Window_Data_Cartoon_v3.pdf}
+	\vspace{-10pt}
+	\caption{Foregrounds are a primary challenge facing 21\,cm cosmology experiments. 
+HERA leverages a ``wedge'' in the cylindrically-averaged ($\mathbf{k}$ is broken into $k_\|$ and $k_\perp$) power spectrum (center panel). Smooth-spectrum foregrounds (right panel) $\sim$5 orders of magnitude brighter than fiducial EoR models (left panel; \citealt{mesinger_et_al2011}) create the ``wedge'' when they interact with the interferometer's chromatic response. Flat spectrum foregrounds cannot contaminate the EoR window beyond the horizon wedge, though intrinsic or imperfectly calibrated chromaticity can push it slightly beyond the horizon. By avoiding foregrounds, PAPER has placed limits within an order
+of magnitude (in mK) of these models \citep{ali_et_al2015} and show the ``EoR Window'' to be foreground-free.
+HERA's dish and compact configuration optimize wedge/window isolation and direct sensitivity to low-$k_\perp$ modes where the EoR is brightest relative to the foreground wedge.
+}	\label{fig:wedge}
+%\vspace{-10pt}
 \end{figure}
+
 
 The techniques to measure the power spectrum may be broken down into two principle techniques -- delay-space (\S\ref{sec:delayapproach}) and map-making (\S\ref{sec:mapapproach}) -- plus additional hydrid methods.  These are briefly summarized below, with an emphasis on the delay-spectrum technique as the initial approach taken by HERA.  Finally, we provide a short discussion on calibration in the concept of this design.
 
