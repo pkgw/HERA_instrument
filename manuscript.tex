@@ -81,10 +81,10 @@
 \textbf{Abstract}
 \end{center}
 
-The Hydrogen Epoch of Reionization Array (HERA http://reionization.org) is a staged experiment that uses the unique properties of the 21-cm line from neutral hydrogen to probe the Epoch of Reionization (EOR). During this epoch, roughly 0.3 - 1 billion years after the Big Bang, the first galaxies and black holes heated and reionized the early Universe. Direct observation of the large scale structure of reionization and its evolution with time will have a profound impact on our understanding of the birth of the first galaxies and black holes, their influence on the intergalactic medium (IGM), and cosmology.  This paper will provide an overview of the project and describe the design of the system.
+The Hydrogen Epoch of Reionization Array (HERA) is a staged experiment that uses the unique properties of the 21\,cm line from neutral hydrogen to probe the Epoch of Reionization (EOR). During this epoch, roughly 0.3 - 1 billion years after the Big Bang, the first galaxies and black holes heated and reionized the early Universe. Direct observation of the large scale structure of reionization and its evolution with time will have a profound impact on our understanding of the birth of the first galaxies and black holes, their influence on the intergalactic medium (IGM), and cosmology.  This paper will provide an overview of the project and describe the design of the system, moving from a science overview to requirements, design and status.
 
 \section{Introduction}
-The Hydrogen Epoch of Reionization Array (HERA) is a staged experiment to use the redshifted 21\,cm line
+The Hydrogen Epoch of Reionization Array (HERA; http://reionization.org) is a staged experiment to use the redshifted 21\,cm line
 of neutral hydrogen to characterize our Cosmic Dawn, from
 the formation of the first stars and black holes $\sim0.1~$Gyr after the Big
 Bang ($z\sim30$) through the full reionization of the intergalactic medium
@@ -97,10 +97,10 @@ purpose-built radio
 interferometer is optimized to deliver high signal-to-noise measurements of
 redshifted 21\,cm emission to detect and characterize the Epoch of Reionization (EOR).
 
-Because of these key science questions that may be probed by highly redshifted hydrogen, there has been a resurgence in low frequency arrays  -- most with a primary
+Because of these key science questions that may be probed by highly-redshifted hydrogen emission, there has been a resurgence in low frequency arrays  -- most with a primary
 objective of measuring the EOR.  These include the Precision Array Probing the Epoch of Reionization (PAPER; \citealt{parsons_et_al2010}), the Murchison Widefield Array (MWA; \citealt{tingay_et_al2013}), the LOw Frequency ARray (LOFAR; \citealt{2013A&A...556A...2V}), and the Long Wavelength Array (LWA; \citealt{2009IEEEP..97.1421E}), as well as systems for existing dish arrays like the Very Large Array (VLA; \citealt{2013AAS...22132804K}) and the Giant Metrewave Radio Telescope (GMRT; \citealt{paciga_et_al2011}).
 With the first generation 21\,cm telescopes approaching the limits of their sensitivity however, HERA continues the experiment by bringing significantly more sensitivity to bear
-while continuing to optimize its design along the delay-spectrum approach to detect the power spectrum of the EoR (discussed in Sec. \ref{sec:delayapproach}).
+while continuing to optimize its design along the delay-spectrum approach to detect the power spectrum of the EoR (discussed in \S\ref{sec:delayapproach}).
 At the same time, HERA continues the development of new techniques to extend and improve its capabilities.
 Examples include improving foreground subtraction to expand the information content 
 in power spectral and imaging measurements and
@@ -125,9 +125,11 @@ staged deployment.  The key is to produce inexpensive collecting area optimized 
 The first 19-element array is complete and, with additional funding from Cambridge University, construction underway on the next 18 elements, for a total of 37.
 The South African National Research Foundation SKA-SA group (SKA-SA) is a key partner in the construction and science.
 
-The current 19 elements are testing the HERA element design for performance and manufacturability on location.  The 37 elements, to be completed in 2016, will provide nearly an order of magnitude more 
-sensitivity than current instruments and provide a significant chance at detecting the EoR power spectrum signal.  The next proposed phase will build out to 128 elements and use the existing 128 dual-polarization analog and digital signal paths that have been in use with PAPER \citep{ali_et_al2015}, which should provide a very robust detection of the EOR signal and allow some characterization.  Finally, extending to 2020, HERA will build out to 350 elements to further EOR science as a function 
-of redshift and spatial scale, potentially producing the first images of the EOR.
+The current 19 elements are testing the HERA element design for performance and manufacturability on location.  The 37 elements, to be completed in 2016, will provide a factor of about 5 more 
+sensitivity than PAPER-128 and provide a significant chance at detecting the EoR power spectrum signal.  The next proposed phase will build out to 128 elements and use the existing 128 dual-polarization analog and digital signal paths that have been in use with PAPER,
+%\citep{ali_et_al2015}
+which should provide a very robust detection of the EOR signal and allow some characterization.  Finally, extending to 2020, HERA will build out to 350 elements to further EOR science as a function 
+of redshift and spatial scale, potentially producing the first images of the EOR.  These estimates will be quantified and shown in this paper.
 
 HERA is a collaboration of the following Partner institutions:  
 Arizona State University (Tempe, AZ USA), 
@@ -185,7 +187,7 @@ the decade \citep{NWNH}.
 \begin{figure}[h!]
 	\centering
 	\includegraphics[width=0.7\textwidth]{plots/cosmicEvo.png}
-	\caption{Rendering of cosmic evolution from just after the Big Bang to today (background image credit Loeb/{\em Scientific American}).  The blue line shows the frequency of the red-shifted hydrogen line (rest frequency 1420 MHz) as a function of redshift (lower horizontal axis) and cosmic time (upper horizontal axis).  The white dashed horizontal lines are the HERA EoR band and the blue are the extended frequency goal.  Determining where the structure in the background really falls is the
+	\caption{Rendering of cosmic evolution from just after the Big Bang to today (background image credit Loeb/{\em Scientific American}).  The blue line shows the frequency of the red-shifted hydrogen line (rest frequency 1420 MHz) as a function of redshift (lower horizontal axis) and cosmic time (upper horizontal axis).  The white dashed horizontal lines are the HERA EOR band and the blue are the extended frequency goal.  Determining where the structure in the background really falls is the
 goal of HERA.} 
 	\label{fig:cosmos}
 \end{figure}
@@ -193,17 +195,17 @@ goal of HERA.}
 
 Exploring the interplay of galaxies and large-scale structure during the EOR
 requires complementary observational approaches. Measurements of the Cosmic Microwave Background 
-(CMB; the escaping radiation permeating the universe after the universe became
-transparent to its radiation by the recombination of the protons and electrons about 400,000 years after the Big Bang)  by COBE, WMAP and Planck provide initial conditions for structure formation.  Thomson
+(CMB; the photons permeating the universe after becoming
+transparent to its own radiation by the recombination of the protons and electrons about 400,000 years after the Big Bang)  by COBE, WMAP and Planck provide initial conditions for structure formation.  Thomson
 scattering of CMB photons by the ionized particles constrains the integrated column of 
-ionized gas and kinetic Sunyaev-Zel'dovich measurements constrain the power spectrum of cosmic structures.
+ionized gas and kinetic Sunyaev-Zel'dovich measurements constrain the duration of the ``patchy'' phase of cosmic structures.
 But even with these measurements, the detailed evolution of the IGM 
 is only loosely constrained \citep{haiman_holder2003,mortonson_hu2008,zahn_etal2012,mesinger_et_al2012}.
 Lyman-$\alpha$ absorption features in quasar and $\gamma$-ray burst spectra give 
 ionization constraints at the tail end of reionization 
 ($z\la7$, \citealt{fan_et_al2006, mcgreer_et_al2015}), but these features 
 saturate at low neutral fractions
-($x_{\rm HI} \la 10^{-4}$), where $x_{\rm HI}$ is the ratio of neutral hydrogen to the total baryonic density. 
+($x_{\rm HI} \ga 10^{-4}$), where $x_{\rm HI}$ is the fraction of hydrogen in its neutral state. 
 
 Measurements of galaxy populations in
 deep {\it Hubble Space Telescope} observations 
@@ -258,7 +260,7 @@ modeling efforts, the HERA program will advance our understanding of early galax
     \includegraphics[width=0.49\textwidth,clip]{plots/sensitivity_wideband.pdf}
   \caption{ 1$\sigma$ thermal noise errors on $\Delta^2(k)$, the 21\,cm power spectrum, at $k\!=\!0.2$\,$h$\,Mpc$^{-1}$ (the dominant error at that $k$)
 with 1080 hours of integration (black)
-compared with various heating and reionization models (colored).  Note that only predicted results using the delay-spectrum approach are shown.}
+compared with various heating and reionization models (colored).  Sensitivity analysis is per footnote in Table \ref{sec:signif}}
 	\label{fig:Sensitivities}
 \end{figure}
 
@@ -274,7 +276,7 @@ However, current experiments cannot expect more than marginal detections of the 
 Figure~\ref{fig:Sensitivities} compares telescope sensitivities as a function of redshift to models of 
 the evolving, spherically averaged 21\,cm EoR power spectrum, characterized by the dimensionless power spectrum parameter $\Delta^2 (k) \equiv k^3 P(k) / 2 \pi^2$.
 The expected performance of HERA relative to current and planned telescopes to detect the peak of reionization (as well as the total collecting area is shown in 
-Table~\ref{tab:signif}.  
+Table~\ref{tab:signif}).  
 
 
 %In contrast to current experiments,
@@ -283,9 +285,9 @@ Table~\ref{tab:signif}.
 %mitigation strategies (see Table~\ref{tab:signif}). The development of enhanced foreground modeling and subtraction further improve the achievable results.
 
 
-\begin{SCtable}
-\caption{\hspace{-1.2mm}: Predicted SNRs of 21\,cm experiments for an EoR model with 50\% ionization at $z=9.5$, with 1080 hours observation, integrated over a $\Delta z$ of $0.8$.
-Foreground avoidance represents an analysis comparable to \cite{ali_et_al2015}, whereas foreground modeling allows signifcantly more $k$ modes of the cosmological signal to be recovered.}
+\begin{table}
+\caption{\small Predicted SNRs of 21\,cm experiments for an EoR model with 50\% ionization at $z=9.5$, with 1080 hours observation, integrated over a $\Delta z$ of $0.8^*$.
+}
 \small
  \centering
  \begin{tabular}{c||r||r|r} 
@@ -304,10 +306,12 @@ LOFAR NL Core & 35,762 & 0.38$\sigma$ & 5.36$\sigma$ \\
 SKA1 Low Core & 416,595 & 13.4$\sigma$ & 109.90$\sigma$
 %\enddata
 \end{tabular}
-%\Caption{-0.1in}{0.99}{-0.1in}
-\hspace{-0.1in}
+\caption*{%\tiny{\justify
+$^*$Calculations done via \url{21cmSense} \url{www.github.com/} \citep{2013AJ....145...65P,2014ApJ...782...66P}
+Foreground avoidance represents an analysis comparable to \cite{ali_et_al2015}, whereas foreground modeling allows significantly more $k$ modes of the cosmological signal to be recovered.}
 \label{tab:signif}
-\end{SCtable}
+\end{table}
+
 
 \begin{figure}[h!]
 \centering
@@ -319,7 +323,7 @@ SKA1 Low Core & 416,595 & 13.4$\sigma$ & 109.90$\sigma$
 HERA's 21\,cm measurements can be used in conjunction with our semi-analytic models to constrain the ionization history. 
 The red band in Fig.~\ref{fig:IonHist} shows the forecasted 95\% confidence region derived from HERA data after marginalizing over astrophysical and cosmological parameters.
 Figure~\ref{fig:paramConstraints} shows the results of a Markov Chain Monte
-Carlo (MCMC) pipeline for fitting models to 21\,cm power spectrum data \citep{greig_and_mesinger2015}, which we have conservatively limited to the range $8 < z < 10$ (although in practice a much broader bandwidth will be available; see Sec. \ref{sec:freqs}).
+Carlo (MCMC) pipeline for fitting models to 21\,cm power spectrum data \citep{greig_and_mesinger2015}, which we have conservatively limited to the range $8 < z < 10$ (although in practice a much broader bandwidth will be available; see \S\ref{sec:freqs}).
 Based on the excursion-set formalism of
 \citet{furlanetto_et_al2004} and the 21cmFAST code \citep{mesinger_et_al2011},
 this code models the astrophysics of
@@ -496,7 +500,7 @@ dispersion. Detecting deviations would rule out broad classes of models and coul
 
 \section{Measuring the EOR}
 \label{sec:eormeas}
-Due to the expansion of the universe over cosmological time, we can identify and measure the early Universe via the red-shift of spectral lines.  The hydrogen hyperfine transition at a rest frequency of 1420 MHz is a key spectral line due to the ubiquity of hydrogen and, being a ``forbidden'' transition, the optical depth lets us see through the entire universe back almost to the period of recombination.  The bandwidth
+Due to the expansion of the universe over cosmological time, we can identify and measure the early Universe via the redshift of spectral lines.  The hydrogen hyperfine transition at a rest frequency of 1420 MHz is a key spectral line due to the ubiquity of hydrogen and, being a ``forbidden'' transition, the optical depth lets us see through the entire universe back almost to the period of recombination.  The bandwidth
 therefore equates to a cosmic distance along the line-of-site of the telescope, with the frequency determining the cosmic age.  An observation of an area of sky over a given bandwidth is therefore providing an average
 over a cosmic volume.
 
@@ -504,8 +508,8 @@ As the distance to the EOR is great (about 13 billion light-years) the signal is
 
 Obviously between our present observation point and the Epoch of Reionization lies the entire intervening universe, which has an intrinsically much brighter signal (up to 6 orders of magnitude or more).  Primarily, this power is due to diffuse Galactic synchrotron radiation, supernova remnants and extragalactic radio sources.  As a first step, areas of the sky where these signals are minimal (for example, outside the galactic plane and away from strong point sources) are targeted \citep{bernardi_2013}.  More importantly and most fortuitously however is the fact that all of these foreground signals are smooth spectrum sources whereas the expected spectrum of the EOR is expected to be rough since it is made up of non-ionized regions which are randomly distributed over a wide range of redshifts.  This fact allows us to try and isolate foregrounds from the EOR, as will be discussed.
 
-The past three years have seen deep EoR observations with PAPER, the MWA, 
-the Giant Metrewave Radio Telescope (GMRT; \citealt{paciga_et_al2013}), and LOFAR.
+The past three years have seen deep EOR observations with PAPER, the MWA, 
+the Giant Metrewave Radio Telescope (GMRT), and LOFAR.
 PAPER and the MWA have produced progressively deeper limits
 \citep{dillon_et_al2014,dillon_et_al2015,parsons_etal2014,ali_et_al2015}, with PAPER
 yielding the first meaningful constraints on the 21\,cm spin temperature during reionization
@@ -514,13 +518,13 @@ The inherent challenge is to simultaneously meet stringent sensitivity requireme
 while suppressing foregrounds $\sim5$ orders of magnitude
 brighter than the 21\,cm signal, which has been addressed along a number of approaches.  
 To address this challenge,  all aspects of the experimental process must be refined and improved, spanning 
-calibration ({\em e.g.} \cite{zheng_et_al2014, jacobs_et_al2016, barry_et_al2016}), handling foreground contamination
+calibration ({\em e.g.} \cite{zheng_et_al2014, jacobs_et_al2016, 2016arXiv160300607B}), handling foreground contamination
 ({\em e.g.} \cite{moore_et_al2013,thyagarajan_et_al2015a,pober_et_al2016}),
 and the interferometer design itself ({\em e.g.} \cite{parsons_et_al2012a,dillon_parsons2016}).
 
 A promising approach to make the first detection of the EoR power spectrum 
 is a foreground mitigation strategy based largely
-on identifying and filtering out a region of phase space where the strong foregrounds are largely confined (Sec. \ref{sec:delayapproach}).  This is the approach
+on identifying and filtering out a region of parameter space where the strong foregrounds are largely confined (\S\ref{sec:delayapproach}).  This is the approach
 pioneered by PAPER.
 By reducing the need
 for foreground modeling and subtraction, this approach allowed PAPER to switch to a grid-based antenna layout that
@@ -538,7 +542,7 @@ intrinsic point source polarization is lower than previously thought
 ionosphere averages down the polarized signal over long observing seasons
 \Mycitep{moore_et_al2016,aguirre_etal_2016}, direction-dependent beam effects remain an area of interest.
 The MWA's image-based calibration and foreground subtraction strategy provides complementary
-capabilities (Sec. \ref{sec:mapapproach}). Imaging with subtraction, while still under development as a viable foreground strategy,
+capabilities (\S\ref{sec:mapapproach}). Imaging with subtraction, while still under development as a viable foreground strategy,
 can increase sensitivity by recovering more modes of the cosmological signal (see
 Table~\ref{tab:signif}) and help address systematic errors rooted
 in the image domain.  HERA's antenna configuration---shown in Figure \ref{fig:arrayConfig} and discussed in \S\ref{sec:arrayConfig}---emphasizes
@@ -582,9 +586,10 @@ appear there through instrumental leakage \citep{parsons_etal2014,ali_et_al2015,
 The power spectrum measurement provides the spatial correlations across the sky, characterized by the magnitude of the wavenumber, ${\bf k}$.
 Though the full magnitude of the {\bf k}-vector is used, it is instructive to split it into two components,  $\kvec =  \kvpr + \kpar{\hat {\bf z}}$ where $|\kvpr|\equiv \kpr = 2\pi b/\lambda X$ is determined by the antenna baseline ($b$) and $\kpar=2\pi/(YB)$ by the bandwidth ($B$).  Here $X$ and $Y$ are cosmological parameters relating angular size and spectral frequency to cosmic volumes respectively (so, relating wavenumber to physical volume at a given redshift).  This is useful since it allows us to split out the chromatic response of the interferometer visibility measurement and isolate a phase space where foreground sources ({\em i.e.} everything {\em not} the EOR) contaminate the signal of interest from where they don't.  
 
-The $\kvpr$ components are directly proportional to the baselines and $\kpar$ are proportional to the Fourier transform of the frequency response.   The Fourier transform of a frequency spectrum is a delay, hence the name ``delay-spectrum'' for the technique that uses this approach.  Note that cosmic evolution limits the largest bandwidth (which determines the smallest $\kpar$) to about 10 MHz -- for larger bandwidths the evolution of the Universe begins to impact the result.  For HERA, wavenumbers are dominated by the bandwidth, not the baseline.
+The $\kvpr$ components are directly proportional to the baselines and $\kpar$ are proportional to the Fourier transform of the frequency response \footnote{Note that this equivalency is an approximation, which is very good for the short baselines and small bandwidths generally used here.  For a more complete discussion see \cite{liu_et_al2014a,liu_et_al2014b}}.   
+The Fourier transform of a frequency spectrum is a delay, hence the name ``delay-spectrum'' for the technique that uses this approach.  Note that cosmic evolution limits the largest bandwidth (which determines the smallest $\kpar$) to about 10 MHz -- for larger bandwidths the evolution of the Universe begins to impact the result.  For HERA, wavenumbers are dominated by the bandwidth, not the baseline.
 
-Figure \ref{fig:kperf} shows many of the dependencies on wavenumber by the bandwidth, configuration and cosmos by plotting the perpendicular wavenumber ($\kvpr$; black lines), parallel wavenumber ($\kpar$; blue lines) and total wavenumber ($k$; green lines) as a function of redshift for various bandwidths and baselines.  The redshift range is appropriate for the extended frequency range that is the goal for HERA, however $z$=6-13 is the primary region for EOR studies.
+Figure \ref{fig:kperf} shows many of the dependencies on wavenumber by the bandwidth, configuration and cosmology by plotting the perpendicular wavenumber ($\kvpr$; black lines), parallel wavenumber ($\kpar$; blue lines) and total wavenumber ($k$; green lines) as a function of redshift for various bandwidths and baselines.  The redshift range is appropriate for the extended frequency range that is the goal for HERA, however $z$=6-13 is the primary region for EOR studies.
 The lines are labelled for the assumed bandwidth and/or baseline, depending on the type of wavenumber shown.  Obviously many values may be used, but here a small sampling of values appropriate for HERA are shown.    
 Wavenumbers with an assumed bandwidth ($k$ and $\kpar$ are shown as stepped profiles, with the redshift steps equal to the bandwidth at that redshift.
 Note that for 100 MHz, the concept of a power spectrum at a given redshift is no longer appropriate, which is why the line is dashed.
@@ -595,23 +600,23 @@ Also in Fig. \ref{fig:kperf}, the lime-green shaded area indicates the initial r
 \centerline{
 \includegraphics[width=.4\textwidth]{plots/kperf.pdf} 
 }
-\caption{\small $|\kvec |, \kpar, \kperp$ wavenumber plots at various bandwidths ($k_{||}$; blue), baselines ($\kperp$; black), and total ($|\kvec |$, green) as a function of redshift.  The stepped profiles for $k_{||}$ and $|\kvec |$ are the line-of-site redshift ranges for that bandwidth (too small to see at 1 MHz).  See text for discussion.  The full redshift range is the HERA extended goal.  The initial HERA delay-spectrum power spectrum goal is the light green square region in the upper left.}
+\caption{\small $|\kvec |, \kpar, \kperp$ wavenumber plots at various bandwidths ($k_{||}$; blue), baselines ($\kperp$; black), and total ($|\kvec |$, green) as a function of redshift.  The stepped profiles for $k_{||}$ and $|\kvec |$ are the line-of-sight redshift ranges for that bandwidth (too small to see at 1 MHz).  See text for discussion.  The full redshift range is the HERA extended goal.  The initial HERA delay-spectrum power spectrum goal is the light green square region in the upper left.}
 \label{fig:kperf}
 \end{figure}
 
 
-In these variables, the ``contaminated'' phase space is a wedge-shaped region in $\kpr$:$\kpar$ space such that the ratio of the time-delay across a given baseline ($b/c$,  which impacts the chromatic visibility) and the delay associated with a given bandwidth ($1/B$) is less than some parameter determined by the details of the system, which we denote as $1/\beta$.  Substituting $\kpr$ and $\kpar$ in for $b$ and $\Delta\nu$ in this ratio, this wedge is bounded by
+In these variables, the ``contaminated'' phase space is a wedge-shaped region in $\kpr, \kpar$ space such that the ratio of the time-delay across a given baseline ($b/c$,  which impacts the chromatic visibility) and the delay associated with a given bandwidth ($1/B$) is less than some parameter determined by the details of the system, which we denote as $1/\beta$.  Substituting $\kpr$ and $\kpar$ in for $b$ and $\Delta\nu$ in this ratio, this wedge is bounded by
 \begin{equation}
 \kpar \le \beta\frac{X\lambda}{Yc}\kpr + \frac{S}{Y}
 \end{equation}
-where an offset parameterized by $S$ accounting for affects related to the combined spectral smoothness of the foregrounds and the antenna response has been included(see Fig. \ref{fig:wedge}). 
+where an offset parameterized by $S$ accounting for affects related to the combined spectral smoothness of the foregrounds and the antenna response has been included (see Fig. \ref{fig:wedge}). 
 
 If this $\beta$ factor is determined by the chromaticity of the longest baseline, we see that $\beta=1$ and this line is referred to as the ``horizon line'' ({\em i.e.}, the delay of a source at the horizon).  Systematics will push that line such as to close the EOR ``window'' to the upper left ($\beta > 1$).  If we can completely control systematics and constrain the affects of the foreground to {\em e.g.} the main beam, the line will move to decrease the size of the wedge ($\beta<1$).
 Therefore, a key issue to measuring the EOR power spectrum is to understand and minimize systematics.  For further discussion and an analytical derivation, see \cite{zahn_etal2012,vedantham_2012,liu_et_al2014b},  in simulation see \cite{datta_etal2010,hazelton_et_al2013} and for observations
 \cite{pober_etal2013b,2015arXiv150601026P,parsons_etal2014,2015arXiv150206016A}.  
 
 
-Note that the unit of the spatial wavenumber $k$ is 1/length, in this case the relevant length scale is megaparsecs (Mpc; 1 Mpc = 3.086$\times10^{22}$ m).  In order to normalize for updated measurements of the Hubble constant, it is further normalized by a factor $h$, where Hubble's constant is expressed as $H_0=100h$ (km/s)/Mpc , such that the wavenumbers are expressed as $h$/Mpc.  Also note that at the red-shifts of interest $X$ has a value of about 160 Mpc/deg and $Y$ has a value of about 16 Mpc/MHz.
+Note that the unit of the spatial wavenumber $k$ is 1/length, in this case the relevant length scale is megaparsecs (Mpc; 1 Mpc = 3.086$\times10^{22}$ m).  In order to normalize for updated measurements of the Hubble constant, it is further normalized by a factor $h$, where Hubble's constant is expressed as $H_0=100h$ (km/s)/Mpc , such that the wavenumbers are expressed as $h$/Mpc.  Also note that at the redshifts of interest $X$ has a value of about 160 Mpc/deg and $Y$ has a value of about 16 Mpc/MHz.
 
 \begin{figure}[t]
 \centerline{
@@ -627,22 +632,22 @@ The techniques to measure the power spectrum may be broken down into two princip
 
 \subsection{Delay-Spectrum Approach}
 \label{sec:delayapproach}
-Given that the response of an interferometer natively measures the power in Fourier modes of the sky within its beam, we see that it is a natural instrument to use for this measurement of the EOR spatial power spectrum.  The delay-spectrum approach leverages the interferometer measurement to optimize sensitivity to the desired modes while rejecting modes contaminated by the foreground power in the wedge.  Other than potentially handling overlapping bins in {\em uv} space, the delay-spectrum approach does not combine baselines before squaring and calculating the power spectrum, which contrasts to the map-making techniques briefly described in the following section.
+Given that the response of an interferometer natively measures the power in Fourier modes of the sky within its beam, we see that it is a natural instrument to use for this measurement of the EOR spatial power spectrum.  The delay-spectrum approach leverages the interferometer measurement to optimize sensitivity to the desired modes while rejecting modes contaminated by the foreground power in the wedge.  Other than potentially handling overlapping bins in {\em uv} space, the delay-spectrum approach does not combine baselines before squaring and calculating the power spectrum, which contrasts to the map-making techniques briefly described in the following section.  For more details, see \cite{parsons_et_al2012b}.
 
-We can essentially relate the sky power spectrum mode ${\hat P}(\kvec)$ to an interferometer baseline visibility ${\tilde V}(\bvec)$, which is the equivalent of the (complex) fringe pattern in a double slit experiment:
+We can essentially relate the sky power spectrum $P(\kvec)$ to the Fourier transform along the frequency axis (the delay-transform) of an interferometer baseline visibility, denoted ${\tilde V}_b(\tau)$:
 \begin{equation}
-{\hat P}(\kvec) \approx\frac{X^2Y}{4k_B^2}   \left[\frac{{\tilde V}^2(\bvec)}{\Omega_b B/ \lambda^4} \right]
+P(\kvec) \approx\frac{X^2Y}{4k_B^2}   \left[\frac{{\tilde V}^2_b(\tau)}{\Omega_b B/ \lambda^4} \right]
 \label{eq:Pk_baseline}
 \end{equation}
 where $X$ and $Y$ were introduced above, $\Omega_b$ is the integrated beam response, $B$ is the effective bandwidth, $\lambda$ is the observation wavelength, and $k_B$ is Boltzmann's constant.  The terms in square brackets are instrumental terms, as opposed to the constants and cosmological parameters.  
-Rather than ${\hat P}(\kvec)$, the literature generally works with a volume-normalized parameter given by $\Delta^2(k) = \frac{k^3}{2\pi^2}{\hat P}(\kvec)$.    
+Rather than $P(\kvec)$, the literature generally works with a volume-normalized parameter given by $\Delta^2(k) = \frac{k^3}{2\pi^2}P(\kvec)$.    
 
 Since the thermal noise per visibility baseline may be expressed as
 \begin{equation}
-V_N = \left(\frac{2k_B}{\lambda^2}\right)\left(\frac{T_{sys}}{\sqrt{2B\tau}}\right)\Omega_b B
+V_N = \left(\frac{2k_B}{\lambda^2}\right)\left(\frac{T_{sys}}{\sqrt{2Bt}}\right)\Omega_b B
 \label{eq:sensitivity_per_baseline}
 \end{equation}
-where $\tau$ is the integration time (see {\em e.g.} \citealt{thompson_et_al2001}),
+where $t$ is the integration time (see {\em e.g.} \citealt{thompson_et_al2001}),
 to determine the sensitivity of an instrument to the power spectrum per baseline we can substitute the thermal noise per baseline for the visibility in Eq. \ref{eq:Pk_baseline}.  Further, since an interferometer typically measures many baselines which may be averaged together to improve the signal-to-noise per $k$-bin, the total sensitivity may be approximated as
 \begin{equation}
 \Delta^2_N (k,z)\approx \frac{k^3X^2(z)Y(z)}{4\pi^2} \left[\frac{T_{sys}^2(z)\Omega_b(z) }{\tau(z) \mathcal{N}_s(k)}\right]
@@ -650,9 +655,9 @@ to determine the sensitivity of an instrument to the power spectrum per baseline
 \end{equation}
 where $\mathcal{N}$ represents the improvement in sensitivity based on the array configuration, which may significantly boost the sensitivity if optimized for this measurement (see \citealt{parsons_et_al2012b}).  Dependencies on redshift and wavenumber have been included.
 
-Fig. \ref{fig:boost} (left) plots this ``redundancy boost'' factor for various configuration types relative to an array in a 19-element hexagonal configuration.  They are labelled for the type of configuration (hex, grid, imaging) and the number of antennas (from 37 to 350).  Note that (a) {\em hex} is based on the configuration used for HERA (14.6m center-to-center spacing); (b) {\em grid} for that of PAPER (4m N-S, 16m E-W spacing); (c) {\em imaging-128} for MWA \citep{tingay_et_al2013}; and (d) {\em imaging-48} for LOFAR (\citealt{2013A&A...556A...2V}; note that this assumes the ability to fully correlate the HBA-pairs).  The plot shows that for a fixed number of elements using the delay-spectrum approach, redundant arrays (hex and grid) provide about an order of magnitude improvement over imaging arrays.  Since the baselines go as order $N^2$, this corresponds to using about 1/3 of the number of elements to yield the same performance (as verified by the Hex-37/Imaging-128 lines).  This advantage does not extend to the other approaches discussed below and imaging configurations would be preferred.  Note that a filled hexagonal-packed array provides excellent imaging as well, but with potentially limited resolution unless outriggers are included.
+Fig. \ref{fig:boost} (left) plots this ``redundancy boost'' factor for various configuration types relative to an array in a 19-element hexagonal configuration.  They are labelled for the type of configuration (hex, grid, imaging) and the number of antennas (from 37 to 350).  Note that (a) {\em hex} is based on the configuration used for HERA (14.6m center-to-center spacing); (b) {\em grid} for that of PAPER (4m N-S, 16m E-W spacing); (c) {\em imaging-128} for MWA \citep{tingay_et_al2013}; and (d) {\em imaging-48} for LOFAR (\citealt{2013A&A...556A...2V}; note that this assumes the ability to fully correlate the HBA-pairs in the Netherlands core).  The plot shows that for a fixed number of elements using the delay-spectrum approach, redundant arrays (hex and grid) provide about an order of magnitude improvement over imaging arrays.  Since the baselines go as order $N^2$, this corresponds to using about 1/3 of the number of elements to yield the same performance (as verified by the Hex-37/Imaging-128 lines).  This specific dependency does not extend to the other approaches discussed below and imaging configurations would likely be preferred.  Note that a filled hexagonal-packed array provides excellent imaging as well, but with potentially limited resolution unless outriggers are included.
 
-Another approach to improving sensitivity is to make the collecting area per element larger.  In the limit, this yields a fully filled aperture.  A larger element does limit the accessible field-of-view, but this is not a huge liability for a focussed experiment as long as an appropriate patch of ``cold'' sky passes within its field-of-view.   Fig. \ref{fig:boost} (right) shows the relative sensitivity incorporating configuration and element size of various arrays relative to HERA-19, calculated for a redshift corresponding to the peak signal at a hydrogen reionization fraction of 0.5.  The circles to the right indicate the relative sizes of the element.  Note that MWA and LOFAR are cross-hatched to indicate phased array tiles, which uses small antennas to phase up a full element response.
+Another approach to improving sensitivity is to make the collecting area per element larger.  A larger element does limit the accessible field-of-view, but this is not a huge liability for a focussed experiment as long as an appropriate patch of ``cold'' sky passes within its field-of-view and a large enough piece of sky is surveyed to overcome sample variance.  These conditions hold true for HERA.  Fig. \ref{fig:boost} (right) shows the relative sensitivity incorporating configuration and element size of various arrays relative to HERA-19 using \url{21cmSense}, calculated for a redshift corresponding to the peak signal at a hydrogen reionization fraction of 0.5 (in this case, z=8).  The circles to the right indicate the relative sizes of the element.  Note that MWA and LOFAR are cross-hatched to indicate phased array tiles, which uses small antennas to phase up a full element response.
 
 
 \begin{figure}[h!]
@@ -668,7 +673,7 @@ magnitude improvement in delay-spectrum sensitivity.  Alternatively, for the sam
 
 
 
-As an aside, note the parallels to imaging with an interferometer.  For imaging, one takes a 2-D spatial Fourier transform of the visibilities, and produces images as a function of frequency.  Here, one is taking a 1-D Fourier transform along the other axis (the bandpass) and produces a 3-D spatial power spectrum.  In imaging, point sources are transformed to a single pixel, whereas for the delay-spectrum, smooth sources are transformed to a single channel (but then get forced into the wedge due to the inherent chromatic response of an interferometer).  For imaging, we are concerned with ripples in the passband due to standing waves, whereas for the delay-spectrum we are concerned with delayed versions of the signal due to multiple reflections.
+As an aside, note the parallels to imaging with an interferometer.  For imaging, one takes a 2-D spatial Fourier transform of the visibilities, and produces images as a function of frequency.  Here, one is taking a 1-D Fourier transform along the other axis (the bandpass) and produces a 3-D spatial power spectrum.  In imaging, point sources are transformed to a single pixel, whereas for the delay-spectrum, smooth sources are transformed to a single channel.  For imaging, we are concerned with ripples in the passband due to standing waves, whereas for the delay-spectrum we are concerned with delayed versions of the signal due to multiple reflections.  Note that these are equivalent views of the same phenomena.
 
 
 \subsection{Mapmaking Approach}
@@ -694,7 +699,7 @@ However, similar to map-making techniques, these approaches need additional prec
 
 \subsection{Calibration}
 \label{sec:calibration}
-As examined above, maximizing sensitivity to a limited number of spatial modes for the delay-spectrum technique requires a grid of antennas that simultaneously measures the same baselines using many redundant pairs of antennas. This redundancy may also be exploited to calibrate the array as well, as long as the true antenna positions fall close enough to that ideal grid \citep{liu_et_al2010}. This technique was pioneered with the MITEoR experiment \citep{zheng_et_al2014}, and has resulted in a package called OMNICAL developed for PAPER and HERA.  \citet{ali_et_al2015} provides a description of this technique as it applies to calibrating the PAPER array, which is mostly situated on a grid with many redundant baselines.  This section provides a high-level overview of calibration as it applies to HERA.
+As examined above, maximizing sensitivity to a limited number of spatial modes for the delay-spectrum technique requires a grid of antennas that simultaneously measures the same baselines using many redundant pairs of antennas. This redundancy may also be exploited to calibrate the array as well, as long as the true antenna positions fall close enough to that ideal grid \citep{liu_et_al2010}. This technique was pioneered with the MITEoR experiment \citep{zheng_et_al2014}, and has resulted in a package called OMNICAL developed for PAPER and HERA (\url{https://github.com/jeffzhen/omnical}).  \citet{ali_et_al2015} provides a description of this technique as it applies to calibrating the PAPER array, which is mostly situated on a grid with many redundant baselines.  This section provides a high-level overview of calibration as it applies to HERA.
 
 Fundamentally, the problem of calibration is the determination of a complex, frequency-dependent gain for each antenna which arises due to differences in amplifiers, cables, etc. Given those gains, the visibility measured by antennas $i$ and $j$ at frequency $\nu$ is given by 
 \begin{equation}
@@ -784,7 +789,7 @@ For this sensitivity, the number of elements needed for a given diameter is
 \label{eq:ND}
 N_{\text core} = (320*14)/D
 \end{equation}
-where $N_{\text core}$ and $D$ are the number of antennas in the core and their diameter respectively.  Note that the linear number-diameter dependence was derived by running multiple sensitivity codes ({\em e.g.} 21cmSense) over a range of values for the HERA configuration for wavenumbers greater than 0.15.  This dependency differs from \cite{2013ExA....36..235M} and analytical expressions, mostly likely due to the assumed configuration.
+where $N_{\text core}$ and $D$ are the number of antennas in the core and their diameter respectively.  Note that the linear number-diameter dependence was derived by running multiple sensitivity codes ({\em e.g.} \url{21cmSense}) over a range of values for the HERA configuration for wavenumbers greater than 0.15.  This dependency differs from \cite{2013ExA....36..235M} and analytical expressions, mostly likely due to the assumed configuration.
 Optimization is 
 therefore done for this sensitivity against cost for various diameters and total element numbers, while trying to minimize multiple reflections on long delays.   
 
@@ -881,7 +886,7 @@ degrading our ability to isolate and remove foreground emission on the basis of
 spectral smoothness.  As shown in
 \Mycitet{parsons_et_al2012b}, the amplitude and timescale of signal reflections
 relates directly to the leakage of smooth-spectrum foregrounds into regions of Fourier space 
-used to measure reionization, as discuss in Sec. \ref{sec:wedge}.
+used to measure reionization, as discuss in \S\ref{sec:wedge}.
 To facilitate foreground filtering, HERA's antenna element is designed to suppress reflections at long time delays.
 
 The feed design will proceed in three phases:
@@ -898,7 +903,7 @@ relatively short (4.5\,m) focal height of the parabolic dish
 minimizes the timescale of feed-dish reflections while maintaining the feed's
 illumination of the dish.  HERA's feed design is based on the PAPER sleeved
 dipole element incorporating a cylindrical backplane to
-improve symmetry in the polarized beam response patterns (Sec. \ref{sec:feed}, which also presents HFSS calculations of the full feed/element system).
+improve symmetry in the polarized beam response patterns (\S\ref{sec:feed}, which also presents HFSS calculations of the full feed/element system).
 
 
 Figure \ref{fig:orbcommexptandbeammap} shows the beam pattern measured at 137 MHz with a beam mapping
@@ -1008,7 +1013,7 @@ using the \citet{liu_et_al2010} technique, yielding calibration errors that are 
 
 \subsection{Analog Signal Path}
 \label{sec:analog}
-HERA's analog signal path from 70--250 MHz with the full performance EOR band of 100-200 MHz, as shown in Fig. \ref{fig:cosmos} and discussed in Sec. \ref{sec:freqs}, emphasizes spectral smoothness and robustness.  Although the low-frequency sky has an intrinsically bright signal level, in the desired ``cold patches'' the sky temperature is only about 30 K at the upper frequency end, so relatively low receiver temperatures are desired.  Note that at the low end of the band (70 MHz), the sky temperature is about 1000 K and across the EOR band it ranges from about 100-400 K.
+HERA's analog signal path from 70--250 MHz with the full performance EOR band of 100-200 MHz, as shown in Fig. \ref{fig:cosmos} and discussed in \S\ref{sec:freqs}, emphasizes spectral smoothness and robustness.  Although the low-frequency sky has an intrinsically bright signal level, in the desired ``cold patches'' the sky temperature is only about 30 K at the upper frequency end, so relatively low receiver temperatures are desired.  Note that at the low end of the band (70 MHz), the sky temperature is about 1000 K and across the EOR band it ranges from about 100-400 K.
 With receiver temperatures of 30--100 K readily achievable with ambient temperature electronics however
 HERA's low-noise amplifiers (LNAs) may be inexpensive, passively cooled components integrated into the
 antenna feed.  
@@ -1030,45 +1035,46 @@ The analog signal path comprises the front-end module (FEM) at the feed, the pos
 \label{sec:digital}
 
 Although correlator development has historically been one of the most 
-expensive aspects of building a large radio interferometer, this is no longer the case.
-The Collaboration for Astronomy Signal Processing and Electronics Research (CASPER) is an \Mycitep{parsons_et_al2006}
-open-source program to further the development of digital signal processing engines for astronomy and
+expensive aspects of building a large radio interferometer, this is no longer generally the case.
+The Collaboration for Astronomy Signal Processing and Electronics Research (CASPER) (\citealt{parsons_et_al2006}, \url{casper.berkeley.edu})
+is an open-source community to further the development of digital signal processing engines for astronomy and
 now has world-wide participation,
 with over 500 members at 73 institutions, and 
 five generations of hardware.
 PAPER has applied CASPER technology to develop and deploy new correlators
 annually for five years running, each quadrupling the computational capacity of its predecessor.
- 
 Led at UC Berkeley's Radio Astronomy Lab (RAL),
 HERA efforts continue this incremental development cycle, using a packet-switched
 correlator architecture \Mycitep{parsons_et_al2008} that both PAPER and LEDA \citep{2015JAI.....450003K} have
 applied to systems employing FPGAs and GPUs \citep{clark_et_al2011}.
 
 In order to meet the 35\,m specification for a maximum analog signal path length, along with a growing need for system scalability, HERA will 
-adopt a node-based architecture for amplification, digitization, channelization, and digital
-transmission in the field, building on MWA and Allen Telescope Array heritage. This design is merged with PAPER's clean 
+adopt a field-deployed node-based architecture for amplification, digitization, channelization, and digital
+transmission, building on MWA and Allen Telescope Array heritage. This design is merged with PAPER's clean 
 architecture for real-sampling and channelizing the entire analog passband at once, packetizing the data into
 10 Gb Ethernet format, and relying on commercial switches to perform the frequency/antenna corner-turn required for FX correlators.  
+This section will step through the digital signal path organized by location:  node, container, and processing building.
+
+\vspace{.2in}
+\noindent{\bf Node}. 
+HERA-350 employs RFI-tight node enclosures that each contain the final gain (PAM) and digitization stages for
+signals from 12 antennas, along with power supplies, cooling, sensors, and a small server for monitor/control. 
 This has led to a new analog-digital-optical board called the Smart Networked Analog-Digital Processor (SNAP), which will become a new modular CASPER device.  
 Figure \ref{fig:hardware} shows the series of primary CASPER processing boards, with SNAP on the far right.
-This section will step through the digital signal path organized by location:  node, container, processing building.
-
-{\bf Node}. HERA-350 employs RFI-tight node enclosures that each contain the final gain and digitization stages for
-signals from 12 antennas, along with power supplies, cooling, sensors, and a small server for monitor/control.  
-As part of previous HERA support,
-a new Smart Network ADC Processor (SNAP; Fig.~\ref{fig:hardware}) board has been incorporated 
-into the Collaboration for Astronomy Signal Processing and Electronics Research (CASPER) suite of hardware and firmware. This inexpensive board was co-designed by UC Berkeley and NRAO to be
+This inexpensive board was co-designed by UC Berkeley and NRAO to be
 both the digitizer and F-engine in HERA's FX correlator architecture.
-Each SNAP board 
-digitizes and channelizes a 0--250 MHz band for 6 input signals (3 antennas, dual-polarization).
+Each SNAP board digitizes and channelizes a 0--250 MHz band for 6 input signals (3 antennas, dual-polarization).
 A 200-MHz band of selectable channels is transmitted over optical fiber
 to a central container (see below), and on to the correlator.  Laboratory
 tests have successfully demonstrated robust transmission from the SNAP board, through 10 km of fiber optic cable, 
-into a 10 GbE switch using inexpensive, commercially available optical transceivers.
-Activities under this proposal include 
-testing and extending FPGA firmware,
-integrating and testing all components in the node subsystem, and providing a monitor/control
-access interface.
+into a 10 GbE switch using inexpensive, commercially available optical transceivers.  For HERA, SNAP is housed in
+a field-deployable RFI-tight box -- for other applications it may be combined in a chassis.
+
+SNAP is an inexpensive and flexible ``RF in, 10 GbE out'' device which uses industry-standard SFP+ modules for output.
+These modules allow for copper or optical fiber output.  Additionally, for optical fiber as in the HERA system, the modules come in different colors
+which may then be multiplexed onto a single fiber within the node (labeled FMUX in Fig. \ref{fig:overallBlockDiagram}).
+The multiplexer module output is a single Quad SFP+ (QSFP+) connector which may be plugged directly into a switch
+as a demultiplexer.   These industry standards allow for inexpensive and very reliable data transport systems.
 
 \begin{figure}[h]
 \centering
@@ -1084,7 +1090,13 @@ easily upgraded for HERA \Mycitep{parsons_et_al2006,parsons_et_al2008}.
 }\label{fig:hardware}
 \end{figure}
 
-{\bf Central Container}.
+The node enclosure itself is an RFI-tight housing that can handle the signal paths for up to 12 antennas.  The enclosures are placed throughout the array to minimize the total number constrained by the 35m maximum cable length.  Note that the delay specification is not critical for the outriggers, so the cable-length to those may be as long as practical.  This leads to 34 nodes, or an average of just over 10 antennas/node.
+The node uses forced-air, earth-coupled cooling similar to that implemented for the Allen Telescope Array \citep{2009IEEEP..97.1438W}.  An AC-synchronous motor continually blows air through 30m of underground 150mm PVC pipe, which vents through the enclosure (in the bottom and out the top).  The underground pipe is at least 1m deep, so the emerging air is very thermally stable on seasonal time constants.  The PAM is the lowest component since it is the most sensitive and also generates the least heat, with the SNAP boards, monitor/control and power supplies above.
+Temperature, air-flow and power will be monitored at the node, as well as control to turn off/power cycle power to the different types of devices.
+
+
+\vspace{.2in}
+\noindent{\bf Central Container}.
 HERA's central container houses two significant subsystems adjacent to the array.  The first is a timing subsystem
 that maintains a GPS-disciplined oscillator and distributes timing
 signals (the sampling clock and 1 pulse-per-second synchronization) to the nodes.  The second
@@ -1092,10 +1104,12 @@ subsystem is a passive fiber optic patch panel that couples
 the optical network from the nodes into the 192-filament optical fiber bundle 
 that connects to the KAPB. 
 
-{\bf Karoo Array Processing Building (KAPB)}.
-The KAPB houses the switch and CPUs
-that 
-complete the HERA correlator system.  A fiber optic bundle enters the KAPB and patches
+\vspace{.2in}
+\noindent{\bf Karoo Array Processing Building (KAPB)}.
+Approximately 10km (by fiber path) from the array central container is the KAPB -- a purpose-built facility for use
+in radio astronomy in the remote desert.
+The KAPB houses the switch and Graphical Processor Units (GPUs) that serve as the correlator cross-multiplier (the ``X-engine'').
+ A fiber optic bundle enters the KAPB and patches
 into local fiber optic cables. These cables terminate in optical transceivers which plug into a 240-port 10 GbE switch.
 Such switches, while large, are readily available commercially today.  Also connected to
 this switch are 30 servers, each hosting two dual-GPU graphics cards and two dual
@@ -1162,7 +1176,7 @@ rephasing, imaging, and deconvolution; Fast Holographic Deconvolution
 forward-modeling and subtraction \citep{sullivan_et_al2012}; Precision Radio Interferometry Simulator 
 (PRISim), a package for accurately simulating wide-field interferometric observations;
 21cmFAST \citep{mesinger_et_al2011}, a fast, semi-numerical 21~cm signal simulator,
-and 21cmSense \citep{pober_et_al2014}, a tool for forecasting power spectrum sensitivity.
+and \url{https://github.com/jpober/21cmSense} \citep{pober_et_al2014}, a tool for forecasting power spectrum sensitivity.
 Other project code is aggregated and revision
 controlled in a public repository with separate sandboxes for each developer to ensure that
 HERA members have up-to-date copies of all project code to facilitate sharing and debugging.
