@@ -1087,48 +1087,33 @@ The analog signal path comprises the front-end module (FEM) at the feed, the pos
 
 \subsection{Digital Signal Path}
 \label{sec:digital}
+%The computational cost of a correlator scales with the square of the number of antennas in an array.
+Although in the past, correlator development has been one of the most expensive and complex aspects of building a large array or radio interferometers, this is no longer generally the case.
+The Collaboration for Astronomy Signal Processing and Electronics Research (CASPER) (\citealt{parsons_et_al2006}, \url{casper.berkeley.edu}) is a community of astronomers and engineers who work to reduce the cost and complexity of radio astronomy signal processing systems through the development of open-source, general-purpose hardware and software.
+CASPER currently has several hundred members at 73 institutions, and has developed six generations of FPGA-based signal processing hardware, shown in Fig. \ref{fig:hardware}.
+PAPER has applied CASPER technology to develop and deploy new correlators annually for five years running, each quadrupling the computational capacity of its predecessor.
+Key to the upgradability of the PAPER correlator is the use of modular processing engines, and industry-standard digital interconnect based on off-the-shelf Ethernet switches \Mycitep{parsons_et_al2008} to perform the antenna/frequency data transpose required by FX correlators.
 
-Although correlator development has historically been one of the most 
-expensive aspects of building a large radio interferometer, this is no longer generally the case.
-The Collaboration for Astronomy Signal Processing and Electronics Research (CASPER) (\citealt{parsons_et_al2006}, \url{casper.berkeley.edu})
-is an open-source community to further the development of digital signal processing engines for astronomy and
-now has world-wide participation,
-with over 500 members at 73 institutions, and 
-five generations of hardware.
-PAPER has applied CASPER technology to develop and deploy new correlators
-annually for five years running, each quadrupling the computational capacity of its predecessor.
-Led at UC Berkeley's Radio Astronomy Lab (RAL),
-HERA efforts continue this incremental development cycle, using a packet-switched
-correlator architecture \Mycitep{parsons_et_al2008} that both PAPER and LEDA \citep{2015JAI.....450003K} have
-applied to systems employing FPGAs and GPUs \citep{clark_et_al2011}.
+HERA will maintain both PAPER's well-proven digital system architecture along with the simple scheme of real-sampling and channelizing the entire analog passband at once.
+However, in order to meet the 35\,m specification for maximum analog signal path length, as well as ensure future scalability of the system, HERA-350 will adopt an architecture of field-deployed amplification, digitization, and channelization nodes, building on MWA and Allen Telescope Array heritage.
+Digital data streams from multiple nodes will be converge on a container by the HERA array, from which they will be routed to a central processor building where correlation and further processing will take place.
+This section will step through the digital signal path, shown in Fig. \ref{fig:overallBlockDiagram}, organized by location:  node, container, and processing building.
 
-In order to meet the 35\,m specification for a maximum analog signal path length, along with a growing need for system scalability, HERA will 
-adopt a field-deployed node-based architecture for amplification, digitization, channelization, and digital
-transmission, building on MWA and Allen Telescope Array heritage. This design is merged with PAPER's clean 
-architecture for real-sampling and channelizing the entire analog passband at once, packetizing the data into
-10 Gb Ethernet format, and relying on commercial switches to perform the frequency/antenna corner-turn required for FX correlators.  
-This section will step through the digital signal path organized by location:  node, container, and processing building.
+%Led at UC Berkeley's Radio Astronomy Lab (RAL), HERA efforts continue this development cycle, using a packet-switched correlator architecture \Mycitep{parsons_et_al2008} that both PAPER and LEDA \citep{2015JAI.....450003K} have
+%applied to systems employing FPGAs and GPUs \citep{clark_et_al2011}.
 
 \vspace{.2in}
 \noindent{\bf Node}. 
-HERA-350 employs RFI-tight node enclosures that each contain the final gain (PAM) and digitization stages for
-signals from 12 antennas, along with power supplies, cooling, sensors, and a small server for monitor/control. 
-This has led to a new analog-digital-optical board called the Smart Networked Analog-Digital Processor (SNAP), which will become a new modular CASPER device.  
-Figure \ref{fig:hardware} shows the series of primary CASPER processing boards, with SNAP on the far right.
-This inexpensive board was co-designed by UC Berkeley and NRAO to be
-both the digitizer and F-engine in HERA's FX correlator architecture.
-Each SNAP board digitizes and channelizes a 0--250 MHz band for 6 input signals (3 antennas, dual-polarization).
-A 200-MHz band of selectable channels is transmitted over optical fiber
-to a central container (see below), and on to the correlator.  Laboratory
-tests have successfully demonstrated robust transmission from the SNAP board, through 10 km of fiber optic cable, 
-into a 10 GbE switch using inexpensive, commercially available optical transceivers.  For HERA, SNAP is housed in
-a field-deployable RFI-tight box -- for other applications it may be combined in a chassis.
+HERA-350 employs RFI-tight node enclosures that each contain the final gain (PAM) and digitization stages for signals from 12 antennas, along with power supplies, cooling, sensors, and a small server for monitor/control. 
+This has led to the development of a new CASPER platform based around a Xilinx Kintex 7 FPGA, which incorporates on-board ADCs: the Smart Networked Analog-Digital Processor (SNAP, shown in Fig. \ref{fig:hardware}).
+SNAP is an inexpensive and flexible ``Analog in, 10 GbE out'' device which uses a pair of industry-standard SFP+ modules for output over either copper or fiber cables.
+Co-designed by UC Berkeley and NRAO, the SNAP board will serve as both the digitizer and F-engine in HERA's FX correlator architecture.
+Each SNAP board digitizes and channelizes a 0--250 MHz band for 6 input signals (3 antennas, dual-polarization), with a complete node containing 4 SNAP boards.
 
-SNAP is an inexpensive and flexible ``RF in, 10 GbE out'' device which uses industry-standard SFP+ modules for output.
-These modules allow for copper or optical fiber output.  Additionally, for optical fiber as in the HERA system, the modules come in different colors
-which may then be multiplexed onto a single fiber within the node (labeled FMUX in Fig. \ref{fig:overallBlockDiagram}).
-The multiplexer module output is a single Quad SFP+ (QSFP+) connector which may be plugged directly into a switch
-as a demultiplexer.   These industry standards allow for inexpensive and very reliable data transport systems.
+Following digitization and channelization, a 200-MHz band of runtime-selectable channels is output as a UDP stream over optical fiber.
+Coarse Wavelength Division Multiplexing (CWDM) technology allows the 10 Gb/s Ethernet streams from the four SNAP boards in a node to share a single fiber, which is routed to a central container, and on to the correlator.
+In this configuration, the fiber from each node is input directly into an Ethernet switch using a single QSFP+ 40GBASE-LR4 transciever, which provides built-in multiplexing and demultiplexing capabilities and may be operated as 4 independent transceivers.
+Laboratory tests have successfully demonstrated robust transmission from the SNAP board, through CWDM multiplexers and 10 km single mode fiber optic cable, into a 10 GbE switch using inexpensive, commercially available optical transceivers.
 
 \begin{figure}[h]
 \centering
@@ -1137,44 +1122,47 @@ as a demultiplexer.   These industry standards allow for inexpensive and very re
 %\includegraphics[height=1.7in]{plots/snap_board.png}
 \caption{
 Six generations of CASPER digital signal processing (left to right) culminating in the SNAP board (right, along with the long-haul fiber-link test setup), which was developed and tested under the previous HERA MSIP award.
-By preserving its toolflow, signal processing libraries, and interface code between hardware generations,
-CASPER combines with a scalable correlator architecture to enable the PAPER correlator to be 
-easily upgraded for HERA \Mycitep{parsons_et_al2006,parsons_et_al2008}.
+By preserving its design tools, signal processing libraries, and interface code between hardware generations, CASPER hardware and a modular architecture have enabled the PAPER correlator to be easily upgraded for HERA \Mycitep{parsons_et_al2006,parsons_et_al2008}.
 %
 }\label{fig:hardware}
 \end{figure}
 
-The node enclosure itself is an RFI-tight housing that can handle the signal paths for up to 12 antennas.  The enclosures are placed throughout the array to minimize the total number constrained by the 35m maximum cable length.  Note that the delay specification is not critical for the outriggers, so the cable-length to those may be as long as practical.  This leads to 34 nodes, or an average of just over 10 antennas/node.
-The node uses forced-air, earth-coupled cooling similar to that implemented for the Allen Telescope Array \citep{2009IEEEP..97.1438W}.  An AC-synchronous motor continually blows air through 30m of underground 150mm PVC pipe, which vents through the enclosure (in the bottom and out the top).  The underground pipe is at least 1m deep, so the emerging air is very thermally stable on seasonal time constants.  The PAM is the lowest component since it is the most sensitive and also generates the least heat, with the SNAP boards, monitor/control and power supplies above.
-Temperature, air-flow and power will be monitored at the node, as well as control to turn off/power cycle power to the different types of devices.
+While some applications may utilise SNAPs in multiple-board chasses, for HERA, SNAP is housed in a field-deployable RFI-tight box.
+The node enclosure itself is an RFI-tight housing that can handle the signal paths for up to 12 antennas.
+The enclosures are placed throughout the array to minimize the total number constrained by the 35\,m maximum cable length. 
+For outrigger antennas the delay specification is not critical, so the cable-length to those may be as long as practical.
+In total, including outriggers, the HERA-350 design demands 34 nodes, or an average of just over 10 antennas/node.
 
+The node uses forced-air, earth-coupled cooling similar to that implemented for the Allen Telescope Array \citep{2009IEEEP..97.1438W}.
+An AC-synchronous motor continually blows air through 30\,m of underground 150\,mm PVC pipe, which vents through the enclosure from bottom to top.
+The underground pipe is at least 1\,m deep, so that the emerging air is very thermally stable on seasonal time constants.
+The PAM is the lowest component since it is the most sensitive and also generates the least heat.
+SNAP boards, monitor and control hardware, and power supplies will be positioned above the PAMs.
+Remote monitoring capabilities will include node temperature, air-flow and power, with remote control of power to the node's various active components.
 
 \vspace{.2in}
 \noindent{\bf Central Container}.
-HERA's central container houses two significant subsystems adjacent to the array.  The first is a timing subsystem
-that maintains a GPS-disciplined oscillator and distributes timing
-signals (the sampling clock and 1 pulse-per-second synchronization) to the nodes.  The second
-subsystem is a passive fiber optic patch panel that couples
-the optical network from the nodes into the 192-filament optical fiber bundle 
-that connects to the KAPB. 
+HERA's central container houses two significant subsystems adjacent to the array.
+The first is a timing subsystem that maintains a GPS-disciplined oscillator and distributes timing signals to the nodes.
+These signals comprise a sampling clock (or other frequency reference from which the sampling clock may be derived) and 1 pulse-per-second (PPS) synchronization pulses.
+The timing subsystem will distribute clock and synchronisation signals over fiber and, depending on cost and performance, will utilise either industry-standard distribution solutions, or the White Rabbit protocol \Mycitep{Moreira_WR}.
+
+The second subsystem is a passive fiber optic patch panel that couples the optical network from the nodes into the 192-filament optical fiber bundle that is routed to the KAPB.
 
 \vspace{.2in}
 \noindent{\bf Karoo Array Processing Building (KAPB)}.
-Approximately 10km (by fiber path) from the array central container is the KAPB -- a purpose-built facility for use
-in radio astronomy in the remote desert.
-The KAPB houses the switch and Graphical Processor Units (GPUs) that serve as the correlator cross-multiplier (the ``X-engine'').
- A fiber optic bundle enters the KAPB and patches
-into local fiber optic cables. These cables terminate in optical transceivers which plug into a 240-port 10 GbE switch.
-Such switches, while large, are readily available commercially today.  Also connected to
-this switch are 30 servers, each hosting two dual-GPU graphics cards and two dual
-10 GbE network interface cards, which implement the cross-multiplication (X-Engine) component
-of the correlator during observations.  This estimate for the number of X-Engine servers
-is extrapolated from current GPU servers deployed on PAPER, assuming no improvement in bus
-speeds for transferring data into the GPU cores, but assuming that the computational
-capacity of GPU cores doubles once according to Moore's Law prior to purchasing
-these servers in year three of the project.
-Output data from the correlator are written to the data storage system described
-in the following section.
+Approximately 10\,km (by fiber path) from the array central container is the KAPB -- a purpose-built facility to house radio astronomy computing resources in the remote desert.
+A fiber optic bundle from the HERA container enters the KAPB and is patched into local fiber cables, which terminate in QSFP+ optical transceivers.
+These QSFP+ transceivers are input to a 64-port QSFP+ 10/40 GbEthernet switch -- such devices are readily available on the commercial market today, at relatively low cost.
+The Ethernet switch forms the core of the HERA correlator's data interconnect, and provides the antenna-frequency data transpose which allows cross-multiplication of antenna signals to be easily parallelised by frequency over many compute nodes performing cross-multiplication (``X-Engines'').
+
+These compute nodes are anticipated to be 30 x86 servers, each hosting a pair of Nvidia Graphics Processing Units (GPUs) and two dual 10GbE network interface cards.
+This estimate assumes an identical configuration to the current PAPER X-Engine hardware, and conservatively assumes that the computational capacity of GPU accelerator cards will double once prior to purchasing these servers in year three of the project.
+No improvement in data transfer speed from CPU to host is assumed.
+
+Other X-Engine realizations are under active evaluation, including a solution involving AMD GPUs and the highly-optimised cross-multiplication kernels developed for the CHIME Pathfinder array \Mycitep{Denman_Chime_X}, and FPGA-based implementations involving both CASPER, and commercially available, platforms.
+
+Output data from the correlator are written to the data storage system described in the following section.
 
 \subsection{Data Processing and Management}
 \label{sec:data}
