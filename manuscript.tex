@@ -72,7 +72,8 @@
 \usepackage{subfig}
 %\usepackage[countmax]{subfloat}
 \title{Hydrogen Epoch of Reionization Array (HERA)}
-\author{A.U.Thor}
+\author{David R. DeBoer, Aaron R. Parsons, Judd D. Bowman, Jonathan C. Pober, Jacqueline N. Hewitt, Chris L. Carilli, Gianni Bernardi, Anita Loots, Andrei Messenger, Paul Alexander, Steve Furlanetto, James E. Aguirre, Miguel F. Morales, Adam Beardsley, Daniel C Jacobs, Nithyanandan Thyagarajan, Zak, Aaron Ewall-Wice, Abraham R. Neben, Max Tegmark, Haoxuan Zheng, Richard Bradley, Matthys Maree, Kathryn Rosie, Randall Fritz, Nathan Mathison, Cresshim Malgas, Raddwine Sell, Samantha Pieterse, Lourence Malan, Austin Julius, MacCalvin Kariseb, Craig Smith, Jasper Grobbelaar, Telalo Lekalake, Eunice Matsetela, Angelo Syce, Bradley Grieg, Eloy de Lera Acedo, Nicolas Fagnoni, Nima Razavi-Ghods, Zaki S. Ali, Carina Cheng, Josh Dillon, Jack Hickish Adrian Liu, David MacMahon, Nipanjana Patra, Saul A. Kohn, Bryna Hazelton, Peter Williams}
+
 
 \begin{document}
 \maketitle
@@ -770,7 +771,7 @@ From the science and techniques discussed above, we may derive some high-level r
 
 \subsection{General Antenna Design and Configuration}
 The primary new feature of HERA over previous generation experiments (in this context primarily PAPER) is the use of large elements to increase the sensitivity, as indicated in Fig. \ref{fig:boost}.  The cost-performance optimization will 
-be discussed below, however we see that to address the central challenges of the delay-spectrum approach in the context of the wedge.
+be discussed below, however we see that to address the central challenges of the delay-spectrum approach in the context of the wedge
 HERA should use close-packed antennas that
 minimize signal reflections over long delays and deliver significant forward gain relative to their horizon response.
 Tests with prototype HERA antennas (Figs.  \ref{fig:delayspec} and \ref{fig:orbcommexptandbeammap}, discussed in \S\ref{sec:antenna})
@@ -808,26 +809,39 @@ The total simultaneously processed bandwidth is the full 100 MHz, since we wish 
 
 \subsection{Delay Response}
 \label{sec:delayspec}
-Early analysis \citep{elementmemo} indicated that to trace the EOR over a wide range of redshift, internal reflections should be attenuated by about 60 dB from the initial incoming wave by about 60 ns, or a VSWR $<$ 1.002 for frequencies $<$ 17 MHz.  This provided the basis for the initial design of the element.    For the contemplated feeds on a primary focus antenna, it was found that a focal length/diameter radio ($f/D$) of approximately 0.32 was optimal.  We may therefore estimate the attenuation as a function of delay and diameter and assign this a ``cost function''.  
+Early analysis \citep{elementmemo} indicated that to trace the EOR over a wide range of redshift, internal reflections should be attenuated by about 60 dB from the initial incoming wave by about 60 ns, or a voltage standing wave ratio (VSWR) $<$ 1.002 for frequencies $<$ 17 MHz.  This was a conservative value based on estimates of power in spectrally smooth foreground sources from \cite{santos_et_al2005,2008MNRAS.385.2166A, deoliveira2008, jelic_et_al2008, bernardi_et_al2010} and experience with PAPER dealing with foreground systematics.
+This provided the basis for the initial design of the element.    For the contemplated feeds on a primary focus antenna, it was found that a focal length/diameter radio ($f/D$) of approximately 0.32 was optimal.  We may therefore estimate the attenuation as a function of delay and diameter and assign this a ``cost function''.  
 
 Figure \ref{fig:costfig} summarizes the adopted cost function.  
 The vertical axis shows a very steep delay ``cost'' at 60 ns and the horizontal axis is the cost/performance model, as described in the following section.  
 The color coding is the product of the two assigned costs, with red showing a high cost normalized to 350 14m elements (clipped at a ratio of 1.25) and purple being the minimum.
-The curves labelled `1', `2' and `3' are the round-trip travel times for 1, 2 and 3 reflections between the feed and the vertex.
+The black lines labelled `1', `2' and `3' are the round-trip travel times for 1, 2 and 3 reflections between the feed and the vertex.
 To obtain 60 dB by 60 ns we may interpret those lines in one of two ways:  
 (a) at a fixed attenuation/reflection, what diameter is required, and
 (b) at a fixed diameter how much attenuation per reflection can be allowed.
 For 1 round-trip, for the assumed $f/D$ over the diameters of interest, from Fig. \ref{fig:costfig} all delays are less than 60 ns, so this provides no constraint.   If we want to be able to handle 2 round-trips worth of delay, the diameter should be less than 14.2m, which is near the cost minimum.  If we assume 14.2m, then we can estimate that each reflection must average a return loss better than 15 dB, an aggressive target.  And finally, if we need to allow for 3 round-trips, the antenna diameter would have to be less than 9.4m, where the cost is quickly rising.  To handle the delay requirement therefore, the diameter should be less than 14.2m, or the return loss specification becomes very aggressive.
 
-As a key specification, this has been a focus of study with a series of prototypes and analyses based on modeling, and measurements have been conducted to provide much more rigor than this early specification \citep{ewall-wice_et_al2016-EoXLimits,neben_et_al2016,thyagarajan_et_al2016,patra_et_al0216}.  The simple specification set above more appropriately becomes a series of curves for attenuation and delay at different wavenumbers for realistic foreground models.  Fig \ref{fig:delayspec}, adapted from \cite{thyagarajan_et_al2016}, shows the results at $k$ = 0.10, 0.15, and 0.20 $h$/Mpc for the adopted design.  The analysis shows that
-the dish design for should should allow for EOR detections for $k>0.10 h/$Mpc.  We also see that the initial simple ``60@60'' specification was a overly conservative, however it served as a good initial goal.
+\begin{figure}[t]
+\centerline{
+\includegraphics[width=0.6\textwidth]{plots/costfig.pdf} 
+}
+\caption{\small The background coloring with colorbar shows the relative cost/performance for delay and cost at a fixed performance as a function of element diameter.  See \S\ref{sec:delayspec}, \S\ref{sec:cost} and \cite{elementmemo} for details.  A diameter of 14-m (vertical dashed line) is near the cost minimum and consistent with assumption for the delay specification.
+\label{fig:costfig}}
+\end{figure}
+
+As a key specification, this has been a focus of study with a series of prototypes and analyses based on modeling, and measurements have been conducted to provide much more rigor than this early specification \citep{ewall-wice_et_al2016-EoXLimits,neben_et_al2016,thyagarajan_et_al2016,patra_et_al0216}.  The simple specification set above more appropriately becomes a series of curves for attenuation and delay at different wavenumbers for realistic foreground models.  Figure \ref{fig:delayspec}, adapted from \cite{thyagarajan_et_al2016}, shows the results at $k$ = 0.10, 0.15, and 0.20 $h$/Mpc for the adopted design.  The analysis shows that
+the dish design for should allow for EOR detections for $k>0.10 h/$Mpc.  We also see that the initial simple ``60@60'' specification was a overly conservative (shown as the lightly shaded area bounded by the teal line), however it served as a good initial goal.
 
 \begin{figure}[h!]
 	\centering
     \includegraphics[width=0.49\textwidth]{plots/delayspecplot.pdf}
      %\includegraphics[width=0.5\textwidth]{plots/ps1d_with_delay_kernel.pdf}
 	%\caption{Left:  
-	\caption{Antenna delay attenuation specification with realistic foregrounds from \cite{thyagarajan_et_al2016} along with the initial conservative ``60@60'' specification.  HFSS calculations (black line) show the HERA dish meeting the specification.  Measurements on the Green Bank prototype are shown in  \citep{patra_et_al2016}.
+	\caption{Antenna delay attenuation specification with realistic foregrounds from \cite{thyagarajan_et_al2016}.  
+	The blue, green and red lines show the maximum attenuation needed at a given delay for the foregrounds to be below the expected EOR signal level for different $\kpar$.
+	The teal line is the ``60@60'' initial conservative specification.
+	 HFSS calculations (black line) for the expected attenuation show the HERA dish meeting the more sophisticated specification. 
+	 %Measurements on the Green Bank prototype are shown in  \citep{patra_et_al2016}.
 }
 %Right: Modeled foreground power spectra with (green) and without (blue) the antenna chromaticism over a 10\,MHz subband centered at $z=7.5$. The spectral smoothness of the dish enables foreground isolation below the level of a fiducial reionization signal (black) for most $k_{\parallel}$ modes, yielding percent-level constraints on model parameters.}
 	\label{fig:delayspec}
@@ -851,13 +865,7 @@ The cost function in Fig. \ref{fig:costfig} is shown as the colored background a
 To determine the optimal diameter, full system costings were done on a range of diameter sizes from 5m - 25m, with the total number set by Eq. \ref{eq:ND}.  This included the full system, except the post-processing (that is, everything after the archived correlator output).  
 The resulting normalized system cost/performance-curve  becomes very flat (colored dark blue/purple) for diameters greater between about 12 and15 m, which is consistent with the chosen value of 14 meters based on other system considerations.
 
-\begin{figure}[t]
-\centerline{
-\includegraphics[width=0.6\textwidth]{plots/costfig.pdf} 
-}
-\caption{\small The background coloring with colorbar shows the relative cost/performance for delay and cost at a fixed performance as a function of element diameter.  See text and \cite{elementmemo} for details.  A diameter of 14-m (vertical dashed line) is near the cost minimum and consistent with assumption for the delay specification.
-\label{fig:costfig}}
-\end{figure}
+
 
 \section{System Design} \label{sec:design}
 As described in the previous section, the critical insights from the first generation 21\,cm EOR experiments have been applied to define
@@ -912,7 +920,7 @@ $\mathbf{T_\textbf{sys}}$: $100 + 120 (\nu/\rm{150~MHz})^{-2.55}$ K & \textbf{Se
 field nodes.  Nodes contain post-amplifiers and Smart Network ADC Processor (SNAP) boards that digitize, channelize,
 and packetize data for optical transmission in 10 Gb Ethernet format.  Optical fibers are aggregated in a field container
 onto a 10 km fiber bundle connecting to the Karoo Array Processing Building, where signals are cross-multiplied
-in the X processor.  After correlation, visibilities are stored by the Librarian, compressed and redundantly calibrated
+in the X processor.  After correlation, visibilities are stored by the Librarian, pre-processed and redundantly calibrated
 by the Real-Time Processor, and transmitted over the network to clusters for storage and analysis.  Final products are
 hosted on public-facing NRAO servers, with a web interface for selecting and downloading data.}
 	\label{fig:overallBlockDiagram}
@@ -930,7 +938,7 @@ As discussed in the previous section, the design of the design principles are th
 \begin{itemize}
 \item optimize for the delay-spectrum technique of measuring the EOR power spectrum,
 \item minimize costs, and
-\item the experiment has a limited lifetime of about five years.
+\item design for a limited lifetime of about five years.
 \end{itemize}
 The first item primarily means that chromatic effects corresponding to delays appropriate for the measurement described above must be below the expected signal level, which essentially determines the focal length.  The second item constrains the diameter and element count, as well as the focal length over diameter ratio ($f/D$), based on a cost function and maximizing sensitivity per element.  And the third item constrains the construction materials and methods and the operational model.  This led to a fixed transit element with a diameter of 14 meters to strike an optimal balance between sensitivity and systematics, as discussed in the previous section.
 
@@ -940,7 +948,7 @@ degrading the ability to isolate and remove foreground emission on the basis of
 spectral smoothness.  As shown in
 \Mycitet{parsons_et_al2012b}, the amplitude and timescale of signal reflections
 relates directly to the leakage of smooth-spectrum foregrounds into regions of Fourier space 
-used to measure reionization, as discuss in \S\ref{sec:wedge}.
+used to measure reionization, as discussed in \S\ref{sec:wedge}.
 To facilitate foreground filtering, HERA's antenna element is designed to suppress reflections at long time delays.
 
 The feed design will proceed in three phases:
@@ -951,13 +959,13 @@ The feed design will proceed in three phases:
 \end{itemize}
 Models and measurements discussed below are for the current Phase 1 system.
 
-As shown in Fig.~\ref{fig:delayspec}, HERA's element meets this requirement in
-reflectometry tests, performing comparably to the PAPER element.  The
-relatively short (4.5\,m) focal height of the parabolic dish 
-minimizes the timescale of feed-dish reflections while maintaining the feed's
-illumination of the dish.  HERA's feed design is based on the PAPER sleeved
-dipole element incorporating a cylindrical backplane to
-improve symmetry in the polarized beam response patterns (\S\ref{sec:feed}, which also presents HFSS calculations of the full feed/element system).
+%As shown in Fig.~\ref{fig:delayspec}, HERA's element meets this requirement in
+%reflectometry tests, performing comparably to the PAPER element.  The
+%relatively short (4.5\,m) focal height of the parabolic dish 
+%minimizes the timescale of feed-dish reflections while maintaining the feed's
+%illumination of the dish.  HERA's feed design is based on the PAPER sleeved
+%dipole element incorporating a cylindrical backplane to
+%improve symmetry in the polarized beam response patterns (\S\ref{sec:feed}, which also presents HFSS calculations of the full feed/element system).
 
 
 Figure \ref{fig:orbcommexptandbeammap} shows the beam pattern measured at 137 MHz with a beam mapping
@@ -976,7 +984,7 @@ manageable level.  Studies of elements in a bigger array and potential screening
 \includegraphics[width=2.1in]{plots/orbcomm_dish_beam_map_530cm_feed.pdf}
 	\end{minipage} & 
 	\begin{minipage}{2.05in}
-	\caption{Left: The first of three prototype dishes at NRAO--Green Bank, used for measuring beam frequency structure with reflectometry and the beam pattern at 137\,MHz by comparing satellite signals to the reference dipole in the foreground \citep{neben_et_al2016}. Right: The measured EW power pattern plotted with dashed lines marking zenith angles of 20$^\circ$, 40$^\circ$, 60$^\circ$, 80$^\circ$.} 
+	\caption{Left: The first of two prototype dishes at NRAO--Green Bank, used for measuring beam frequency structure with reflectometry and the beam pattern at 137\,MHz by comparing satellite signals to the reference dipole in the foreground \citep{neben_et_al2016}. Right: The measured EW power pattern plotted with dashed lines marking zenith angles of 20$^\circ$, 40$^\circ$, 60$^\circ$, 80$^\circ$.} 
 	\label{fig:orbcommexptandbeammap}
 	\end{minipage}
 	\end{tabular}
@@ -1044,10 +1052,10 @@ The low noise amplifier/balun integrates directly to the base of the feed dipole
 
 As a focused experiment, HERA's configuration is optimized for the robust foreground-avoidance approach to EoR power spectrum estimation. 
 This requires a densely-packed core of antenna elements, maximizing sensitivity to short baselines---those least contaminated by foreground chromaticity ({\em i.e} the wedge). 
-Furthermore, the configuration should be highly redundant, both to enable the delay-spectrum strategy of PAPER \citep{parsons_et_al2012a} and redundant baseline calibration \citep{liu_et_al2010,zheng_et_al2014}.
+Furthermore, the configuration should be highly redundant, both to increase sensitivity for the delay-spectrum strategy of PAPER \citep{parsons_et_al2012a} and provide for redundant baseline calibration \citep{liu_et_al2010,zheng_et_al2014}.
 On the other hand, it is also desirable to improve the mapmaking ability of the array for calibration and map-based power spectrum estimation with longer baselines and a densely-sampled $uv$-plane \citep{dillon_et_al2015a}. This tradeoff was closely examined by \citet{dillon_parsons2016} and the ultimate HERA configuration was drawn from one of the designs they considered.
 
-HERA's 320 core elements are arranged in a compact hexagonal grid, split into three displaced segments to cover the $uv$-plane with sub-aperture sampling density (see Fig.~\ref{fig:arrayConfig}). Splitting the core into three sections triples the density of instantaneous sampling of the $uv$-plane, improving HERA's mapmaking ability.Furthermore, the core is supplemented by 30 additional outrigger elements to tile the $uv$-plane with instantaneously complete sub-aperture sampling out to 250$\lambda$ and complete aperture-scale sampling out to 350$\lambda$ (at 150\,MHz). 
+HERA's 320 core elements are arranged in a compact hexagonal grid, split into three displaced segments to cover the $uv$-plane with sub-aperture sampling density (see Fig.~\ref{fig:arrayConfig}). Splitting the core into three sections triples the density of instantaneous sampling of the $uv$-plane, improving HERA's mapmaking ability.  Furthermore, the core is supplemented by 30 additional outrigger elements to tile the $uv$-plane with instantaneously complete sub-aperture sampling out to 250$\lambda$ and complete aperture-scale sampling out to 350$\lambda$ (at 150\,MHz). 
 This sub-aperture sampling strategy suppresses grating lobes in the instrument's point spread function and provides information for calibrating and correcting direction-dependent antenna responses \citep{dillon_parsons2016}.
 Even with the sub-aperture dithering and long baselines, the design is sufficiently redundant to take advantage of redundant baseline calibration technique and robust to the failure of individual elements.
 Resulting calibration errors range from $\sim 5\%$ (in the core) to $\sim 10\%$ (for outriggers) of the residual fractional noise per antenna after averaging. 
@@ -1089,7 +1097,7 @@ The analog signal path comprises the front-end module (FEM) at the feed, the pos
 \label{sec:digital}
 %The computational cost of a correlator scales with the square of the number of antennas in an array.
 Although in the past, correlator development has been one of the most expensive and complex aspects of building a large array or radio interferometers, this is no longer generally the case.
-The Collaboration for Astronomy Signal Processing and Electronics Research (CASPER) (\citealt{parsons_et_al2006}, \url{casper.berkeley.edu}) is a community of astronomers and engineers who work to reduce the cost and complexity of radio astronomy signal processing systems through the development of open-source, general-purpose hardware and software.
+The Collaboration for Astronomy Signal Processing and Electronics Research (CASPER; \citealt{parsons_et_al2006}, \url{casper.berkeley.edu}) is a community of astronomers and engineers who work to reduce the cost and complexity of radio astronomy signal processing systems through the development of open-source, general-purpose hardware and software.
 CASPER currently has several hundred members at 73 institutions, and has developed six generations of FPGA-based signal processing hardware, shown in Fig. \ref{fig:hardware}.
 PAPER has applied CASPER technology to develop and deploy new correlators annually for five years running, each quadrupling the computational capacity of its predecessor.
 Key to the upgradability of the PAPER correlator is the use of modular processing engines, and industry-standard digital interconnect based on off-the-shelf Ethernet switches \Mycitep{parsons_et_al2008} to perform the antenna/frequency data transpose required by FX correlators.
@@ -1121,7 +1129,7 @@ Laboratory tests have successfully demonstrated robust transmission from the SNA
 \includegraphics[width=1.0\textwidth]{plots/casper_boards.png}
 %\includegraphics[height=1.7in]{plots/snap_board.png}
 \caption{
-Six generations of CASPER digital signal processing (left to right) culminating in the SNAP board (right, along with the long-haul fiber-link test setup), which was developed and tested under the previous HERA MSIP award.
+Six generations of CASPER digital signal processing (left to right) culminating in the SNAP board (right, along with the long-haul fiber-link test setup).
 By preserving its design tools, signal processing libraries, and interface code between hardware generations, CASPER hardware and a modular architecture have enabled the PAPER correlator to be easily upgraded for HERA \Mycitep{parsons_et_al2006,parsons_et_al2008}.
 %
 }\label{fig:hardware}
@@ -1190,7 +1198,7 @@ scratch storage
 for routine data inspection and lightweight analysis tasks.
 For the bulk application of processing-intensive data pipelines to HERA data,
 NRAO manages the dynamic acquisition of computing from
-external HPC and cloud-computing facilities, including the Amazon spot market (\url{aws.amazon.com/ec2/spot}) and XSEDE (\url{www.xsede.com}) . 
+external HPC and cloud-computing facilities, including the Amazon spot market (\url{aws.amazon.com/ec2/spot}) and XSEDE (\url{www.xsede.com}). 
 Combined with legacy computing resources at UPenn and MIT, this plan leverages NRAO's
 expertise in managing and acquiring computing resources while providing distributed
 permanent resources for HERA's basic processing needs.
@@ -1209,7 +1217,7 @@ monitor/control systems) to loose collections of scripts written for exploratory
 Software packages that support HERA analysis are open source, publicly 
 hosted\footnote{Including \url{github.com/AaronParsons/aipy}, \url{github.com/JeffZhen/omnical}, 
 \url{github.com/MiguelFMorales/FHD}, \url{github.com/MiguelFMorales/eppsilon}, \url{github.com/jpober/21cmSense},
-and \url{github.com/Nithyanandan/PRISim}.}, revision controlled, and unit-tested.  
+\url{github.com/Nithyanandan/PRISim}, and \url{https://github.com/BradGreig/21CMMC}.}, revision controlled, and unit-tested.  
 These include OMNICAL, a complete package for redundant baseline calibration;
 Astronomical Interferometry in Python (AIPY), a set of
 tools and file-format interfaces for reading visibilities, calibrating,
