@@ -72,8 +72,7 @@
 \usepackage{subfig}
 %\usepackage[countmax]{subfloat}
 \title{Hydrogen Epoch of Reionization Array (HERA)}
-\author{David R. DeBoer, Aaron R. Parsons, Judd D. Bowman, Jonathan C. Pober, Jacqueline N. Hewitt, Chris L. Carilli, Gianni Bernardi, Anita Loots, Andrei Messenger, Paul Alexander, Steve Furlanetto, James E. Aguirre, Miguel F. Morales, Adam Beardsley, Daniel C Jacobs, Nithyanandan Thyagarajan, Zak, Aaron Ewall-Wice, Abraham R. Neben, Max Tegmark, Haoxuan Zheng, Richard Bradley, Matthys Maree, Kathryn Rosie, Randall Fritz, Nathan Mathison, Cresshim Malgas, Raddwine Sell, Samantha Pieterse, Lourence Malan, Austin Julius, MacCalvin Kariseb, Craig Smith, Jasper Grobbelaar, Telalo Lekalake, Eunice Matsetela, Angelo Syce, Bradley Grieg, Eloy de Lera Acedo, Nicolas Fagnoni, Nima Razavi-Ghods, Zaki S. Ali, Carina Cheng, Josh Dillon, Jack Hickish Adrian Liu, David MacMahon, Nipanjana Patra, Saul A. Kohn, Bryna Hazelton, Peter Williams}
-
+\author{David DeBoer, Aaron Parsons, Judd Bowman, Jonathan Pober, Jacqueline Hewitt, Chris Carilli, Gianni Bernardi, Anita Loots, Andrei Messenger, Paul Alexander, Steve Furlanetto, James Aguirre, Miguel Morales, Zaki Ali, Adam Beardsley, Richard Bradley, Carina Cheng, Eloy de Lera Acedo, Josh Dillon, Aaron Ewall-Wice, Nicolas Fagnoni, Randall Fritz, Bradley Grieg, Jasper Grobbelaar, Bryna Hazelton, Daniel Jacobs, Austin Julius, MacCalvin Kariseb, Saul Kohn, Telalo Lekalake, David MacMahon, Lourence Malan, Cresshim Malgas, Matthys Maree, Nathan Mathison, Eunice Matsetela, Abraham Neben, Nipanjana Patra, Samantha Pieterse, Nima Razavi-Ghods, Kathryn Rosie, Raddwine Sell, Craig Smith, Angelo Syce, Max Tegmark, Nithyanandan Thyagarajan, Peter Williams, Zak, Haoxuan Zheng}
 
 \begin{document}
 \maketitle
@@ -103,11 +102,12 @@ we present the HERA instrument design, along with the subsystem specifications t
 ensure that HERA meets its performance requirements.  Finally, we summarize the schedule
 and status of the project.  We conclude by suggesting that, given the realities of foreground
 contamination, current-generation 21 cm instruments are approaching their sensitivity limits.
-HERA is designed to bring both the
-sensitivity and the precision to deliver its primary science on the basis of
+HERA is designed to bring both the sensitivity and the precision to deliver its primary science on the basis of
 proven foreground filtering techniques, while developing new subtraction
 techniques to unlock new capabilities.  The result will be a major step toward
 realizing the widely recognized scientific potential of 21 cm cosmology.
+
+\tableofcontents
 
 \section{Introduction}
 
@@ -878,7 +878,7 @@ In this section, we summarize key features of the HERA design (see Table~\ref{ta
 and system architecture (see Fig.~\ref{fig:overallBlockDiagram}).
 This architecture directly inherits from the PAPER and MWA experiments.  HERA begins by reusing the
 analog, digital, and real-time processing systems deployed for PAPER-128.  
-This allowed for immediate observing with the new elements with a well-characterized system.
+This allows for immediate observing with the new elements with a well-characterized system.
 As HERA develops, this
 architecture is incrementally upgraded to improve performance and add features while simultaneously
 addressing issues of modularity and scalability.  As with PAPER, HERA proceeds in stages of development,
@@ -888,6 +888,8 @@ earliest build-out stages, that data analysis pipelines are tested and debugged 
 and that HERA is always producing high quality science.
 
 Note that in addition to the 19 elements currently observing in South Africa (and an initial prototype near Berkeley, CA), a pair of elements at the Green Bank Observatory in West Virginia have been used extensively in validation testing.  Also, three elements are currently under construction at the Mullard Radio Astronomy Observatory outside Cambridge, UK for additional feed and element tests.  This allows for an independent testing platform as the group at Cavendish continues to investigate both a broad-band feed, as well as ways to improve the current analog system for an improved match and noise performance.
+
+We are furthermore analyzing the effect of coupling with numerical simulations where we can quantify and understand the effects of mutual coupling, which so far only looks substantial in the far out side-lobes. This will allow us optimized the feed design for reduced coupling as well as evaluate the need of ``skirts'' for cross-coupling reduction or other further dish optimizations. This work will benefit from the existence of several prototype systems including the 3-dish HERA system at Lord's Bridge, Cambridge.
 
 For details of the first generation HERA system (the existing and commissioned PAPER signal path), see \cite{parsons_et_al2010}.  This section will discuss the new system to be deployed beginning and 2016 and tested in conjunction with the previous system.  Fig \ref{fig:overallBlockDiagram} provides a system block diagram of the new HERA architecture.
 
@@ -950,14 +952,10 @@ spectral smoothness.  As shown in
 relates directly to the leakage of smooth-spectrum foregrounds into regions of Fourier space 
 used to measure reionization, as discussed in \S\ref{sec:wedge}.
 To facilitate foreground filtering, HERA's antenna element is designed to suppress reflections at long time delays.
+Models and measurements discussed below are for the initial phase system.
 
-The feed design will proceed in three phases:
-\begin{itemize}
-\item {\em Phase 1:}  use existing PAPER dipole with new ground screen (\S\ref{sec:feed}) and existing PAPER signal path,
-\item {\em Phase 2:}  updated ground screen, matching network and analog signal path (\S\ref{sec:analog})
-\item {\em Phase 3:}  broad-band or separate low-frequency for full spectral coverage.
-\end{itemize}
-Models and measurements discussed below are for the current Phase 1 system.
+
+
 
 %As shown in Fig.~\ref{fig:delayspec}, HERA's element meets this requirement in
 %reflectometry tests, performing comparably to the PAPER element.  The
@@ -1009,7 +1007,15 @@ The shape between the spars is actually a parabola rather than a paraboloid, so 
 
 \subsubsection{Feed}
 \label{sec:feed}
-The feed is to be deployed along two separate phases.  Initially, the feed reuses the original PAPER sleeved dipole, however in a new optimized cylindrical feed-cage configuration.  As discussed in \cite{feedmemo}, the optimization was based on (a) main beam efficiency, (b) cross-coupling (integrated feed pattern on the dish), (c) standing waves (blockage size), (d) frequency response and (e) polarization match.  The design parameters were size of backplane, height of mast, and height of cylinder.  A range of conical structures were looked at but were ruled out since it was found they introduce additional frequency structure with no real improvement in performance.  The polarization figure-of-merit shown in Fig. \ref{fig:ant_params} is a simplified variant of the fractional power leakage as defined in \cite{Moore_et_al2015}:
+The feed design will proceed in three phases:
+\begin{itemize}
+\item {\em Phase 1:}  use existing PAPER dipole with new ground screen (\S\ref{sec:feed}) and existing PAPER signal path,
+\item {\em Phase 2:}  updated ground screen, matching network and analog signal path (\S\ref{sec:analog})
+\item {\em Phase 3:}  broad-band or separate low-frequency for full spectral coverage.
+\end{itemize}
+
+\noindent
+{\bf Phase 1:}  Initially, the feed reuses the original PAPER sleeved dipole, however in a new optimized cylindrical feed-cage configuration.  As discussed in \cite{feedmemo}, the optimization was based on (a) main beam efficiency, (b) cross-coupling (integrated feed pattern on the dish), (c) standing waves (blockage size), (d) frequency response and (e) polarization match.  The design parameters were size of backplane, height of mast, and height of cylinder.  A range of conical structures were looked at but were ruled out since it was found they introduce additional frequency structure with no real improvement in performance.  The polarization figure-of-merit shown in Fig. \ref{fig:ant_params} is a simplified variant of the fractional power leakage as defined in \cite{Moore_et_al2015}:
 \begin{equation}
 \xi = \frac{\integral_{-\pi}^{\pi}\left[\sqrt{G(\theta,\phi=0)} - \sqrt{G(\theta,\phi=90)}\right]^2\sin\theta d\theta}
                {\integral_{-\pi}^{\pi}\left[\sqrt{G(\theta,\phi=0)} + \sqrt{G(\theta,\phi=90)}\right]^2\sin\theta d\theta}
@@ -1045,6 +1051,23 @@ The first phase design uses a 172cm diameter backplane, with a 36cm cylinder hei
 The feed is supported by spring-tensioned aramid fiber lines from the three poles via a rigid support to which the feed cage and dipole attach.  The tensioning line goes down centrally to the hub to hold the feed rigidly in place at the correct height.  This also stabilizes the feed in position and allows for strain relief on the coaxial cables.  
 
 The low noise amplifier/balun integrates directly to the base of the feed dipole in the same configuration as per PAPER.  The 150m length of 75 $\Omega$ cable used in the initial design also runs down centrally and then over to the post-amplifier module, which is housed near the RFI-shielded container containing the digital electronics.  This will be replaced by the 35m cable/node design, to be discussed.
+
+\noindent
+{\bf Phase 3:} 
+A wideband feed is being designed for the next phase of HERA (see Fig. \ref{fig:futureFeed}). This feed will have wide bandwidth (50-250 MHz) and improved performance compare to the current PAPER dipoles. This wider band will open the window of Cosmic Dawn and the latest stages of the Epoch of Re-ionization to HERA. This feed is based on a modified TEM horn concept where the feed?s beam is optimized for the appropriate illumination of the HERA dish to maximize sensitivity. This is to maximize the effective aperture while minimizing the system temperature (receiver noise, ohmic losses, spill-over, etc.).  This feed will as well replace the current PAPER dipoles and will therefore be mechanically compatible with the current dishes being deployed in South Africa.
+
+\begin{figure}[h!]
+\centerline{
+\includegraphics[height=0.3\textwidth]{plots/futureFeed.png}
+}
+\caption{\small Future HERA feed showing its directive beam pointed towards the dish.}
+\label{fig:futureFeed}
+\end{figure}
+
+The proposed feed belongs to the family of travelling wave end-fire antennas. This type of antennas, as opposed to standing wave antennas such as dipoles, conducts the wave through the structure until it is radiated. These antennas therefore tend to show good ultra band behavior in the time domain, which is key for HERA. TEM horn antennas also show ultra wide band impedance patterns for relatively small sizes as well as frequency stable circular beam patterns. Polarization purity tends to be well behaved in these antennas, being worst in the diagonal planes. Our current work is relying on numerical simulations for the optimization of the feed (see Fig. 2).
+
+Furthermore, as shown in \cite{2015ExA....39..567D}, room temperature ultra low receiver noise (<35K including matching noise) above ~100 MHz can be achieved with COTS transistors if a proper feeding mechanism and matching are designed. Despite sky noise is dominant for most of the EoR band, good matching is always critical in wide band systems, and specifically in the HERA case it is important to ensure good power match as well as noise match in order to reduce the effects of unwanted reflections [2]. We envisage having such a feeding mechanism in the new feed where the first stage LNA will be connected directly to the feeding point of the feed antenna. 
+
 
 
 \subsection{Array Configuration}
@@ -1087,10 +1110,21 @@ to limit the total analog path length.  This length is set to be 35m, such that 
 
 The analog signal path comprises the front-end module (FEM) at the feed, the post-amplfier module (PAM) at field-deployed nodes, and the $\sim 35m$ coaxial cable in between.  Also included are the monitor and control aspects to control and measure its state.
 
+\noindent
 {\bf Front-End Module: }
+The Front-End Module consists of an LNA as the very first stage in the chain for each polarization.  This component for the existing feed design will be a differential low noise amplifier which consists of two sets of LNAs feeding each dipole arm followed by a balun (or hybrid coupler).  The output from this point is then all single ended and mostly matched to 50? impedance.  Whilst it is desirable to be sky noise dominated in the HERA band, meaning for the first stage, the best achievable noise match must be obtained, it must not come at a too great cost to the power match since reducing the ripple across the band is absolutely essential.  This trade-off will be observed carefully to ensure the FEM is both low noise and well matched.  This stage is followed by carefully matched reflection-less filters and further amplifications of the signal.  In order to ensure very low reflection on the line a large matching attenuator will be used at each end of the cable after the bias-Tee circuit. 
 
+The FEM will also include a number of useful signal conditioning operations.  One of these will be to have a phase switch for each polarization as early as possible in the signal chain.  The switch will offer very low phase imbalance and will be controlled by differential lines.  The Walsh functions (orthogonal phase switching signals) will be generated in the SNAP board and used to control all FEMs in the field.  
+
+Another useful feature of the FEM will be an integrated ?Dicke? switching radiometer similar to the EDGES experiment \cite{2012RaSc...47.0K06R}.  The circuit provides the capability of switching between the output of the antenna, a calibrated noise source and a 50? ambient load.  The antenna measures only a fraction of the sky brightness temperature, determined by the matching between the antenna and receiver.  Three spectrometer measurements (antenna, ambient load and noise source) as well as additional lab measurements of the s-parameters and noise-parameters of the FEM prior to deployment then allow good calibration of the output spectrum. An on-board temperature sensor near the noise source will also aid with the calibration of the receiver chain.  The FEM will be housed in a rugged 5x5x10 cm unit which is water and dust resistant.
+
+\noindent
 {\bf Post-Amplifier Module: }
+The Front-End Module consists of an LNA as the very first stage in the chain for each polarization.  This component for the existing feed design will be a differential low noise amplifier which consists of two sets of LNAs feeding each dipole arm followed by a balun (or hybrid coupler).  The output from this point is then all single ended and mostly matched to 50? impedance.  Whilst it is desirable to be sky noise dominated in the HERA band, meaning for the first stage, the best achievable noise match must be obtained, it must not come at a too great cost to the power match since reducing the ripple across the band is absolutely essential.  This trade-off will be observed carefully to ensure the FEM is both low noise and well matched.  This stage is followed by carefully matched reflection-less filters and further amplifications of the signal.  In order to ensure very low reflection on the line a large matching attenuator will be used at each end of the cable after the bias-Tee circuit. 
 
+The FEM will also include a number of useful signal conditioning operations.  One of these will be to have a phase switch for each polarization as early as possible in the signal chain.  The switch will offer very low phase imbalance and will be controlled by differential lines.  The Walsh functions (orthogonal phase switching signals) will be generated in the SNAP board and used to control all FEMs in the field.  
+
+Another useful feature of the FEM will be an integrated ?Dicke? switching radiometer similar to the EDGES experiment [1].  The circuit provides the capability of switching between the output of the antenna, a calibrated noise source and a 50? ambient load.  The antenna measures only a fraction of the sky brightness temperature, determined by the matching between the antenna and receiver.  Three spectrometer measurements (antenna, ambient load and noise source) as well as additional lab measurements of the s-parameters and noise-parameters of the FEM prior to deployment then allow good calibration of the output spectrum. An on-board temperature sensor near the noise source will also aid with the calibration of the receiver chain.  The FEM will be housed in a rugged 5x5x10 cm unit which is water and dust resistant.
 
 
 \subsection{Digital Signal Path}
