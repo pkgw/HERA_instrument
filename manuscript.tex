@@ -200,7 +200,7 @@ Beyond these directly supported applications, HERA's public data products and in
 searching for auroral radio bursts from exoplanetary magnetospheres (\S\ref{sec:exoplanets}); and
 performing triggered, low-frequency follow up and characterization of fast radio bursts (\S\ref{sec:FRBs}).
 
-Section \ref{sec:eormeas} presents the techniques used to make the measurement.  Section \ref{sec:requirements} presents the high-level requirements and Section \ref{sec:design} presents the system description..   Section \ref{sec:status} presents a brief status and outline the deployement timetable and Section \ref{sec:conclusion} concludes by summarizing and providing additional context.
+Section \ref{sec:eormeas} presents the techniques used to make the measurement.  Section \ref{sec:requirements} presents the high-level requirements and Section \ref{sec:design} presents the system description.   Section \ref{sec:status} presents a brief status and outline the deployement timetable and Section \ref{sec:conclusion} concludes by summarizing and providing additional context.
 
 
 
@@ -227,9 +227,9 @@ the decade \citep{NWNH}.
 \begin{figure}[h!]
 	\centering
 	\includegraphics[width=0.7\textwidth]{plots/cosmicEvo.pdf}
-	\caption{Rendering of cosmic evolution from just after the Big Bang to today (background image credit Loeb/{\em Scientific American}).  The blue line shows the frequency of the red-shifted hydrogen line (rest frequency 1420 MHz) as a function of redshift (lower horizontal axis) and cosmic time (upper horizontal axis).  The white dashed horizontal lines are the HERA EOR band and the blue are the extended frequency goal.  %Determining where the structure in the background really falls is the goal of HERA.  
+	\caption{Rendering of cosmic evolution from just after the Big Bang to today (background image credit Loeb/{\em Scientific American}).  The labels show the redshift and the frequency of the red-shifted hydrogen line (rest frequency 1420 MHz) at different ages of the Universe.  The solid white lines bracket the HERA EOR band and the dashed ones bracket the extended frequency goal.  %Determining where the structure in the background really falls is the goal of HERA.  
 CMB observations observe the afterglow of the Big Bang (far left) and Baryonic Acoustic Oscillation (BAO) surveys proposed 
-target $z\approx$0.8-2.5.  Limited surveys span back to about $z\approx$7.} 
+target $z\approx0.8$-2.5.  Limited surveys span back to about $z\approx7$.}
 	\label{fig:cosmos}
 \end{figure}
 
@@ -348,7 +348,7 @@ SKA1 Low Core & 416,595 & 13.4$\sigma$ & 109.90$\sigma$
 %\enddata
 \end{tabular}
 \caption*{%\tiny{\justify
-$^*$Calculations done via \url{21cmSense} \url{www.github.com/} \citep{2013AJ....145...65P,2014ApJ...782...66P}
+$^*$Calculations done via {\tt 21cmSense}  \citep[\url{www.github.com/jpober/21cmSense};][]{2013AJ....145...65P,2014ApJ...782...66P}.
 Foreground avoidance represents an analysis comparable to \cite{ali_et_al2015}, whereas foreground modeling allows significantly more $k$ modes of the cosmological signal to be recovered.}
 \label{tab:signif}
 \end{table}
@@ -542,12 +542,14 @@ dispersion. Detecting deviations would rule out broad classes of models and coul
 \section{Measuring the EOR}
 \label{sec:eormeas}
 Due to the expansion of the universe over cosmological time, we can identify and measure the early Universe via the redshift of spectral lines.  The hydrogen hyperfine transition at a rest frequency of 1420 MHz is a key spectral line due to the ubiquity of hydrogen and, being a ``forbidden'' transition, the optical depth lets us see through the entire universe back almost to the period of recombination.  The bandwidth
-therefore equates to a cosmic distance along the line-of-site of the telescope, with the frequency determining the cosmic age.  An observation of an area of sky over a given bandwidth is therefore providing an average
+therefore equates to a cosmic distance along the line-of-sight of the telescope, with the frequency determining the cosmic age.  An observation of an area of sky over a given bandwidth is therefore providing an average
 over a cosmic volume.
 
 As the distance to the EOR is great (about 13 billion light-years) the signal is weak.  However, the signal also subtends the entire sky, so initial measurements of the EOR strive to measure a statistical power spectrum of the signal over the sky since the nature of the reionization process should have a specific spatial signature.  The goal is therefore to measure a range of aggregate spatial scales on the sky, rather than to image the signal directly.  Imaging does remain an ultimate goal to fully understand the process, however we will likely need a greater understanding of the signal characteristics and the systematics to achieve this more difficult goal.  
 
-Obviously between our present observation point and the Epoch of Reionization lies the entire intervening universe, which has an intrinsically much brighter signal (up to 6 orders of magnitude or more).  Primarily, this power is due to diffuse Galactic synchrotron radiation, supernova remnants and extragalactic radio sources.  As a first step, areas of the sky where these signals are minimal (for example, outside the galactic plane and away from strong point sources) are targeted \citep{bernardi_2013}.  More importantly and most fortuitously however is the fact that all of these foreground signals are smooth spectrum sources whereas the expected spectrum of the EOR is expected to be rough since it is made up of non-ionized regions which are randomly distributed over a wide range of redshifts.  This fact allows us to try and isolate foregrounds from the EOR, as will be discussed.
+Obviously between our present observation point and the Epoch of Reionization lies the entire intervening universe, which has an intrinsically much brighter signal (up to 6 orders of magnitude or more).
+% Almost everywhere else says 5 orders of magnitude, not 6; intended?
+Primarily, this power is due to diffuse Galactic synchrotron radiation, supernova remnants and extragalactic radio sources.  As a first step, areas of the sky where these signals are minimal (for example, outside the galactic plane and away from strong point sources) are targeted \citep{bernardi_2013}.  More importantly and most fortuitously however is the fact that all of these foreground signals are smooth spectrum sources whereas the expected spectrum of the EOR is expected to be rough since it is made up of non-ionized regions which are randomly distributed over a wide range of redshifts.  This fact allows us to try and isolate foregrounds from the EOR, as will be discussed.
 
 The past three years have seen deep EOR observations with PAPER, the MWA, 
 the Giant Metrewave Radio Telescope (GMRT), and LOFAR.
