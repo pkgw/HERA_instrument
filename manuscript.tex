@@ -561,9 +561,9 @@ The inherent challenge is to simultaneously meet stringent sensitivity requireme
 while suppressing foregrounds $\sim5$ orders of magnitude
 brighter than the 21\,cm signal, which has been addressed along a number of approaches.  
 To address this challenge,  all aspects of the experimental process must be refined and improved, spanning 
-calibration ({\em e.g.} \cite{zheng_et_al2014, jacobs_et_al2016, 2016arXiv160300607B}), handling foreground contamination
-({\em e.g.} \cite{moore_et_al2013,thyagarajan_et_al2015a,pober_et_al2016}),
-and the interferometer design itself ({\em e.g.} \cite{parsons_et_al2012a,dillon_parsons2016}).
+calibration \citep[{\em e.g.},][]{zheng_et_al2014, jacobs_et_al2016, 2016arXiv160300607B}, handling foreground contamination
+\citep[{\em e.g.},][]{moore_et_al2013,thyagarajan_et_al2015a,pober_et_al2016},
+and the interferometer design itself \citep[{\em e.g.},][]{parsons_et_al2012a,dillon_parsons2016}.
 
 A promising approach to make the first detection of the EoR power spectrum 
 is a foreground mitigation strategy based largely
@@ -630,11 +630,11 @@ The power spectrum measurement provides the spatial correlations across the sky,
 Though the full magnitude of the {\bf k}-vector is used, it is instructive to split it into two components,  $\kvec =  \kvpr + \kpar{\hat {\bf z}}$ where $|\kvpr|\equiv \kpr = 2\pi b/\lambda X$ is determined by the antenna baseline ($b$) and $\kpar=2\pi/(YB)$ by the bandwidth ($B$).  Here $X$ and $Y$ are cosmological parameters relating angular size and spectral frequency to cosmic volumes respectively (so, relating wavenumber to physical volume at a given redshift).  This is useful since it allows us to split out the chromatic response of the interferometer visibility measurement and isolate a phase space where foreground sources ({\em i.e.} everything {\em not} the EOR) contaminate the signal of interest from where they don't.  
 
 The $\kvpr$ components are directly proportional to the baselines and $\kpar$ are proportional to the Fourier transform of the frequency response \footnote{Note that this equivalency is an approximation, which is very good for the short baselines and small bandwidths generally used here.  For a more complete discussion see \cite{liu_et_al2014a,liu_et_al2014b}}.   
-The Fourier transform of a frequency spectrum is a delay, hence the name ``delay-spectrum'' for the technique that uses this approach.  Note that cosmic evolution limits the largest bandwidth (which determines the smallest $\kpar$) to about 10 MHz -- for larger bandwidths the evolution of the Universe begins to impact the result.  For HERA, wavenumbers are dominated by the bandwidth, not the baseline.
+The Fourier transform of a frequency spectrum is a delay spectrum, hence the name ``delay-spectrum'' for the technique that uses this approach.  Note that cosmic evolution limits the largest bandwidth (which determines the smallest $\kpar$) to about 10 MHz -- for larger bandwidths the evolution of the Universe begins to impact the result.  For HERA, wavenumbers are dominated by the bandwidth, not the baseline.
 
 Figure \ref{fig:kperf} shows many of the dependencies on wavenumber by the bandwidth, configuration and cosmology by plotting the perpendicular wavenumber ($\kvpr$; black lines), parallel wavenumber ($\kpar$; blue lines) and total wavenumber ($k$; green lines) as a function of redshift for various bandwidths and baselines.  The redshift range is appropriate for the extended frequency range that is the goal for HERA, however $z$=6-13 is the primary region for EOR studies.
 The lines are labelled for the assumed bandwidth and/or baseline, depending on the type of wavenumber shown.  Obviously many values may be used, but here a small sampling of values appropriate for HERA are shown.    
-Wavenumbers with an assumed bandwidth ($k$ and $\kpar$ are shown as stepped profiles, with the redshift steps equal to the bandwidth at that redshift.
+Wavenumbers with an assumed bandwidth ($k$ and $\kpar$) are shown as stepped profiles, with the redshift steps equal to the bandwidth at that redshift.
 Note that for 100 MHz, the concept of a power spectrum at a given redshift is no longer appropriate, which is why the line is dashed.
 Also in Fig. \ref{fig:kperf}, the lime-green shaded area indicates the initial region in which HERA intends to detect and characterize the EOR using the delay-spectrum technique.
 
@@ -654,12 +654,14 @@ In these variables, the ``contaminated'' phase space is a wedge-shaped region in
 \end{equation}
 where an offset parameterized by $S$ accounting for affects related to the combined spectral smoothness of the foregrounds and the antenna response has been included (see Fig. \ref{fig:wedge}). 
 
-If this $\beta$ factor is determined by the chromaticity of the longest baseline, we see that $\beta=1$ and this line is referred to as the ``horizon line'' ({\em i.e.}, the delay of a source at the horizon).  Systematics will push that line such as to close the EOR ``window'' to the upper left ($\beta > 1$).  If we can completely control systematics and constrain the affects of the foreground to {\em e.g.} the main beam, the line will move to decrease the size of the wedge ($\beta<1$).
-Therefore, a key issue to measuring the EOR power spectrum is to understand and minimize systematics.  For further discussion and an analytical derivation, see \cite{zahn_etal2012,vedantham_2012,liu_et_al2014b},  in simulation see \cite{datta_etal2010,hazelton_et_al2013} and for observations
-\cite{pober_etal2013b,2015arXiv150601026P,parsons_etal2014,2015arXiv150206016A}.  
+If this $\beta$ factor is determined by the chromaticity of the longest baseline, we see that $\beta=1$ and this line is referred to as the ``horizon line'' ({\em i.e.}, the delay of a source at the horizon).  Systematics will push that line such as to close the EOR ``window'' to the upper left ($\beta > 1$).
+% above: should "close" be "move"?
+If we can completely control systematics and constrain the effects of the foreground to {\em e.g.} the main beam, the line will move to decrease the size of the wedge ($\beta<1$).
+Therefore, a key issue to measuring the EOR power spectrum is to understand and minimize systematics.  For further discussion and an analytical derivation, see \citet{zahn_etal2012}, \citet{vedantham_2012}, and \citet{liu_et_al2014b}. In simulation see \citet{datta_etal2010} and \citet{hazelton_et_al2013}, and for observations
+\citet{pober_etal2013b}, \citet{2015arXiv150601026P}, \citet{parsons_etal2014}, and \citet{2015arXiv150206016A}.  
 
 
-Note that the unit of the spatial wavenumber $k$ is 1/length, in this case the relevant length scale is megaparsecs (Mpc; 1 Mpc = 3.086$\times10^{22}$ m).  In order to normalize for updated measurements of the Hubble constant, it is further normalized by a factor $h$, where Hubble's constant is expressed as $H_0=100h$ (km/s)/Mpc , such that the wavenumbers are expressed as $h$/Mpc.  Also note that at the redshifts of interest $X$ has a value of about 160 Mpc/deg and $Y$ has a value of about 16 Mpc/MHz.
+Note that the unit of the spatial wavenumber $k$ is length$^{-1}$, in this case the relevant length scale is megaparsecs (Mpc; 1 Mpc = 3.086$\times10^{22}$ m).  In order to normalize for updated measurements of the present-day Hubble parameter $H_0$, it is further normalized by a factor $h$, where $H_0=100h$ (km/s)/Mpc, such that the wavenumbers are expressed as $h$/Mpc.  Also note that at the redshifts of interest $X$ has a value of about 160 Mpc/deg and $Y$ has a value of about 16 Mpc/MHz.
 
 %\begin{figure}[t]
 %\centerline{
@@ -685,7 +687,7 @@ HERA's dish and compact configuration optimize wedge/window isolation and direct
 \end{figure}
 
 
-The techniques to measure the power spectrum may be broken down into two principle techniques -- delay-space (\S\ref{sec:delayapproach}) and map-making (\S\ref{sec:mapapproach}) -- plus additional hydrid methods.  These are briefly summarized below, with an emphasis on the delay-spectrum technique as the initial approach taken by HERA.  Finally, we provide a short discussion on calibration in the concept of this design.
+The techniques to measure the power spectrum may be broken down into two principle techniques -- delay-space (\S\ref{sec:delayapproach}) and map-making (\S\ref{sec:mapapproach}) -- plus additional hybrid methods.  These are briefly summarized below, with an emphasis on the delay-spectrum technique as the initial approach taken by HERA.  Finally, we provide a short discussion on calibration in the concept of this design.
 
 \subsection{Delay-Spectrum Approach}
 \label{sec:delayapproach}
@@ -707,7 +709,7 @@ V_N = \left(\frac{2k_B}{\lambda^2}\right)\left(\frac{T_{sys}}{\sqrt{2Bt}}\right)
 where $t$ is the integration time (see {\em e.g.} \citealt{thompson_et_al2001}),
 to determine the sensitivity of an instrument to the power spectrum per baseline we can substitute the thermal noise per baseline for the visibility in Eq. \ref{eq:Pk_baseline}.  Further, since an interferometer typically measures many baselines which may be averaged together to improve the signal-to-noise per $k$-bin, the total sensitivity may be approximated as
 \begin{equation}
-\Delta^2_N (k,z)\approx \frac{k^3X^2(z)Y(z)}{4\pi^2} \left[\frac{T_{sys}^2(z)\Omega_b(z) }{\tau(z) \mathcal{N}_s(k)}\right]
+\Delta^2_N (k,z)\approx \frac{k^3X^2(z)Y(z)}{4\pi^2} \left[\frac{T_{sys}^2(z)\Omega_b(z) }{\tau(z) \mathcal{N}(k)}\right]
 \label{eq:sensitivity}
 \end{equation}
 where $\mathcal{N}$ represents the improvement in sensitivity based on the array configuration, which may significantly boost the sensitivity if optimized for this measurement (see \citealt{parsons_et_al2012b}).  Dependencies on redshift and wavenumber have been included.
@@ -724,7 +726,7 @@ Another approach to improving sensitivity is to make the collecting area per ele
 \includegraphics[height=4cm]{plots/elementSizes.pdf}
 }
 \caption{Left: Representative boost factors ($\mathcal{N}$ in Eq. \ref{eq:sensitivity}) normalized to a 19-element hexagonal configuration spaced at 14.6m.  For a given element count, one can get about an order of
-magnitude improvement in delay-spectrum sensitivity.  Alternatively, for the same sensitivity one can build roughly 1/3 the antennas.  Right:  Power spectrum sensitivities for various arrays normalized to HERA-19.  Here the element size is included, which is shown as an appropriately sized circle.}
+magnitude improvement in delay-spectrum sensitivity.  Alternatively, for the same sensitivity one can build roughly 1/3 the antennas.  Right:  Power spectrum sensitivities for various arrays normalized to HERA-19.  The element sizes are indicated at the far right with appropriately sized circles.}
 \label{fig:boost}
 \end{figure}
 
@@ -799,11 +801,11 @@ reionization; CMB measurements probe an integral quantity subject
 to large degeneracies. Even when these observations are
 combined into a single 95\% confidence region, the bounds remain weak.
 For example, $x_{HI}$ spans almost the entire allowable range of [0,1]
-at $z=8$. 21\,cm reionization experiments place much tighter constraints on ionization, with the
+at $z=8$. Twenty-one centimeter reionization experiments place much tighter constraints on ionization, with the
 red band showing the forecasted 95\% confidence region derived from HERA data,
 after marginalizing over astrophysical and cosmological parameters.
 
-From these measurements and models, HERA is required to cover a redshift range of $z=$6 to 13, corresponding to a frequency range of 101 - 203 MHz.  We adopt 100-200 MHz for full performance as the requirement.  Extending the science to include the Dark Ages remains a goal so that efforts are on-going to design a feed to increase the lower limit down to at least 70 MHz without compromising the performance in the above requirement range.  The fall-back position for low frequencies is a serial deployment of a scaled version of the HERA feed or to potentially build additional elements specifically for low frequencies.  
+From these measurements and models, HERA is required to cover a redshift range of $z=6$ to 13, corresponding to a frequency range of 101--203 MHz.  We adopt 100--200 MHz for full performance as the requirement.  Extending the science to include the Dark Ages remains a goal so that efforts are on-going to design a feed to increase the lower limit down to at least 70 MHz without compromising the performance in the above requirement range.  The fall-back position for low frequencies is a serial deployment of a scaled version of the HERA feed or to potentially build additional elements specifically for low frequencies.  
 
 The scientific requirement on channel bandwidth is to allow access to k-modes of $\sim1$ h/Mpc, which requires about 256 channels over the 100 MHz bandwidth.  However, in order to handle radio frequency interference as well as to allow the bandpass to be characterized, a specification of 1024 channels has been chosen.  This yields a channel bandwidth of 97.7 kHz.
 
@@ -811,11 +813,12 @@ The total simultaneously processed bandwidth is the full 100 MHz, since we wish 
 
 \subsection{Delay Response}
 \label{sec:delayspec}
-Early analysis \citep{elementmemo} indicated that to trace the EOR over a wide range of redshift, internal reflections should be attenuated by about 60 dB from the initial incoming wave by about 60 ns, or a voltage standing wave ratio (VSWR) $<$ 1.002 for frequencies $<$ 17 MHz.  This was a conservative value based on estimates of power in spectrally smooth foreground sources from \cite{santos_et_al2005,2008MNRAS.385.2166A, deoliveira2008, jelic_et_al2008, bernardi_et_al2010} and experience with PAPER dealing with foreground systematics.
+Early analysis \citep{elementmemo} indicated that to trace the EOR over a wide range of redshift, internal reflections should be attenuated by about 60 dB from the initial incoming wave by about 60 ns, or a voltage standing wave ratio (VSWR) $<$ 1.002 for frequencies $<$ 17 MHz.  This was a conservative value based on estimates of power in spectrally smooth foreground sources \citep{santos_et_al2005,2008MNRAS.385.2166A, deoliveira2008, jelic_et_al2008, bernardi_et_al2010} and experience with PAPER dealing with foreground systematics.
 This provided the basis for the initial design of the element.    For the contemplated feeds on a primary focus antenna, it was found that a focal length/diameter radio ($f/D$) of approximately 0.32 was optimal.  We may therefore estimate the attenuation as a function of delay and diameter and assign this a ``cost function''.  
 
 Figure \ref{fig:costfig} summarizes the adopted cost function.  
-The vertical axis shows a very steep delay ``cost'' at 60 ns and the horizontal axis is the cost/performance model, as described in the following section.  
+The vertical axis shows a very steep delay ``cost'' at 60 ns and the horizontal axis is the cost/performance model, as described in the following section.
+% should this just be "horizontal axis is the element diameter"?
 The color coding is the product of the two assigned costs, with red showing a high cost normalized to 350 14m elements (clipped at a ratio of 1.25) and purple being the minimum.
 The black lines labelled `1', `2' and `3' are the round-trip travel times for 1, 2 and 3 reflections between the feed and the vertex.
 To obtain 60 dB by 60 ns we may interpret those lines in one of two ways:  
@@ -827,12 +830,12 @@ For 1 round-trip, for the assumed $f/D$ over the diameters of interest, from Fig
 \centerline{
 \includegraphics[width=0.6\textwidth]{plots/costfig.pdf} 
 }
-\caption{\small The background coloring with colorbar shows the relative cost/performance for delay and cost at a fixed performance as a function of element diameter.  See \S\ref{sec:delayspec}, \S\ref{sec:cost} and \cite{elementmemo} for details.  A diameter of 14-m (vertical dashed line) is near the cost minimum and consistent with assumption for the delay specification.
+\caption{\small The background coloring with colorbar shows the relative cost/performance for delay and cost at a fixed performance as a function of element diameter.  See \S\ref{sec:delayspec}, \S\ref{sec:cost} and \cite{elementmemo} for details.  A diameter of 14-m (vertical dashed line) is near the cost minimum and consistent with assumptions for the delay specification.
 \label{fig:costfig}}
 \end{figure}
 
 As a key specification, this has been a focus of study with a series of prototypes and analyses based on modeling, and measurements have been conducted to provide much more rigor than this early specification \citep{ewall-wice_et_al2016-EoXLimits,neben_et_al2016,thyagarajan_et_al2016,patra_et_al0216}.  The simple specification set above more appropriately becomes a series of curves for attenuation and delay at different wavenumbers for realistic foreground models.  Figure \ref{fig:delayspec}, adapted from \cite{thyagarajan_et_al2016}, shows the results at $k$ = 0.10, 0.15, and 0.20 $h$/Mpc for the adopted design.  The analysis shows that
-the dish design for should allow for EOR detections for $k>0.10 h/$Mpc.  We also see that the initial simple ``60@60'' specification was a overly conservative (shown as the lightly shaded area bounded by the teal line), however it served as a good initial goal.
+the dish design for should allow for EOR detections for $k>0.10 h/$Mpc.  We also see that the initial simple ``60@60'' specification was overly conservative (shown as the lightly shaded area bounded by the teal line), however it served as a good initial goal.
 
 \begin{figure}[h!]
 	\centering
@@ -938,7 +941,7 @@ HERA is located at the Karoo Astronomy Reserve.
 \subsection{Antenna}
 \label{sec:antenna}
 
-As discussed in the previous section, the design of the design principles are three-fold:
+As discussed in the previous section, the goals of the design principles are three-fold:
 \begin{itemize}
 \item optimize for the delay-spectrum technique of measuring the EOR power spectrum,
 \item minimize costs, and
@@ -992,7 +995,7 @@ manageable level.  Studies of elements in a bigger array and potential screening
 \end{figure}
 
 \subsubsection{Element Construction}
-To minimize cost and aid in construction in a remote location, the construction materials are readily available standard construction materials, making for a very cost-effective design.  The feed is supported from three utility poles using line and hardware primarily from boating activities which can handle the load and external environment.  Given the close-packed design, each pole (except for the perimeter) are shared between three antennas.  This both reduces the number of poles, but also makes for a balanced load.  Note that the perimeter poles can be stayed with guy lines if needed.   The rim is also supported off of these poles, with three smaller posts in between such that the outer perimeter is regular dodecagon shape.  Two of the three intermediate posts are shared with adjacent antennas.
+To minimize cost and aid in construction in a remote location, the elements are built from readily available standard construction materials, making for a very cost-effective design.  The feed is supported from three utility poles using line and hardware primarily from boating activities which can handle the load and external environment.  Given the close-packed design, each pole (except for the perimeter) is shared between three antennas.  This both reduces the number of poles, but also makes for a balanced load.  Note that the perimeter poles can be stayed with guy lines if needed.   The dish rim is also supported off of these poles, with three smaller posts in between such that the outer perimeter is regular dodecagon shape.  Two of the three intermediate posts are shared with adjacent antennas.
 
 The center of the antenna is a cast-in-place concrete donut-shaped hub with 12 sleeves for PVC spars which provide the support for the surface and 12 horizontal spars which allow for additional support.  The twelve surface spars are made of 60mm PVC pipe, which are stressed along three support points to approximate a parabolic shape.  Note that an ideal moment-loaded beam actually attains a true parabola.  The three support points (one at the hub, one about 3 meters out radially and one at the rim-end) are at the correct height and angle for the underlying parabola and the PVC essentially acts as a spatial filter.
 
@@ -1056,7 +1059,7 @@ The low noise amplifier/balun integrates directly to the base of the feed dipole
 
 \noindent
 {\bf Phase 3:} 
-A wideband feed is being designed for the next phase of HERA (see Fig. \ref{fig:futureFeed}). This feed will have wide bandwidth (50-250 MHz) and improved performance compare to the current PAPER dipoles. This wider band will open the window of Cosmic Dawn and the latest stages of the Epoch of Re-ionization to HERA. This feed is based on a modified TEM horn concept where the feed?s beam is optimized for the appropriate illumination of the HERA dish to maximize sensitivity. This is to maximize the effective aperture while minimizing the system temperature (receiver noise, ohmic losses, spill-over, etc.).  This feed will as well replace the current PAPER dipoles and will therefore be mechanically compatible with the current dishes being deployed in South Africa.
+A wideband feed is being designed for the next phase of HERA (see Fig. \ref{fig:futureFeed}). This feed will have wider bandwidth (50-250 MHz) and improved performance compare to the current PAPER dipoles. This wider band will open the window of Cosmic Dawn and the latest stages of the Epoch of Re-ionization to HERA. This feed is based on a modified TEM horn concept where the feed's beam is optimized for the appropriate illumination of the HERA dish to maximize sensitivity. This is to maximize the effective aperture while minimizing the system temperature (receiver noise, ohmic losses, spill-over, etc.).  This feed will as well replace the current PAPER dipoles and will therefore be mechanically compatible with the current dishes being deployed in South Africa.
 
 \begin{figure}[h!]
 \centerline{
@@ -1068,7 +1071,9 @@ A wideband feed is being designed for the next phase of HERA (see Fig. \ref{fig:
 
 The proposed feed belongs to the family of travelling wave end-fire antennas. This type of antennas, as opposed to standing wave antennas such as dipoles, conducts the wave through the structure until it is radiated. These antennas therefore tend to show good ultra band behavior in the time domain, which is key for HERA. TEM horn antennas also show ultra wide band impedance patterns for relatively small sizes as well as frequency stable circular beam patterns. Polarization purity tends to be well behaved in these antennas, being worst in the diagonal planes. Our current work is relying on numerical simulations for the optimization of the feed (see Fig. 2).
 
-Furthermore, as shown in \cite{2015ExA....39..567D}, room temperature ultra low receiver noise (<35K including matching noise) above ~100 MHz can be achieved with COTS transistors if a proper feeding mechanism and matching are designed. Despite sky noise is dominant for most of the EoR band, good matching is always critical in wide band systems, and specifically in the HERA case it is important to ensure good power match as well as noise match in order to reduce the effects of unwanted reflections [2]. We envisage having such a feeding mechanism in the new feed where the first stage LNA will be connected directly to the feeding point of the feed antenna. 
+Furthermore, as shown in \cite{2015ExA....39..567D}, room temperature ultra low receiver noise ($<$35K including matching noise) above ~100 MHz can be achieved with COTS transistors if a proper feeding mechanism and matching are designed. Despite the fact that sky noise is dominant for most of the EoR band, good matching is always critical in wide band systems, and specifically in the HERA case it is important to ensure good power match as well as noise match in order to reduce the effects of unwanted reflections [2].
+% this "[2]" is probably a citation that has not been properly propagated??
+We envisage having such a feeding mechanism in the new feed where the first stage LNA will be connected directly to the feeding point of the feed antenna. 
 
 
 
@@ -1100,7 +1105,7 @@ using the \citet{liu_et_al2010} technique, yielding calibration errors that are 
 
 \subsection{Analog Signal Path}
 \label{sec:analog}
-HERA's analog signal path from 70--250 MHz with the full performance EOR band of 100-200 MHz, as shown in Fig. \ref{fig:cosmos} and discussed in \S\ref{sec:freqs}, emphasizes spectral smoothness and robustness.  Although the low-frequency sky has an intrinsically bright signal level, in the desired ``cold patches'' the sky temperature is only about 30 K at the upper frequency end, so relatively low receiver temperatures are desired.  Note that at the low end of the band (70 MHz), the sky temperature is about 1000 K and across the EOR band it ranges from about 100-400 K.
+HERA's analog signal path from 70--250 MHz with the full performance EOR band of 100--200 MHz, as shown in Fig. \ref{fig:cosmos} and discussed in \S\ref{sec:freqs}, emphasizes spectral smoothness and robustness.  Although the low-frequency sky has an intrinsically bright signal level, in the desired ``cold patches'' the sky temperature is only about 30 K at the upper frequency end, so relatively low receiver temperatures are desired.  Note that at the low end of the band (70 MHz), the sky temperature is about 1000 K and across the EOR band it ranges from about 100--400 K.
 With receiver temperatures of 30--100 K readily achievable with ambient temperature electronics however
 HERA's low-noise amplifiers (LNAs) may be inexpensive, passively cooled components integrated into the
 antenna feed.  
@@ -1110,24 +1115,20 @@ HERA's signal path emphasizes careful impedance matching between each component 
 house the analog-to-digital converters (ADCs) in ``nodes'' near the antenna elements
 to limit the total analog path length.  This length is set to be 35m, such that the round-trip delay corresponds to about 0.15 $h$/Mpc, which remains in the wavenumbers  near the wedge.  The project is also examining the impact of having a range of varying analog path lengths.
 
-The analog signal path comprises the front-end module (FEM) at the feed, the post-amplfier module (PAM) at field-deployed nodes, and the $\sim 35m$ coaxial cable in between.  Also included are the monitor and control aspects to control and measure its state.
+The analog signal path comprises the front-end module (FEM) at the feed, the post-amplifier module (PAM) at field-deployed nodes, and the $\sim 35$ m coaxial cable in between.  Also included are the monitor and control aspects to control and measure its state.
 
 \noindent
 {\bf Front-End Module: }
-The Front-End Module consists of an LNA as the very first stage in the chain for each polarization.  This component for the existing feed design will be a differential low noise amplifier which consists of two sets of LNAs feeding each dipole arm followed by a balun (or hybrid coupler).  The output from this point is then all single ended and mostly matched to 50? impedance.  Whilst it is desirable to be sky noise dominated in the HERA band, meaning for the first stage, the best achievable noise match must be obtained, it must not come at a too great cost to the power match since reducing the ripple across the band is absolutely essential.  This trade-off will be observed carefully to ensure the FEM is both low noise and well matched.  This stage is followed by carefully matched reflection-less filters and further amplifications of the signal.  In order to ensure very low reflection on the line a large matching attenuator will be used at each end of the cable after the bias-Tee circuit. 
+The Front-End Module consists of an LNA as the very first stage in the chain for each polarization.  This component for the existing feed design will be a differential low noise amplifier which consists of two sets of LNAs feeding each dipole arm followed by a balun (or hybrid coupler).  The output from this point is then all single ended and mostly matched to 50$\Omega$ impedance.  Whilst it is desirable to be sky noise dominated in the HERA band, meaning for the first stage, the best achievable noise match must be obtained, it must not come at a too great cost to the power match since reducing the ripple across the band is absolutely essential.  This trade-off will be observed carefully to ensure the FEM is both low noise and well matched.  This stage is followed by carefully matched reflection-less filters and further amplifications of the signal.  In order to ensure very low reflection on the line a large matching attenuator will be used at each end of the cable after the bias-Tee circuit. 
 
 The FEM will also include a number of useful signal conditioning operations.  One of these will be to have a phase switch for each polarization as early as possible in the signal chain.  The switch will offer very low phase imbalance and will be controlled by differential lines.  The Walsh functions (orthogonal phase switching signals) will be generated in the SNAP board and used to control all FEMs in the field.  
 
-Another useful feature of the FEM will be an integrated ?Dicke? switching radiometer similar to the EDGES experiment \cite{2012RaSc...47.0K06R}.  The circuit provides the capability of switching between the output of the antenna, a calibrated noise source and a 50? ambient load.  The antenna measures only a fraction of the sky brightness temperature, determined by the matching between the antenna and receiver.  Three spectrometer measurements (antenna, ambient load and noise source) as well as additional lab measurements of the s-parameters and noise-parameters of the FEM prior to deployment then allow good calibration of the output spectrum. An on-board temperature sensor near the noise source will also aid with the calibration of the receiver chain.  The FEM will be housed in a rugged 5x5x10 cm unit which is water and dust resistant.
+Another useful feature of the FEM will be an integrated ``Dicke'' switching radiometer similar to the EDGES experiment \citep{2012RaSc...47.0K06R}.  The circuit provides the capability of switching between the output of the antenna, a calibrated noise source and a 50$\Omega$ ambient load.  The antenna measures only a fraction of the sky brightness temperature, determined by the matching between the antenna and receiver.  Three spectrometer measurements (antenna, ambient load and noise source) as well as additional lab measurements of the s-parameters and noise-parameters of the FEM prior to deployment then allow good calibration of the output spectrum. An on-board temperature sensor near the noise source will also aid with the calibration of the receiver chain.  The FEM will be housed in a rugged 5$\times$5$\times$10 cm unit which is water and dust resistant.
 
 \noindent
 {\bf Post-Amplifier Module: }
-The Front-End Module consists of an LNA as the very first stage in the chain for each polarization.  This component for the existing feed design will be a differential low noise amplifier which consists of two sets of LNAs feeding each dipole arm followed by a balun (or hybrid coupler).  The output from this point is then all single ended and mostly matched to 50? impedance.  Whilst it is desirable to be sky noise dominated in the HERA band, meaning for the first stage, the best achievable noise match must be obtained, it must not come at a too great cost to the power match since reducing the ripple across the band is absolutely essential.  This trade-off will be observed carefully to ensure the FEM is both low noise and well matched.  This stage is followed by carefully matched reflection-less filters and further amplifications of the signal.  In order to ensure very low reflection on the line a large matching attenuator will be used at each end of the cable after the bias-Tee circuit. 
-
-The FEM will also include a number of useful signal conditioning operations.  One of these will be to have a phase switch for each polarization as early as possible in the signal chain.  The switch will offer very low phase imbalance and will be controlled by differential lines.  The Walsh functions (orthogonal phase switching signals) will be generated in the SNAP board and used to control all FEMs in the field.  
-
-Another useful feature of the FEM will be an integrated ?Dicke? switching radiometer similar to the EDGES experiment [1].  The circuit provides the capability of switching between the output of the antenna, a calibrated noise source and a 50? ambient load.  The antenna measures only a fraction of the sky brightness temperature, determined by the matching between the antenna and receiver.  Three spectrometer measurements (antenna, ambient load and noise source) as well as additional lab measurements of the s-parameters and noise-parameters of the FEM prior to deployment then allow good calibration of the output spectrum. An on-board temperature sensor near the noise source will also aid with the calibration of the receiver chain.  The FEM will be housed in a rugged 5x5x10 cm unit which is water and dust resistant.
-
+TODO.
+% The text here was a duplicate of the FEM subsection.
 
 \subsection{Digital Signal Path}
 \label{sec:digital}
@@ -1171,7 +1172,7 @@ By preserving its design tools, signal processing libraries, and interface code 
 }\label{fig:hardware}
 \end{figure}
 
-While some applications may utilise SNAPs in multiple-board chasses, for HERA, SNAP is housed in a field-deployable RFI-tight box.
+While some applications may utilise SNAPs in multiple-board chassis, for HERA, SNAP is housed in a field-deployable RFI-tight box.
 The node enclosure itself is an RFI-tight housing that can handle the signal paths for up to 12 antennas.
 The enclosures are placed throughout the array to minimize the total number constrained by the 35\,m maximum cable length. 
 For outrigger antennas the delay specification is not critical, so the cable-length to those may be as long as practical.
@@ -1216,7 +1217,7 @@ on the basis of redundancy, compresses it by a factor of 20, and transfers it to
 This real-time pipeline, based on a similar system for PAPER, is mature, computationally manageable, and 
 agnostic with respect to observing parameters, making it a safe and robust first step in data processing.  For a discussion
 of the PAPER pipeline, see
-\cite{zheng_et_al2014,parsons_etal2014,ali_et_al2015}.
+\citet{zheng_et_al2014}, \citet{parsons_etal2014}, and \citet{ali_et_al2015}.
 The Internet link between the Karoo and data centers in the U.S.\ has been extensively tested, with assistance from SKA-SA, TENET
 (South African to London link provider) and GEANT (London to U.S.\ provider).   
 Transfer speeds are sufficient for streaming compressed data to the U.S.\ via the Internet. Portable storage is also
@@ -1262,7 +1263,7 @@ rephasing, imaging, and deconvolution; Fast Holographic Deconvolution
 forward-modeling and subtraction \citep{sullivan_et_al2012}; Precision Radio Interferometry Simulator 
 (PRISim), a package for accurately simulating wide-field interferometric observations;
 21cmFAST \citep{mesinger_et_al2011}, a fast, semi-numerical 21~cm signal simulator,
-and \url{https://github.com/jpober/21cmSense} \citep{pober_et_al2014}, a tool for forecasting power spectrum sensitivity.
+and 21cmSense \citep{pober_et_al2014}, a tool for forecasting power spectrum sensitivity.
 Other project code is aggregated and revision
 controlled in a public repository with separate sandboxes for each developer to ensure that
 HERA members have up-to-date copies of all project code to facilitate sharing and debugging.
@@ -1284,7 +1285,7 @@ machine learning interpolations of simulations for joint Monte Carlo estimation 
 \label{sec:status}
 
 \noindent On-site construction will proceed in stages, starting from the
-initial 19 element currently in place.    Elements 20-37
+initial 19 elements currently in place.    Elements 20--37
 are currently under construction, to be completed in 2016.  
  These will be used
 in conjunction with the thoroughly characterized extant PAPER signal path and
@@ -1338,7 +1339,6 @@ is the result of these advances.
 
 
 HERA is ``the right instrument at the right time.'' With first generation experiments approaching the limits of their sensitivity, it is now critical to build upon new knowledge and experience to advance beyond them. HERA's large collecting area and optimized design enable precise constraints of EoR astrophysics and a broad range of high-impact secondary science, all before SKA-low becomes operational.
-With CHAMP, HERA expands CAMPARE's proven methods and recruitment network to bring more students from underrepresented groups into cutting-edge astronomy research and support them with year-round mentoring.
 By bringing the U.S.\ teams from PAPER, the MWA, MITEoR, and EDGES together with strategic international partners,
 the HERA collaboration has consolidated theoretical and experimental leadership in the field, 
 and is equipped to deliver the proposed science. By building HERA, we can provide the community with unprecedented insights into this key new area of cosmology.
